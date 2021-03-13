@@ -28,7 +28,7 @@ To watch a video of the application being fully demo'd please use this link: [Ap
 ## Technologies Used
 
   <img src="https://img.shields.io/badge/-react-red" />
- <img src="https://img.shields.io/badge/-heroku-red" />
+  <img src="https://img.shields.io/badge/-heroku-red" />
   <img src="https://img.shields.io/badge/Passport-9cf" />
   <img src="https://img.shields.io/badge/Javascript-yellow" />
   <img src="https://img.shields.io/badge/HTML-orange" />
