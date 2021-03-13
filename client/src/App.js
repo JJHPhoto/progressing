@@ -8,21 +8,15 @@ function App() {
   const displayPage = () => {
     console.log(pathName);
     switch (pathName) {
-      case "/React-Portfolio":
-        return <About />;
-      case "/React-Portfolio/Work":
-        return <Work />;
-      case "/React-Portfolio/ContactMe":
-        return <ContactMe />;
-      case "/React-Portfolio/Resume":
-        return <Resume />;
-      default:
-        return <About />; 
+      case "/Start":
+        return <Start />;
+
     }
   }
   return (
     <div className="App">
       <Start />
+      {displayPage()}
      
     </div>
   );
