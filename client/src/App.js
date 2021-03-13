@@ -1,10 +1,23 @@
-import { useAuthTokenStore } from "./utils/auth";
+import Start from "./pages/Start/Start";
+// import { useAuthTokenStore } from "./utils/auth";
 
 function App() {
-  useAuthTokenStore();
+  // useAuthTokenStore();
+  const pathName = window.location.pathname
+
+  const displayPage = () => {
+    console.log(pathName);
+    switch (pathName) {
+      case "/Start":
+        return <Start />;
+
+    }
+  }
   return (
     <div className="App">
-      <h1>testText</h1>
+      <Start />
+      {displayPage()}
+     
     </div>
   );
 }
