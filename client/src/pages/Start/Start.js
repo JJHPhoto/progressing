@@ -13,8 +13,12 @@ function Start () {
        <div className="start-header mt-5 d-flex align-items-center flex-column ">
             <Header />
             <div className="start-buttons d-flex flex-column">
-                <Button className="main-button mt-4" variant="success" size="lg"><Link to="/login" style={{ textDecoration: 'none', color: 'white'}}>Login</Link></Button>
-                <Button className="main-button mt-3" variant="success" size="lg"><Link to="/signup" style={{ textDecoration: 'none', color: 'white'}}>Sign Up</Link></Button>
+                <Button className="main-button mt-4" variant="success" size="lg">
+                    <Link to="/login" style={{ textDecoration: 'none', color: 'white'}}>Login</Link>
+                </Button>
+                <Button className="main-button mt-3" variant="success" size="lg">
+                    <Link to="/signup" style={{ textDecoration: 'none', color: 'white'}}>Sign Up</Link>
+                </Button>
             </div>
         </div>
     </Container>
