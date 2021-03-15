@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp";
 import Home from "./pages/Landing";
 import Goal from "./pages/Goal";
 import CreateGoal from "./pages/CreateGoal";
+import NotFound from "./pages/NotFound/NotFound";
 // import { useAuthTokenStore } from "./utils/auth";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/home"component={Home} />
           <Route path="/goal"component={Goal} />
           <Route path="/creategoal"component={CreateGoal} />
+          <Route component={NotFound}/>
         </Switch>
       </Router>
     </div>
