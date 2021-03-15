@@ -1,5 +1,5 @@
 import { useRef, useLogin } from "react";
-import api from "../../utils/API";
+// import api from "../../utils/API";
 import {Button} from "react-bootstrap";
 
 function SignUp() {
@@ -39,8 +39,8 @@ function SignUp() {
     //   <button>Submit</button>
     // </form>
    <>
-    <h1>testingRoutesSignUp</h1>
-    <Button variant="link">Link</Button>
+    <h1>Welcome to the Sign Page!!!</h1>
+    {/* <Button variant="link">Submit</Button> */}
     </>
   );
 }
