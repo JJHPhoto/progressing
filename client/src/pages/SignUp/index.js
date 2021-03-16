@@ -1,6 +1,8 @@
 import { useRef, useLogin } from "react";
 // import api from "../../utils/API";
 import {Button} from "react-bootstrap";
+import { Header } from "../../components/Header/Header";
+import { SignUpEmailInput, SignUpFirstName, SignUpLastName, SignUpPageSubmit, SignUpPasswordInput } from "../../components/SignUp/SignUpForm";
 
 function SignUp() {
   // const emailRef = useRef();
@@ -38,10 +40,14 @@ function SignUp() {
     //   <br />
     //   <button>Submit</button>
     // </form>
-   <>
-    <h1>Welcome to the Sign Page!!!</h1>
-    {/* <Button variant="link">Submit</Button> */}
-    </>
+   <div className="container">
+     <Header />
+    <SignUpFirstName />
+    <SignUpLastName />
+    <SignUpEmailInput />
+    <SignUpPasswordInput />
+    <SignUpPageSubmit />
+    </div>
   );
 }
 
