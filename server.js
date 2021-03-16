@@ -1,11 +1,10 @@
+// require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 require("./config/connect");
-// require("dotenv").config();
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -29,8 +28,6 @@ if (process.env.NODE_ENV === "production") {
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-
-//Need to add Mongo DB connection here
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
