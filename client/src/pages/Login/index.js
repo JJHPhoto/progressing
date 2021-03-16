@@ -1,5 +1,5 @@
 import { useRef, useLogin } from "react";
-import { LoginEmailInput, LoginPasswordInput, LoginUpPageSubmit } from "../../components/Login/LoginForm";
+import { LoginEmailInput, LoginPasswordInput, LoginPageSubmit, ReturnToStart } from "../../components/Login/LoginForm";
 import { Header } from "../../components/Header/Header";
 
 
@@ -40,7 +40,8 @@ function Login() {
 
     <LoginEmailInput />
     <LoginPasswordInput />
-    <LoginUpPageSubmit />
+    <LoginPageSubmit />
+    <ReturnToStart />
     </div>
   );
 }

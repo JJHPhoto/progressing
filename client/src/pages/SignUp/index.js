@@ -2,6 +2,7 @@ import { useRef, useLogin } from "react";
 // import api from "../../utils/API";
 import {Button} from "react-bootstrap";
 import { Header } from "../../components/Header/Header";
+import { ReturnToStart } from "../../components/Login/LoginForm";
 import { SignUpEmailInput, SignUpFirstName, SignUpLastName, SignUpPageSubmit, SignUpPasswordInput } from "../../components/SignUp/SignUpForm";
 
 function SignUp() {
@@ -47,6 +48,7 @@ function SignUp() {
     <SignUpEmailInput />
     <SignUpPasswordInput />
     <SignUpPageSubmit />
+    <ReturnToStart />
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
 
 
 
@@ -27,12 +29,24 @@ export function LoginPasswordInput(props) {
     );
 }
 
-export function LoginUpPageSubmit (props) {
+export function LoginPageSubmit (props) {
 
     return (
         <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success submitBtn">
                 {props.children}
-                Submit Login Info
+                <Link to="/home" style={{ textDecoration: 'none', color: 'white'}}>Submit Login Info</Link>
+                
         </button>
     );
 }   
+
+export function ReturnToStart (props) {
+
+    return (
+        <button {...props} style={{ float: "left", marginBottom: 10 }} className="btn btn-success submitBtn">
+                {props.children}
+                <Link to="/" style={{ textDecoration: 'none', color: 'white'}}>Return to Start</Link>
+               
+        </button>
+    );
+}
