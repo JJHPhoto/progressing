@@ -1,9 +1,15 @@
 import { useRef, useLogin } from "react";
-// import api from "../../utils/API";
-import {Button} from "react-bootstrap";
+// import api from "../../utils/api";
+import { Button } from "react-bootstrap";
 import { Header } from "../../components/Header/Header";
 import { ReturnToStart } from "../../components/Login/LoginForm";
-import { SignUpEmailInput, SignUpFirstName, SignUpLastName, SignUpPageSubmit, SignUpPasswordInput } from "../../components/SignUp/SignUpForm";
+import {
+  SignUpEmailInput,
+  SignUpFirstName,
+  SignUpLastName,
+  SignUpPageSubmit,
+  SignUpPasswordInput,
+} from "../../components/SignUp/SignUpForm";
 
 function SignUp() {
   // const emailRef = useRef();
@@ -41,14 +47,14 @@ function SignUp() {
     //   <br />
     //   <button>Submit</button>
     // </form>
-   <div className="container">
-     <Header />
-    <SignUpFirstName />
-    <SignUpLastName />
-    <SignUpEmailInput />
-    <SignUpPasswordInput />
-    <SignUpPageSubmit />
-    <ReturnToStart />
+    <div className="container">
+      <Header />
+      <SignUpFirstName />
+      <SignUpLastName />
+      <SignUpEmailInput />
+      <SignUpPasswordInput />
+      <SignUpPageSubmit />
+      <ReturnToStart />
     </div>
   );
 }
