@@ -1,16 +1,21 @@
 import React from "react";
-import { Navbar } from "react-bootstrap";
+import { Button, Navbar } from "react-bootstrap";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 
 function NavBar() {
   return (
     <div>
       <Navbar>
-        <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
-        <Navbar.Toggle />
+        <Button variant="success">Life Goals</Button>
+        <Button variant="success">Options</Button>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Signed in as: <a href="#login">Mark Otto</a>
+            Signed in as: <a href="#login">User's Name </a>
           </Navbar.Text>
+          <Button variant="success">
+            {" "}
+            Logut <RiLogoutCircleRLine />
+          </Button>{" "}
         </Navbar.Collapse>
       </Navbar>
     </div>
