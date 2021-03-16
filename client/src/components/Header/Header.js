@@ -1,20 +1,13 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Banner from "../../assets/images/ProgressingBanner.jpg";
+import Banner from "../photos/ProgressingBanner.jpg";
 
 export function Header() {
-
-    return (
-        <>
-        <Card>
-      <Card.Img variant="top" src={Banner} />
-        <Card.Body>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the bulk
-            of the card's content.
-          </Card.Text>
-        </Card.Body>
+  return (
+    <>
+      <Card>
+        <Card.Img variant="top" src={Banner} />
       </Card>
-      </>
-    )
+    </>
+  );
 }

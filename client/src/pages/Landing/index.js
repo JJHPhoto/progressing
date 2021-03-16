@@ -1,9 +1,13 @@
 import React from "react";
+import { Header } from "../../components/Header/Header";
+import NavBar from "../../components/NavBar/NavBar";
 
 function Home() {
-
-  return(
-    <h1>Hello Landing Page</h1>
+  return (
+    <div>
+      <Header />
+      <NavBar />
+    </div>
   );
 }
 
