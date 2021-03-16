@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
 
 export function SignUpFirstName(props) {
 
@@ -54,7 +56,9 @@ export function SignUpPageSubmit (props) {
     return (
         <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success submitBtn">
                 {props.children}
-                Submit Signup Info
+
+                <Link to="/home" style={{ textDecoration: 'none', color: 'white'}}>Submit Signup Info</Link>
+              
         </button>
     );
 }   
