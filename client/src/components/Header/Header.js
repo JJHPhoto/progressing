@@ -1,18 +1,12 @@
 import React from "react";
-import { Container, Jumbotron } from "react-bootstrap";
+import "./style.css";
 
-export function Header() {
+function Header() {
   return (
-    <>
-      <Jumbotron fluid>
-        <Container>
-          <h1>Fluid jumbotron</h1>
-          <p>
-            This is a modified jumbotron that occupies the entire horizontal
-            space of its parent.
-          </p>
-        </Container>
-      </Jumbotron>
-    </>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container"></div>
+    </div>
   );
 }
+
+export default Header;
