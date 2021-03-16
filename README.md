@@ -37,4 +37,8 @@ To watch a video of the application being fully demo'd please use this link: [Ap
 
 ## Workflow
 
+- initial files
+- linking pages/routes
+- user auth
+
 ## Resources

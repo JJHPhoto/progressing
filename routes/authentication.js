@@ -31,9 +31,7 @@ router.post("/login", validateBodyWith(loginValidator), async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ email })
-      // Restrict the data loaded from the user model
-      .select("name email password");
+    const user = await User.findOne({ email });
 
     if (!user) {
       // User not found by email.
