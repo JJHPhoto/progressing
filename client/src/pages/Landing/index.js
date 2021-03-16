@@ -2,7 +2,9 @@ import React from "react";
 
 function Home() {
 
-  return;
+  return(
+    <h1>Hello Landing Page</h1>
+  );
 }
 
 export default Home;
