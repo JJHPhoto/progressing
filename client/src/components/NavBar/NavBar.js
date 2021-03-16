@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Navbar } from "react-bootstrap";
 import { RiLogoutCircleRLine } from "react-icons/ri";
+import "./style.css";
 
 function NavBar() {
   return (
