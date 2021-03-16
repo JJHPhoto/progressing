@@ -1,12 +1,13 @@
 import React from "react";
-import "./style.css";
+import Card from "react-bootstrap/Card";
+import Banner from "../photos/ProgressingBanner.jpg";
 
-function Header() {
+export function Header() {
   return (
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container"></div>
-    </div>
+    <>
+      <Card>
+        <Card.Img variant="top" src={Banner} />
+      </Card>
+    </>
   );
 }
-
-export default Header;

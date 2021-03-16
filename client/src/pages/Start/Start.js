@@ -3,7 +3,7 @@ import React from "react";
 import "./style.css";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Header } from "../../components/Header/";
+import { Header } from "../../components/Header/Header";
 
 function Start() {
   return (
