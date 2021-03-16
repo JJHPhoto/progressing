@@ -1,4 +1,7 @@
 import { useRef, useLogin } from "react";
+import { LoginEmailInput, LoginPasswordInput, LoginUpPageSubmit } from "../../components/Login/LoginForm";
+import { Header } from "../../components/Header/Header";
+
 
 function Login() {
   // const emailRef = useRef();
@@ -32,7 +35,13 @@ function Login() {
     //   <br />
     //   <button>Submit</button>
     // </form>
-    <h1>Welcome to the Login Page!!!</h1>
+    <div className="container">
+    <Header />
+
+    <LoginEmailInput />
+    <LoginPasswordInput />
+    <LoginUpPageSubmit />
+    </div>
   );
 }
 
