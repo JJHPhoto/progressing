@@ -2,167 +2,139 @@ import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
 
-import api from "./api";
+import API from "./api";
 import { useStoreContext } from "../store";
 import { LOGIN_USER, LOGOUT_USER } from "../store/actions";
 
-const setAuthToken = token => {
+const setAuthToken = (token) => {
+  storeAuthToken(token);
+  applyAuthToken(token);
 
-    storeAuthToken( token );
-    applyAuthToken( token );
+  return token ? jwt_decode(token) : undefined;
+};
 
-    return token ? jwt_decode(token) : undefined;
+const storeAuthToken = (token) => {
+  token
+    ? localStorage.setItem("jwtToken", token)
+    : localStorage.removeItem("jwtToken");
+};
 
-}
-
-const storeAuthToken = token => {
-
-    token
-
-        ? localStorage.setItem("jwtToken", token)
-        
-        : localStorage.removeItem( "jwtToken" );
-
-}
-
-const applyAuthToken = token => {
-
-    token
-
-        // Apply authorization token to every request if logged in
-        ? api.setHeader( "Authorization", token )
-
-        // Delete auth header
-        : api.setHeader( "Authorization", false );
-
-}
+const applyAuthToken = (token) => {
+  token
+    ? // Apply authorization token to every request if logged in
+      API.setHeader("Authorization", token)
+    : // Delete auth header
+      API.setHeader("Authorization", false);
+};
 
 export const useAuthTokenStore = () => {
+  const [, dispatch] = useStoreContext();
+  const [isDone, setIsDone] = useState(false);
 
-    const [ ,dispatch ] = useStoreContext();
-    const [ isDone, setIsDone ] = useState(false);
+  const history = useHistory();
 
-    const history = useHistory();
+  useEffect(() => {
+    if (isDone) return;
 
-    useEffect(() => {
+    // Check for token to keep user logged in
+    if (!localStorage.jwtToken) {
+      setIsDone(true);
+      return;
+    }
 
-        if( isDone ) return;
+    // Set auth token header auth
+    const tokenString = localStorage.jwtToken;
 
-        // Check for token to keep user logged in
-        if ( !localStorage.jwtToken ) {
-            setIsDone( true );
-            return;
-        }
-            
-        // Set auth token header auth
-        const tokenString = localStorage.jwtToken;
-        
-        // Decode token and get user info and exp
-        const token = jwt_decode(tokenString);
-        
-        // Check for expired token
-        const currentTime = Date.now() / 1000; // to get in milliseconds
+    // Decode token and get user info and exp
+    const token = jwt_decode(tokenString);
 
-        const invalidate = () => {
+    // Check for expired token
+    const currentTime = Date.now() / 1000; // to get in milliseconds
 
-            // Logout user
-            setAuthToken( false );
-            dispatch({ type: LOGOUT_USER });
-            
-            // Redirect to login
-            history.push("/");
+    const invalidate = () => {
+      // Logout user
+      setAuthToken(false);
+      dispatch({ type: LOGOUT_USER });
 
-        }
-        
-        if (token.exp < currentTime) {
-            
-            invalidate();
+      // Redirect to login
+      history.push("/");
+    };
 
-        } else {
+    if (token.exp < currentTime) {
+      invalidate();
+    } else {
+      applyAuthToken(tokenString);
 
-            applyAuthToken(tokenString);
+      const authCheck = async () => {
+        let user;
 
-            const authCheck = async () => {
+        try {
+          const { data } = await API.authenticated();
 
-                let user;
-
-                try {
-
-                    const { data } = await api.authenticated();
-
-                    user = data;
-
-                } catch(res) {
-                    
-                    invalidate();
-
-                }
-
-                if( user ) dispatch({ type: LOGIN_USER, payload: { token, user } });
-
-                console.log("user", user)
-                setIsDone( true );
-
-            }
-
-            authCheck();
-
+          user = data;
+        } catch (res) {
+          invalidate();
         }
 
-    }, [ dispatch, history, isDone ])
+        if (user) dispatch({ type: LOGIN_USER, payload: { token, user } });
 
-    return isDone;
+        console.log("user", user);
+        setIsDone(true);
+      };
 
-}
+      authCheck();
+    }
+  }, [dispatch, history, isDone]);
+
+  return isDone;
+};
 
 export const useIsAuthenticated = () => {
+  const [
+    {
+      userAuth: { token },
+    },
+  ] = useStoreContext();
 
-    const [ { userAuth: { token } } ] = useStoreContext();
-
-    return token && token.exp > Date.now() / 1000;
-
-}
+  return token && token.exp > Date.now() / 1000;
+};
 
 export const useAuthenticatedUser = () => {
+  const [
+    {
+      userAuth: { user },
+    },
+  ] = useStoreContext();
 
-    const [ { userAuth: { user } } ] = useStoreContext();
-
-    return user;
-
-}
+  return user;
+};
 
 export const useLogin = () => {
+  const [, dispatch] = useStoreContext();
 
-    const [ ,dispatch ] = useStoreContext();
+  return async (credentials) => {
+    const {
+      data: { token: tokenString, user },
+    } = await API.login(credentials);
 
-    return async ( credentials ) => {
-    
-        const { data: { token: tokenString, user } } = await api.login( credentials );
+    console.log("credentials", credentials);
 
-        console.log("credentials", credentials)
+    const token = setAuthToken(tokenString);
 
-        const token = setAuthToken( tokenString );
+    dispatch({ type: LOGIN_USER, payload: { token, user } });
 
-        dispatch({ type: LOGIN_USER, payload: { token, user } });
-
-        return token;
-        
-    }
-    
-}
+    return token;
+  };
+};
 
 export const useLogout = () => {
+  const [, dispatch] = useStoreContext();
+  const history = useHistory();
 
-    const [ ,dispatch ] = useStoreContext();
-    const history = useHistory();
+  return () => {
+    setAuthToken(false);
+    dispatch({ type: LOGOUT_USER });
 
-    return () => {
-
-        setAuthToken( false );
-        dispatch({ type: LOGOUT_USER });
-
-        history.push("/");
-
-    }
-    
-}
+    history.push("/");
+  };
+};
