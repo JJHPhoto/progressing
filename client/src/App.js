@@ -8,24 +8,31 @@ import SignUp from "./pages/SignUp";
 import Home from "./pages/Landing";
 import Goal from "./pages/Goal";
 import CreateGoal from "./pages/CreateGoal";
+import LogoutButton from "./components/LogoutButton";
 import NotFound from "./pages/NotFound/NotFound";
-import { useAuthTokenStore } from "./utils/auth";
+import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
+import GuestRoute from "./components/GuestRoute";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   useAuthTokenStore();
+
+  const isAuthenticated = useIsAuthenticated();
+
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Start} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/home" component={Home} />
-          <Route path="/goal" component={Goal} />
-          <Route path="/creategoal" component={CreateGoal} />
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
+        <Router>
+          <Switch>
+            <GuestRoute redirectTo="/home" exact path="/" component={Start} />
+            <GuestRoute redirectTo="/home" path="/login" component={Login} />
+            <GuestRoute  redirectTo="/home" path="/signup" component={SignUp} />
+            <PrivateRoute path="/home" component={Home} />
+            <PrivateRoute path="/goal" component={Goal} />
+            <PrivateRoute path="/creategoal" component={CreateGoal} />
+            <Route component={NotFound} />
+            {isAuthenticated && <LogoutButton />}
+          </Switch>
+        </Router>
     </div>
   );
 }

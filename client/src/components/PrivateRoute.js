@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import { Route, Redirect } from "react-router-dom";
 import { useIsAuthenticated } from "../utils/auth";
 

@@ -15,21 +15,21 @@ const passport = require("passport");
 
 app.use(passport.initialize());
 // Passport config
-passport.use(require("./config/jwtPassportStrategy"));
+passport.use( require("./config/jwtPassportStrategy") );
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use("/api", require("./routes/authentication"));
-
+app.use( "/api", require("./routes/authentication") );
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function (req, res) {
+app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, function () {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

@@ -1,6 +1,6 @@
 import React from "react";
 import {Dropdown} from "react-bootstrap";
-import Style from "./style.css";
+import "./style.css";
 
 
 export function GoalTitle(props) {

@@ -2,136 +2,167 @@ import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
 
-import api from "./api";
+import API from "./API";
 import { useStoreContext } from "../store";
 import { LOGIN_USER, LOGOUT_USER } from "../store/actions";
 
-const setAuthToken = (token) => {
-  storeAuthToken(token);
-  applyAuthToken(token);
+const setAuthToken = token => {
 
-  return token ? jwt_decode(token) : undefined;
-};
+    storeAuthToken( token );
+    applyAuthToken( token );
 
-const storeAuthToken = (token) => {
-  token
-    ? localStorage.setItem("jwtToken", token)
-    : localStorage.removeItem("jwtToken");
-};
+    return token ? jwt_decode(token) : undefined;
 
-const applyAuthToken = (token) => {
-  token
-    ? // Apply authorization token to every request if logged in
-      api.setHeader("Authorization", token)
-    : // Delete auth header
-      api.setHeader("Authorization", false);
-};
+}
+
+const storeAuthToken = token => {
+
+    token
+
+        ? localStorage.setItem("jwtToken", token)
+        
+        : localStorage.removeItem( "jwtToken" );
+
+}
+
+const applyAuthToken = token => {
+
+    token
+
+        // Apply authorization token to every request if logged in
+        ? API.setHeader( "Authorization", token )
+
+        // Delete auth header
+        : API.setHeader( "Authorization", false );
+
+}
 
 export const useAuthTokenStore = () => {
-  const [, dispatch] = useStoreContext();
-  const [isDone, setIsDone] = useState(false);
 
-  const history = useHistory();
+    const [ ,dispatch ] = useStoreContext();
+    const [ isDone, setIsDone ] = useState(false);
 
-  useEffect(() => {
-    if (isDone) return;
+    const history = useHistory();
 
-    // Check for token to keep user logged in
-    if (!localStorage.jwtToken) {
-      setIsDone(true);
-      return;
-    }
+    useEffect(() => {
 
-    // Set auth token header auth
-    const tokenString = localStorage.jwtToken;
+        if( isDone ) return;
 
-    // Decode token and get user info and exp
-    const token = jwt_decode(tokenString);
+        // Check for token to keep user logged in
+        if ( !localStorage.jwtToken ) {
+            setIsDone( true );
+            return;
+        }
+            
+        // Set auth token header auth
+        const tokenString = localStorage.jwtToken;
+        
+        // Decode token and get user info and exp
+        const token = jwt_decode(tokenString);
+        
+        // Check for expired token
+        const currentTime = Date.now() / 1000; // to get in milliseconds
 
-    // Check for expired token
-    const currentTime = Date.now() / 1000; // to get in milliseconds
+        const invalidate = () => {
 
-    const invalidate = () => {
-      // Logout user
-      setAuthToken(false);
-      dispatch({ type: LOGOUT_USER });
+            // Logout user
+            setAuthToken( false );
+            dispatch({ type: LOGOUT_USER });
+            
+            // Redirect to login
+            history.push("/");
 
-      // Redirect to login
-      history.push("/");
-    };
+        }
+        
+        if (token.exp < currentTime) {
+            
+            invalidate();
 
-    if (token.exp < currentTime) {
-      invalidate();
-    } else {
-      applyAuthToken(tokenString);
+        } else {
 
-      const authCheck = async () => {
-        let user;
+            applyAuthToken(tokenString);
 
-        try {
-          const { data } = await api.authenticated();
+            const authCheck = async () => {
 
-          user = data;
-        } catch (res) {
-          invalidate();
+                let user;
+
+                try {
+
+                    const { data } = await API.authenticated();
+
+                    user = data;
+
+                } catch(res) {
+                    
+                    invalidate();
+
+                }
+
+                if( user ) dispatch({ type: LOGIN_USER, payload: { token, user } });
+
+                console.log("user", user)
+                setIsDone( true );
+
+            }
+
+            authCheck();
+
         }
 
-        if (user) dispatch({ type: LOGIN_USER, payload: { token, user } });
+    }, [ dispatch, history, isDone ])
 
-        setIsDone(true);
-      };
+    return isDone;
 
-      authCheck();
-    }
-  }, [dispatch, history, isDone]);
-
-  return isDone;
-};
+}
 
 export const useIsAuthenticated = () => {
-  const [
-    {
-      userAuth: { token },
-    },
-  ] = useStoreContext();
 
-  return token && token.exp > Date.now() / 1000;
-};
+    const [ { userAuth: { token } } ] = useStoreContext();
+
+    return token && token.exp > Date.now() / 1000;
+
+}
 
 export const useAuthenticatedUser = () => {
-  const [
-    {
-      userAuth: { user },
-    },
-  ] = useStoreContext();
 
-  return user;
-};
+    const [ { userAuth: { user } } ] = useStoreContext();
+
+    return user;
+
+}
 
 export const useLogin = () => {
-  const [, dispatch] = useStoreContext();
 
-  return async (credentials) => {
-    const {
-      data: { token: tokenString, user },
-    } = await api.login(credentials);
+    const [ ,dispatch ] = useStoreContext();
 
-    const token = setAuthToken(tokenString);
+    return async ( credentials ) => {
+    
+        const { data: { token: tokenString, user } } = await API.login( credentials );
 
-    dispatch({ type: LOGIN_USER, payload: { token, user } });
+        console.log("credentials", credentials)
 
-    return token;
-  };
-};
+        const token = setAuthToken( tokenString );
+
+        dispatch({ type: LOGIN_USER, payload: { token, user } });
+
+        return token;
+        
+    }
+    
+}
 
 export const useLogout = () => {
-  const [, dispatch] = useStoreContext();
-  const history = useHistory();
 
-  return () => {
-    setAuthToken(false);
-    dispatch({ type: LOGOUT_USER });
+    const [ ,dispatch ] = useStoreContext();
+    const history = useHistory();
 
-    history.push("/");
-  };
-};
+    return () => {
+
+        setAuthToken( false );
+        dispatch({ type: LOGOUT_USER });
+
+        history.push("/");
+
+    }
+    
+}
