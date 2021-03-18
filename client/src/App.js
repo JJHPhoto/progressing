@@ -1,7 +1,12 @@
 import React from "react";
 // import "./main.sass";
 // import "bootstrap/scss/bootstrap.scss";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter,
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from "react-router-dom";
 import Start from "./pages/Start/Start";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -9,10 +14,14 @@ import Home from "./pages/Landing";
 import Goal from "./pages/Goal";
 import CreateGoal from "./pages/CreateGoal";
 import NotFound from "./pages/NotFound/NotFound";
-import { useAuthTokenStore } from "./utils/auth";
+import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
+import { Header } from "./components/Header/Header";
 
 function App() {
   useAuthTokenStore();
+
+  // const isAuthenticated = useIsAuthenticated;
+
   return (
     <div className="App">
       <Router>
