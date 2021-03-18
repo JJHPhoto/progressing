@@ -1,9 +1,11 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 
 function Goal() {
-
-  return;
+  return (
+    <div>
+      <h1>Goal Page</h1>
+    </div>
+  );
 }
 
 export default Goal;
