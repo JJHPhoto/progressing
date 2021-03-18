@@ -7,9 +7,9 @@ import {
   Switch,
 } from "react-router-dom";
 import Start from "./pages/Start/Start";
-import Login from "./pages/Login";
+import Login from "./pages/Home";
 import SignUp from "./pages/SignUp";
-import Home from "./pages/Landing";
+import Home from "./pages/Home";
 import Goal from "./pages/Goal";
 import CreateGoal from "./pages/CreateGoal";
 import LogoutButton from "./components/LogoutButton";

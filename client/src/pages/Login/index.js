@@ -1,10 +1,4 @@
 import { useRef } from "react";
-import {
-  LoginEmailInput,
-  LoginPasswordInput,
-  LoginPageSubmit,
-  ReturnToStart,
-} from "../../components/Login/LoginForm";
 import { Header } from "../../components/Header/Header";
 import { useLogin } from "../../utils/auth";
 
@@ -34,19 +28,15 @@ function Login() {
   return (
     <div className="container">
       <Header />
-      <form onSubmit={handleSubmit}>
+      <form className="form-group" onSubmit={handleSubmit}>
         <h2>Login</h2>
-        <input type="text" ref={emailRef} placeholder="Your email" />
+        <input className="form-control" type="text" ref={emailRef} placeholder="Your email" />
         <br />
-        <input type="password" ref={passwordRef} placeholder="Your password" />
+        <input className="form-control" type="password" ref={passwordRef} placeholder="Your password" />
         <br />
-        <button>Submit</button>
+        <button style={{ float: "right", marginBottom: 10 }} className="btn btn-success submitBtn">Submit</button>
       </form>
 
-      <LoginEmailInput />
-      <LoginPasswordInput />
-      <LoginPageSubmit />
-      <ReturnToStart />
     </div>
   );
 }

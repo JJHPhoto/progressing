@@ -3,17 +3,12 @@ import { useLogin } from "../../utils/auth";
 import api from "../../utils/api";
 import { Header } from "../../components/Header/Header";
 import { ReturnToStart } from "../../components/Login/LoginForm";
-import {
-  SignUpEmailInput,
-  SignUpFirstName,
-  SignUpLastName,
-  SignUpPageSubmit,
-  SignUpPasswordInput,
-} from "../../components/SignUp/SignUpForm";
 
 function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
 
   // Get the helper login function from the `useLogin` hook.
   const login = useLogin();
@@ -23,15 +18,17 @@ function SignUp() {
 
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
+    const firstName = firstNameRef.current.value;
+    const lastName = lastNameRef.current.value;
 
     console.log(email, password);
 
     try {
       // Register the user.
-      await api.register({ email, password });
+      await api.register({ email, password, firstName, lastName });
 
       // User has been successfully registered, now log them in with the same information.
-      await login({ email, password });
+      await login({ email, password, firstName, lastName });
 
       // User has been successfully registered, logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
     } catch (err) {
@@ -47,19 +44,18 @@ function SignUp() {
   return (
     <div className="container">
       <Header />
-      <form onSubmit={handleSubmit}>
-        <h2>Sign Up for our App</h2>
-        <input type="text" ref={emailRef} placeholder="Your email" />
+      <form className="form-group" onSubmit={handleSubmit}>
+        <h2>Join Progressing</h2>
+        <input className="form-control" type="text" ref={firstNameRef} placeholder="Your first name" />
+        <br/>
+        <input className="form-control" type="text" ref={lastNameRef} placeholder="Your last name" />
+        <br/>
+        <input className="form-control" type="text" ref={emailRef} placeholder="Your email" />
         <br />
-        <input type="password" ref={passwordRef} placeholder="Your password" />
+        <input className="form-control" type="password" ref={passwordRef} placeholder="Your password" />
         <br />
-        <button>Submit</button>
+        <button style={{ float: "right", marginBottom: 10 }} className="btn btn-success submitBtn">Submit</button>
       </form>
-      <SignUpFirstName />
-      <SignUpLastName />
-      <SignUpEmailInput />
-      <SignUpPasswordInput />
-      <SignUpPageSubmit />
       <ReturnToStart />
     </div>
   );
