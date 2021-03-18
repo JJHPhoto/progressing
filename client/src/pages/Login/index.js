@@ -1,9 +1,12 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
+import {
+  LoginEmailInput,
+  LoginPasswordInput,
+  LoginPageSubmit,
+  ReturnToStart,
+} from "../../components/Login/LoginForm";
+import { Header } from "../../components/Header/Header";
 import { useLogin } from "../../utils/auth";
-// import { Link } from "react-router-dom";
-// import { LoginEmailInput, LoginPasswordInput, LoginPageSubmit, ReturnToStart } from "../../components/Login/LoginForm";
-// import { Header } from "../../components/Header/Header";
-
 
 function Login() {
   const emailRef = useRef();
@@ -29,22 +32,22 @@ function Login() {
   };
 
   return (
-    <form className="container" onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <input type="text" ref={emailRef} placeholder="Your email" />
-      <br />
-      <input type="password" ref={passwordRef} placeholder="Your password" />
-      <br />
-      <button>Submit</button>
-    </form>
-    // <div className="container">
-    // <Header />
+    <div className="container">
+      <Header />
+      <form onSubmit={handleSubmit}>
+        <h2>Login</h2>
+        <input type="text" ref={emailRef} placeholder="Your email" />
+        <br />
+        <input type="password" ref={passwordRef} placeholder="Your password" />
+        <br />
+        <button>Submit</button>
+      </form>
 
-    // <LoginEmailInput />
-    // <LoginPasswordInput />
-    // <LoginPageSubmit />
-    // <ReturnToStart />
-    // </div>
+      <LoginEmailInput />
+      <LoginPasswordInput />
+      <LoginPageSubmit />
+      <ReturnToStart />
+    </div>
   );
 }
 

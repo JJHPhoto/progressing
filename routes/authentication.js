@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const util = require("util");
+const RegistrationController = require("../controllers/registrationController");
 
 const passwordHash = require("../config/passwordHash");
 
