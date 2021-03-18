@@ -1,23 +1,23 @@
 import React from "react";
-import { Button, Navbar } from "react-bootstrap";
-import { RiLogoutCircleRLine } from "react-icons/ri";
+import { Navbar, NavDropdown } from "react-bootstrap";
+import LogoutButton from "../LogoutButton";
 import "./style.css";
 
 function NavBar() {
   return (
     <div>
-      <Navbar>
-        <Button variant="success">Life Goals</Button>
-        <Button variant="success">Options</Button>
+      <Navbar bg="success" variant="dark">
+      <NavDropdown title="Progressing" id="basic-nav-dropdown">
+        <NavDropdown.Item href="/">Home</NavDropdown.Item>
+        <NavDropdown.Item href="/creategoal">Create Goal</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item><LogoutButton/></NavDropdown.Item>
+      </NavDropdown>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Signed in as: <a href="#login">User's Name </a>
+            Signed in as: <a href="#login">UserName</a>
           </Navbar.Text>
-          <Button variant="success">
-            {" "}
-            Logut <RiLogoutCircleRLine />
-          </Button>{" "}
-        </Navbar.Collapse>
+          </Navbar.Collapse>
       </Navbar>
     </div>
   );
