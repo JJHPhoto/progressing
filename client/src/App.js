@@ -16,9 +16,6 @@ import CreateGoal from "./pages/CreateGoal";
 import NotFound from "./pages/NotFound/NotFound";
 import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
 import { Header } from "./components/Header/Header";
-import RegistrationForm from "./components/RegistartionForm";
-import LoginForm from "./components/LoginForm";
-import LogoutButton from "./components/LogoutButton";
 
 function App() {
   useAuthTokenStore();
@@ -26,17 +23,6 @@ function App() {
   // const isAuthenticated = useIsAuthenticated;
 
   return (
-    // <BrowserRouter>
-    //   <div className="App">
-    //     <Header />
-    //     <div>
-    //       {isAuthenticated && <RegistrationForm />}
-    //       {!isAuthenticated && <LoginForm />}
-    //       {!isAuthenticated && <LogoutButton />}
-    //     </div>
-    //   </div>
-    // </BrowserRouter>
-
     <div className="App">
       <Router>
         <Switch>

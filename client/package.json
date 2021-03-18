@@ -2,6 +2,7 @@
   "name": "progressing",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -19,6 +20,7 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
