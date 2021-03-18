@@ -9,7 +9,7 @@ const v = new Validator({
   },
 });
 
-const validatorFactory = (schema) =>
+const validatorFactory = schema =>
   v.compile({
     $$strict: "remove",
     ...schema,
