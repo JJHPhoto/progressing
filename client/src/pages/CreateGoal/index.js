@@ -21,8 +21,10 @@ function CreateGoal() {
 
   const user = useAuthenticatedUser();
   const isAuthenticated = useIsAuthenticated();
-  console.log("user", user)
-  console.log("isAuthenticated", isAuthenticated)
+  console.log("user", user);
+  console.log("isAuthenticated", isAuthenticated);
+
+  const []
 
   return (
     <div className="container">
