@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Header } from "../../components/Header/Header";
+import { ReturnToStart } from "../../components/Login/LoginForm";
 import { useLogin } from "../../utils/auth";
 
 function Login() {
@@ -36,7 +37,7 @@ function Login() {
         <br />
         <button style={{ float: "right", marginBottom: 10 }} className="btn btn-success submitBtn">Submit</button>
       </form>
-
+      <ReturnToStart />
     </div>
   );
 }
