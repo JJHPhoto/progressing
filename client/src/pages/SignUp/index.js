@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { useLogin } from "../../utils/auth";
 import api from "../../utils/API";
-// import api from "../../utils/api";
-import { Header } from "../../components/Header/Header";
-import { ReturnToStart } from "../../components/Login/LoginForm";
+import { StartHeader } from "../../components/StartHeader";
+import { Container } from "react-bootstrap";
+// import { ReturnToStart } from "../../components/Login/LoginForm";
 
 function SignUp() {
   const emailRef = useRef();
@@ -43,10 +43,10 @@ function SignUp() {
   };
 
   return (
-    <div className="container">
-      <Header />
+    <Container>
+      <StartHeader />
       <form className="form-group" onSubmit={handleSubmit}>
-        <h2>Join Progressing</h2>
+        <h2>Start your Journey</h2>
         <input
           className="form-control"
           type="text"
@@ -82,8 +82,8 @@ function SignUp() {
           Submit
         </button>
       </form>
-      <ReturnToStart />
-    </div>
+      {/* <ReturnToStart /> */}
+    </Container>
   );
 }
 

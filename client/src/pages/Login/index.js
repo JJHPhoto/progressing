@@ -1,7 +1,8 @@
 import { useRef } from "react";
-import { Header } from "../../components/Header/Header";
-import { ReturnToStart } from "../../components/Login/LoginForm";
+import { StartHeader } from "../../components/StartHeader";
+// import { ReturnToStart } from "../../components/Login/LoginForm";
 import { useLogin } from "../../utils/auth";
+import { Container } from "react-bootstrap";
 
 function Login() {
   const emailRef = useRef();
@@ -27,8 +28,8 @@ function Login() {
   };
 
   return (
-    <div className="container">
-      <Header />
+    <Container>
+      <StartHeader />
       <form className="form-group" onSubmit={handleSubmit}>
         <h2>Login</h2>
         <input className="form-control" type="text" ref={emailRef} placeholder="Your email" />
@@ -37,8 +38,8 @@ function Login() {
         <br />
         <button style={{ float: "right", marginBottom: 10 }} className="btn btn-success submitBtn">Submit</button>
       </form>
-      <ReturnToStart />
-    </div>
+      {/* <ReturnToStart /> */}
+      </Container>
   );
 }
 
