@@ -28,6 +28,7 @@ function Start() {
               </Link>
             </Button>
           </div>
+          <h1 className="text-center" style={{ marginTop: "80px" }}>Every Journey Begins with the First Step</h1>
         </div>
       </Container>
     </>
