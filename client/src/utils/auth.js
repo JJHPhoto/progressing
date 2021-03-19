@@ -79,7 +79,7 @@ export const useAuthTokenStore = () => {
 
         if (user) dispatch({ type: LOGIN_USER, payload: { token, user } });
 
-        console.log("user", user);
+        // console.log("user", user);
         setIsDone(true);
       };
 
