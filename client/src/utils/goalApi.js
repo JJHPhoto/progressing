@@ -11,6 +11,7 @@ const goalAPI = {
   },
 
   saveGoal: function(goalData) {
+    console.log("goalData", goalData)
     return axios.post("/api/goals", goalData);
   },
 

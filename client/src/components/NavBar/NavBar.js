@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Navbar, NavDropdown } from "react-bootstrap";
 import LogoutButton from "../LogoutButton";
 import "./style.css";
 import {Link} from "react-router-dom";
-import { useIsAuthenticated, useAuthenticatedUser } from "../../utils/auth";
+import { useAuthenticatedUser } from "../../utils/auth";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faEllipsisH, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
@@ -24,7 +25,7 @@ function NavBar() {
           <Navbar.Text>
             Welcome, <Link to="/home" style={{ textDecoration: 'none', color: 'white'}} >{user.firstName}!</Link>
           </Navbar.Text>
-          </Navbar.Collapse>
+        </Navbar.Collapse>
       </Navbar>
     </div>
   );
