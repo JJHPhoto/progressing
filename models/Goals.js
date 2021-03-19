@@ -6,7 +6,10 @@ const goalSchema = new Schema({
         type: Date,
         default: new Date().toDateString("en-US")
     },
-    complete: Boolean,
+    complete: {
+        type: Boolean,
+        default: false
+    },
     title: {
         type: String,
         required: true
@@ -17,11 +20,17 @@ const goalSchema = new Schema({
     milestones: [ 
         {
             name: String,
-            complete: Boolean,
+            complete: {
+                type: Boolean,
+                default: false
+            },
             actionItems: [
                 {
                     name: String,
-                    complete: Boolean
+                    complete: {
+                        type: Boolean,
+                        default: false
+                    },
                 }
             ]
         }
