@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useLogin } from "../../utils/auth";
-import api from "../../utils/api";
+import api from "../../utils/API";
 import { Header } from "../../components/Header/Header";
 import { ReturnToStart } from "../../components/Login/LoginForm";
 
@@ -46,15 +46,40 @@ function SignUp() {
       <Header />
       <form className="form-group" onSubmit={handleSubmit}>
         <h2>Join Progressing</h2>
-        <input className="form-control" type="text" ref={firstNameRef} placeholder="Your first name" />
-        <br/>
-        <input className="form-control" type="text" ref={lastNameRef} placeholder="Your last name" />
-        <br/>
-        <input className="form-control" type="text" ref={emailRef} placeholder="Your email" />
+        <input
+          className="form-control"
+          type="text"
+          ref={firstNameRef}
+          placeholder="Your first name"
+        />
         <br />
-        <input className="form-control" type="password" ref={passwordRef} placeholder="Your password" />
+        <input
+          className="form-control"
+          type="text"
+          ref={lastNameRef}
+          placeholder="Your last name"
+        />
         <br />
-        <button style={{ float: "right", marginBottom: 10 }} className="btn btn-success submitBtn">Submit</button>
+        <input
+          className="form-control"
+          type="text"
+          ref={emailRef}
+          placeholder="Your email"
+        />
+        <br />
+        <input
+          className="form-control"
+          type="password"
+          ref={passwordRef}
+          placeholder="Your password"
+        />
+        <br />
+        <button
+          style={{ float: "right", marginBottom: 10 }}
+          className="btn btn-success submitBtn"
+        >
+          Submit
+        </button>
       </form>
       <ReturnToStart />
     </div>
