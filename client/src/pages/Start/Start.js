@@ -1,16 +1,15 @@
-// import { startSession } from "mongoose";
 import React from "react";
 import "./style.css";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Header } from "../../components/Header/Header";
+import { StartHeader } from "../../components/StartHeader";
 
 function Start() {
   return (
     <>
       <Container>
-        <div className="start-header mt-5 d-flex align-items-center flex-column ">
-          <Header />
+        <StartHeader />
+        <div className="start-header mt-2 d-flex align-items-center flex-column ">
           <div className="start-buttons d-flex flex-column">
             <Button className="main-button mt-4" variant="success" size="lg">
               <Link
@@ -20,7 +19,7 @@ function Start() {
                 Login
               </Link>
             </Button>
-            <Button className="main-button mt-3" variant="success" size="lg">
+            <Button className="main-button mt-4" variant="success" size="lg">
               <Link
                 to="/signup"
                 style={{ textDecoration: "none", color: "white" }}
@@ -29,6 +28,7 @@ function Start() {
               </Link>
             </Button>
           </div>
+          <h1 className="text-center" style={{ marginTop: "80px" }}>Every Journey Begins with the First Step</h1>
         </div>
       </Container>
     </>

@@ -27,9 +27,9 @@ function Home() {
 
   return (
     <div className="container">
-      <Header />      
       <NavBar />
-      {/* <Button variant="success"> <Link to="/creategoal" style={{ testDecoration: "none", color: "white"}}>Life Goals</Link> </Button> */}
+      <Header />      
+      {/* <NavBar /> */}
       <Chart />
     </div>
   );

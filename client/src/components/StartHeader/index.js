@@ -3,11 +3,11 @@ import Card from "react-bootstrap/Card";
 import Banner from "../photos/ProgressingBanner.jpg";
 import {Link} from "react-router-dom";
 
-export function Header() {
+export function StartHeader() {
   return (
     <>
-      <Card >
-        <Link to="/home"><Card.Img variant="top" src={Banner} /></Link>
+      <Card className="mt-4 mb-4">
+        <Link to="/"><Card.Img variant="top" src={Banner} /></Link>
       </Card>
     </>
   );
