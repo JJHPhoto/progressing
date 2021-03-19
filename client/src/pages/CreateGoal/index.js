@@ -7,10 +7,12 @@ import {
   SubmitGoal,
 } from "../../components/GoalForm/GoalForm";
 import { Header } from "../../components/Header/Header";
+import NavBar from "..//../components/NavBar/NavBar";
 
 function CreateGoal() {
   return (
     <div className="container">
+      <NavBar />
       <Header />
       <GoalTitle />
       <GoalDescription />
