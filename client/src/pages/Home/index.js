@@ -29,6 +29,7 @@ function Home() {
     <div className="container">
       <Header />      
       <NavBar />
+      {/* <Button variant="success"> <Link to="/creategoal" style={{ testDecoration: "none", color: "white"}}>Life Goals</Link> </Button> */}
       <Chart />
     </div>
   );

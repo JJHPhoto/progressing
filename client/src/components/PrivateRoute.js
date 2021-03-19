@@ -6,6 +6,10 @@ const PrivateRoute = ({ component: Component, children, redirectTo = "/", ...pro
 
     const isAuth = useIsAuthenticated();
 
+    // console.log("redirectTo", redirectTo)
+    // console.log("location", location)
+    // console.log("Component", Component)
+
     const render = () => (
         isAuth
         

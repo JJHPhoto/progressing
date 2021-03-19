@@ -3,8 +3,11 @@ import { Navbar, NavDropdown } from "react-bootstrap";
 import LogoutButton from "../LogoutButton";
 import "./style.css";
 import {Link} from "react-router-dom";
+import { useIsAuthenticated, useAuthenticatedUser } from "../../utils/auth";
 
 function NavBar() {
+
+  const user = useAuthenticatedUser();
 
   return (
     <div>
@@ -17,7 +20,7 @@ function NavBar() {
       </NavDropdown>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Signed in as: <a href="#login">UserName</a>
+            Signed in as: <Link to="/home" style={{ textDecoration: 'none', color: 'white'}} >{user.email}</Link>
           </Navbar.Text>
           </Navbar.Collapse>
       </Navbar>
