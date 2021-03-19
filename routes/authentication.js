@@ -3,7 +3,6 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const util = require("util");
-const RegistrationController = require("../controllers/registrationController");
 
 const passwordHash = require("../config/passwordHash");
 
@@ -95,7 +94,7 @@ router.post("/register", validateBodyWith( registerValidator ), async (req, res)
 
   try {
 
-    const { email, password } = req.body;
+    const { email, password, firstName, lastName } = req.body;
 
     const user = await User.findOne({ email });
 
@@ -107,7 +106,11 @@ router.post("/register", validateBodyWith( registerValidator ), async (req, res)
     const newUser = new User({
       email,
       
-      password: await passwordHash( password )
+      password: await passwordHash( password ),
+
+      firstName,
+
+      lastName
     });
 
     await newUser.save();
