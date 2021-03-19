@@ -1,3 +1,8 @@
 #basic-nav-dropdown {
     color: white !important;
+    
+}
+
+#basic-nav-dropdown::after {
+    content: none;
 }

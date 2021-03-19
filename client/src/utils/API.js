@@ -32,6 +32,8 @@ class API {
    * @param {object} userData
    * @param {String} userData.email
    * @param {String} userData.password
+   * @param {String} userData.firstName
+   * @param {String} userData.lastName
    *
    * @returns {Promise}
    */

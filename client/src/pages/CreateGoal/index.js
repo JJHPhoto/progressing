@@ -17,7 +17,7 @@ import {
 import { Header } from "../../components/Header/Header";
 import NavBar from "..//../components/NavBar/NavBar";
 import { useAuthenticatedUser } from "../../utils/auth";
-// import API from "../../utils/API";
+import goalAPI from "../../utils/goalApi";
 
 function CreateGoal() {
 
@@ -69,7 +69,7 @@ function CreateGoal() {
   const handleFormSubmit = e => {
     e.preventDefault();
 
-    
+    goalAPI.saveGoal(newGoalState);
     
   }
 
