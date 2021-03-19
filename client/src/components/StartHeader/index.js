@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 export function StartHeader() {
   return (
     <>
-      <Card className="mt-3 mb-4">
+      <Card className="mt-4 mb-4">
         <Link to="/"><Card.Img variant="top" src={Banner} /></Link>
       </Card>
     </>

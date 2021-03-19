@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 export function Header() {
   return (
     <>
-      <Card>
+      <Card >
         <Link to="/home"><Card.Img variant="top" src={Banner} /></Link>
       </Card>
     </>

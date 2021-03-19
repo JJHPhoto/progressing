@@ -12,7 +12,7 @@ function NavBar() {
   const user = useAuthenticatedUser();
 
   return (
-    <div>
+    <div className="mt-4">
       <Navbar bg="success" variant="dark">
       <NavDropdown title={<FontAwesomeIcon icon={faBars}/>} id="basic-nav-dropdown">
         <NavDropdown.Item><Link to="/home" style={{ textDecoration: 'none', color: 'black'}}>Home</Link></NavDropdown.Item>
