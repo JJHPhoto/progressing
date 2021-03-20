@@ -87,17 +87,19 @@ export function GoalEndDate(props) {
 }
 
 export function GoalMilestones(props) {
+    console.log("props", props)
     return (
         <div className="form-group goalMilestones">
-            Milestone
-            <input
-                value={props.milestones}
-                onChange={props.handleInputChange}
-                name="milestones"
-                className="form-control"
-                placeholder="Name this milestone"
-                {...props}
-            />
+            
+                Milestone
+                <input
+                    value={props.milestones}
+                    onChange={props.handleInputChange}
+                    name="milestones"
+                    className="form-control"
+                    placeholder="Name this milestone"
+                    {...props}
+                />
         </div>
     );
 }

@@ -118,7 +118,7 @@ export const useLogin = () => {
       data: { token: tokenString, user },
     } = await API.login(credentials);
 
-    console.log("credentials", credentials);
+    // console.log("credentials", credentials);
 
     const token = setAuthToken(tokenString);
 
