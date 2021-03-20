@@ -23,6 +23,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use( "/api", require("./routes/authentication") );
+app.use( "/api/goals", require("./routes/api/goals"))
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
