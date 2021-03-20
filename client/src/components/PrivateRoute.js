@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-globals */
 import { Route, Redirect } from "react-router-dom";
 import { useIsAuthenticated } from "../utils/auth";
 
@@ -10,7 +9,7 @@ const PrivateRoute = ({ component: Component, children, redirectTo = "/", ...pro
     // console.log("location", location)
     // console.log("Component", Component)
 
-    const render = () => (
+    const render = ({ location }) => (
         isAuth
         
             ? (Component ? <Component /> : children)
