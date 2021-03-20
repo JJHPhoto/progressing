@@ -69,7 +69,9 @@ function CreateGoal() {
   const handleFormSubmit = e => {
     e.preventDefault();
 
-    goalAPI.saveGoal(newGoalState);
+    goalAPI.saveGoal(newGoalState)
+      .then(res => console.log("res", res))
+      .catch(err => console.log("err", err));
     
   }
 
@@ -81,7 +83,7 @@ function CreateGoal() {
       <Header />
       <GoalTitle handleInputChange={handleInputChange}/>
       <GoalDescription handleInputChange={handleInputChange}/>
-      <GoalTypeDropdown handleInputChange={handleInputChange}/>
+      <GoalTypeDropdown {...goalFormState} handleInputChange={handleInputChange}/>
       <GoalEndDate handleInputChange={handleInputChange}/>
       <GoalMilestones handleInputChange={handleInputChange}/>
       <ActionItemDropdown handleInputChange={handleInputChange}/>

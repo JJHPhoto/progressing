@@ -2,7 +2,11 @@ const router = require("express").Router();
 const GoalsController = require("../../controllers/goalsController");
 
 // Matches with "/api/Goals"
-router.route("/").get(GoalsController.findAll).post(GoalsController.create);
+router.route("/")
+  .get(GoalsController.findAll)
+  .post(GoalsController.create);
+
+  console.log("Hello!!!")
 
 // Matches with "/api/Goals/:id"
 router

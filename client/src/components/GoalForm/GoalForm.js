@@ -40,6 +40,7 @@ export function GoalDescription(props) {
 }
 
 export function GoalTypeDropdown(props) {
+    console.log("props", props)
     return (
         <Dropdown>
             Is your goal time based or event based?
