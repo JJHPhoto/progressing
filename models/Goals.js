@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const goalSchema = new Schema({
+const GoalSchema = new Schema({
     date: {
         type: Date,
         default: new Date().toDateString("en-US")
@@ -19,14 +19,14 @@ const goalSchema = new Schema({
     endDate: Date,
     milestones: [ 
         {
-            name: String,
+            type: String,
             complete: {
                 type: Boolean,
                 default: false
             },
             actionItems: [
                 {
-                    name: String,
+                    type: String,
                     complete: {
                         type: Boolean,
                         default: false
@@ -35,14 +35,14 @@ const goalSchema = new Schema({
             ]
         }
     ],
+    user_id: String,
     notes: String,
-    user_id: String
 }, 
 // {
 //     toJSON: { virtuals: true }
 // }
+
+console.log("in the schema")
 );
 
-const Goals = mongoose.model("Goals", goalSchema);
-
-module.exports = Goals;
+module.exports = Goals = mongoose.model("goals", GoalSchema);

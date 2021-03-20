@@ -41,12 +41,17 @@ function NavBar() {
           </NavDropdown.Item>
         </NavDropdown>
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            Welcome,{" "}
-            <Link to="/home" style={{ textDecoration: "none", color: "white" }}>
-              {user.firstName}!
-            </Link>
-          </Navbar.Text>
+          {user && (
+            <Navbar.Text>
+              Welcome,{" "}
+              <Link
+                to="/home"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                {user.firstName}!
+              </Link>
+            </Navbar.Text>
+          )}
         </Navbar.Collapse>
       </Navbar>
     </div>
