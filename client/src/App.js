@@ -1,6 +1,5 @@
 import React from "react";
 // import "./main.sass";
-// import "bootstrap/scss/bootstrap.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Start from "./pages/Start/Start";
 import Login from "./pages/Login";
