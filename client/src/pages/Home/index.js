@@ -4,34 +4,38 @@ import Chart from "../../components/Chart";
 import { Header } from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import "./style.css";
-// import goalAPI from "../../utils/goalApi"
+import goalAPI from "../../utils/goalApi"
 
 function Home() {
 
-  // // State to display goals
-  // const [goals, setGoals] = useState([]);
+  // State to display goals
+  const [goals, setGoals] = useState([]);
 
-  // console.log(goals);
+  console.log(goals);
 
-  // useEffect(() => {
-  //     loadGoals()
-  //   }, [])
+  useEffect(() => {
+      loadGoals()
+    }, [])
 
-  // const loadGoals = (req,res) => {
-  //     goalAPI.getGoals(res)
-  //         .then(res => {
-  //             setGoals(res.data);
-  //             console.log(res.data);      
-  //         })
-  //         .catch(err => console.log(err));
-  // }
+  const loadGoals = (req,res) => {
+      goalAPI.getGoals(res)
+          .then(res => {
+              setGoals(res.data);
+              console.log(res.data);      
+          })
+          .catch(err => console.log(err));
+  }
 
   return (
     <div className="container">
       <NavBar />
-      <Header />      
-      {/* <NavBar /> */}
-      <Chart />
+      <Header />
+      {goals.map(goals => {
+        return (
+          <Chart goals={goals} />
+        )
+      })}      
+      
     </div>
   );
 }
