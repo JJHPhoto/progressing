@@ -15,13 +15,13 @@ import GuestRoute from "./components/GuestRoute";
 import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
-  useAuthTokenStore();
+  const isReauthDone = useAuthTokenStore();
 
   const isAuthenticated = useIsAuthenticated();
 
   return (
     <div className="App">
-      
+      {isReauthDone && 
         <Switch>
           <GuestRoute redirectTo="/home" exact path="/" component={Start} />
           <GuestRoute redirectTo="/home" exact path="/login" component={Login} />
@@ -32,6 +32,7 @@ function App() {
           <Route component={NotFound} />
           {isAuthenticated && <LogoutButton />}
         </Switch>
+        }
 
     </div>
   );
