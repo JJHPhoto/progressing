@@ -15,27 +15,34 @@ import GuestRoute from "./components/GuestRoute";
 import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
-  useAuthTokenStore();
+  const isReauthDone = useAuthTokenStore();
 
   const isAuthenticated = useIsAuthenticated();
 
   return (
     <div className="App">
-      <Switch>
-        <GuestRoute redirectTo="/home" exact path="/" component={Start} />
-        <GuestRoute redirectTo="/home" exact path="/login" component={Login} />
-        <GuestRoute
-          redirectTo="/home"
-          exact
-          path="/signup"
-          component={SignUp}
-        />
-        <PrivateRoute exact path="/home" component={Home} />
-        <PrivateRoute exact path="/goal" component={Goal} />
-        <PrivateRoute exact path="/creategoal" component={CreateGoal} />
-        <Route component={NotFound} />
-        {isAuthenticated && <LogoutButton />}
-      </Switch>
+      {isReauthDone && (
+        <Switch>
+          <GuestRoute redirectTo="/home" exact path="/" component={Start} />
+          <GuestRoute
+            redirectTo="/home"
+            exact
+            path="/login"
+            component={Login}
+          />
+          <GuestRoute
+            redirectTo="/home"
+            exact
+            path="/signup"
+            component={SignUp}
+          />
+          <PrivateRoute exact path="/home" component={Home} />
+          <PrivateRoute exact path="/goal" component={Goal} />
+          <PrivateRoute exact path="/creategoal" component={CreateGoal} />
+          <Route component={NotFound} />
+          {isAuthenticated && <LogoutButton />}
+        </Switch>
+      )}
     </div>
   );
 }
