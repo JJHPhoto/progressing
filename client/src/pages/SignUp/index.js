@@ -1,15 +1,21 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useLogin } from "../../utils/auth";
 import api from "../../utils/API";
 import { StartHeader } from "../../components/StartHeader";
 import { Container } from "react-bootstrap";
 // import { ReturnToStart } from "../../components/Login/LoginForm";
+import ErrorNotification from "../../components/ErrorNotification";
 
 function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const firstNameRef = useRef();
   const lastNameRef = useRef();
+
+  const [errorMessage, setErrorMessage] = useState([]);
+  const [visible, toggleVisible] = useState(false);
+ 
+  console.log(errorMessage);
 
   // Get the helper login function from the `useLogin` hook.
   const login = useLogin();
@@ -36,11 +42,17 @@ function SignUp() {
       // Handle error responses from the API. This will include
       if (err.response && err.response.data) {
         console.log(err.response.data);
+        setErrorMessage(err.response.data)
+        toggleNotification()
       } else {
         console.log(err);
       }
     }
   };
+
+  const toggleNotification = () => {
+    toggleVisible(!visible)
+  }
 
   return (
     <Container>
@@ -81,6 +93,7 @@ function SignUp() {
         >
           Submit
         </button>
+        <div> {visible ? <ErrorNotification visible={visible} toggleVisible={toggleVisible} errorMessage={errorMessage}/> : null} </div>
       </form>
       {/* <ReturnToStart /> */}
     </Container>
