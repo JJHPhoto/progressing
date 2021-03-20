@@ -7,9 +7,9 @@ function Chart(props) {
   return (
     <div className="mt-4">
       {/* {console.log("charts", props)} */}
-      <Card mt-2>
+      <Card className="mt-2">
         <Card.Body>
-          <Card.Header className="bg-success" mb-2 pb-2>
+          <Card.Header className="bg-success mb-2 pb-2">
             <Link
               className="text-white"
               style={{ textDecoration: "none", color: "black" }}
