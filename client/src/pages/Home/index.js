@@ -32,7 +32,7 @@ function Home() {
       <Header />
       {goals.map(goals => {
         return (
-          <Chart goals={goals} />
+          <Chart className="mt-2" chartGoal={goals} />
         )
       })}      
       
