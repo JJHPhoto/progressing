@@ -19,14 +19,14 @@ const GoalSchema = new Schema({
     endDate: Date,
     milestones: [ 
         {
-            type: String,
+            name: { type: String},
             complete: {
                 type: Boolean,
                 default: false
             },
             actionItems: [
                 {
-                    type: String,
+                    name: { type: String},
                     complete: {
                         type: Boolean,
                         default: false

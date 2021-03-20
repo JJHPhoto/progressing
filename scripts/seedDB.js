@@ -15,9 +15,9 @@ const goalSeed = [{
     description: "I want to move more and be less sedantary",
     goalType: "event",
     milestones: [{
-      type: "create physical activity routine",
+      name: "create physical activity routine",
       actionItems: [{
-            type: "daily walk in the park for at least 30 minutes"
+            name: "daily walk in the park for at least 30 minutes"
           }
         ]
       }
@@ -29,11 +29,11 @@ const goalSeed = [{
     description: "I haven't worked with C# in years and want familiarize myself with it",
     goalType: "event",
     milestones: [{
-      type: "Improve skill with C#",
+      name: "Improve skill with C#",
       actionItems: [{
-            type: "Read about a C# topic every day"
+          name: "Read about a C# topic every day"
           }, {
-            type: "Do a C# programming exercise every day"
+            name: "Do a C# programming exercise every day"
           }
         ]
       }
@@ -44,15 +44,15 @@ const goalSeed = [{
     description: "I want to learn to play guitar as a creative outlet",
     goaltype: "event",
     milestones: [{
-        type: "Learn to read guitar tabs",
+      name: "Learn to read guitar tabs",
         actionItems: [{
-            type: "practice reading tabs"
+          name: "practice reading tabs"
           }, {
-            type: "practice finger positioning for tabs"
+            name: "practice finger positioning for tabs"
           }  
         ]
       }, {
-        type: "Establish a practice routine"
+        name: "Establish a practice routine"
       }
     ],
     user_id: process.env.USER_ID,
