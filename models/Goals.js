@@ -44,28 +44,16 @@ const GoalSchema = new Schema({
 GoalSchema.virtual("totalStepsPerGoal").get( function () {
     let totalStepsPerGoal = 0;
     this.milestones.forEach( function (milestone) {
-        if ( milestones.actionItems ) {
-            totalStepsPerGoal = totalStepsPerGoal + milestones.actionItems.length;
-        } else {
+        if ( milestone.actionItems ) {
+            totalStepsPerGoal = totalStepsPerGoal + milestone.actionItems.length;
+        } 
+        if (milestone.actionItems.length == 0){
             totalStepsPerGoal = totalStepsPerGoal + 1;
         }
-        console.log("milestones", milestones)
     })
     return totalStepsPerGoal;
 });
 
-// GoalSchema.virtual("totalSingleMilestoneActions").get( function () {
-//     let totalSingleMilestoneActions = 0;
-//     this.milestones.forEach( function (milestone) {
-//         if ( milestone.actionItems.length > 0 ) {
-//             totalSingleMilestoneActions += 
-
-//             //no else statement, take total (if 0 or null, count milestone)== call this a different variable like validatedMilestone
-//         } else {
-
-//         }
-//     })
-// });
 
 // GoalSchema.virtual("totalAllMilestonesActions").get( function () {
 //     let totalAllMilestonesActions = 0;
