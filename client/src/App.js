@@ -1,6 +1,4 @@
 import React from "react";
-// import "./main.sass";
-// import "bootstrap/scss/bootstrap.scss";
 import { Route, Switch } from "react-router-dom";
 import Start from "./pages/Start/Start";
 import Login from "./pages/Login";
@@ -13,6 +11,8 @@ import NotFound from "./pages/NotFound/NotFound";
 import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
 import GuestRoute from "./components/GuestRoute";
 import PrivateRoute from "./components/PrivateRoute";
+// Importing to overwrite bootstrap 'bg-success' color, TSK 
+import "./style.css";
 
 function App() {
   const isReauthDone = useAuthTokenStore();
