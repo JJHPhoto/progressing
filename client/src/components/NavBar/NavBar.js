@@ -22,9 +22,10 @@ function NavBar() {
         <NavDropdown.Item><LogoutButton /></NavDropdown.Item>
       </NavDropdown>
         <Navbar.Collapse className="justify-content-end">
+          {user &&
           <Navbar.Text>
             Welcome, <Link to="/home" style={{ textDecoration: 'none', color: 'white'}} >{user.firstName}!</Link>
-          </Navbar.Text>
+          </Navbar.Text>}
         </Navbar.Collapse>
       </Navbar>
     </div>

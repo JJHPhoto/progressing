@@ -6,8 +6,6 @@ router.route("/")
   .get(GoalsController.findAll)
   .post(GoalsController.create);
 
-  console.log("Hello!!!")
-
 // Matches with "/api/Goals/:id"
 router
   .route("/:id")

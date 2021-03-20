@@ -32,13 +32,11 @@ function CreateGoal() {
     goalType: "",
     endDate: "",
     milestones: [],
-    actionItems: []
   });
 
   const [newGoalState, setNewGoalState] = useState({});
 
   const handleInputChange = e => {
-
     const value = e.target.value;
     const name = e.target.name;
     console.log("value", value)
@@ -49,6 +47,25 @@ function CreateGoal() {
       [name]: value
     });
   };
+
+  // const handleActionItems = (e, index) => {
+  //   const { target } = e;
+  //   const { name } = target;
+  //   const { value } = target;
+  //   console.log("value", value)
+  //   console.log("name", name)
+
+  //   setGoalFormState( goalFormState => {
+  //     const milestone = [...goalFormState.milestones];
+  //     const actionItem = [...goalFormState.milestones.actionItems];
+  //     milestone[index] = {...milestone[index], [name]: value};
+  //     actionItem[milestone] = {...actionItem[milestone], [name]: value};
+  //     console.log("actionItem", actionItem)
+  //     console.log("milstone", milestone)
+  //     return { milestone };
+  //   });
+
+  // }
 
   const handleDoneButton = e => {
     e.preventDefault();
@@ -85,6 +102,10 @@ function CreateGoal() {
       <GoalDescription handleInputChange={handleInputChange}/>
       <GoalTypeDropdown {...goalFormState} handleInputChange={handleInputChange}/>
       <GoalEndDate handleInputChange={handleInputChange}/>
+      {/* <GoalMilestones 
+        {...goalFormState}
+        handleActionItems={handleActionItems}
+      /> */}
       <GoalMilestones handleInputChange={handleInputChange}/>
       <ActionItemDropdown handleInputChange={handleInputChange}/>
       <GoalActionItem handleInputChange={handleInputChange}/>
