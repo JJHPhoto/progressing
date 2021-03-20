@@ -3,7 +3,7 @@ import React from "react";
 import { Navbar, NavDropdown } from "react-bootstrap";
 import LogoutButton from "../LogoutButton";
 import "./style.css";
-import { Link } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import { useAuthenticatedUser } from "../../utils/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
