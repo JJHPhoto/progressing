@@ -1,6 +1,4 @@
 import React from "react";
-// import "./main.sass";
-// import "bootstrap/scss/bootstrap.scss";
 import { Route, Switch } from "react-router-dom";
 import Start from "./pages/Start/Start";
 import Login from "./pages/Login";
@@ -13,6 +11,8 @@ import NotFound from "./pages/NotFound/NotFound";
 import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
 import GuestRoute from "./components/GuestRoute";
 import PrivateRoute from "./components/PrivateRoute";
+// Importing to overwrite bootstrap 'bg-success' color, TSK 
+import "./style.css";
 
 function App() {
   const isReauthDone = useAuthTokenStore();
@@ -21,19 +21,28 @@ function App() {
 
   return (
     <div className="App">
-      {isReauthDone && 
+      {isReauthDone && (
         <Switch>
           <GuestRoute redirectTo="/home" exact path="/" component={Start} />
-          <GuestRoute redirectTo="/home" exact path="/login" component={Login} />
-          <GuestRoute redirectTo="/home" exact path="/signup" component={SignUp} />
+          <GuestRoute
+            redirectTo="/home"
+            exact
+            path="/login"
+            component={Login}
+          />
+          <GuestRoute
+            redirectTo="/home"
+            exact
+            path="/signup"
+            component={SignUp}
+          />
           <PrivateRoute exact path="/home" component={Home} />
           <PrivateRoute exact path="/goal" component={Goal} />
           <PrivateRoute exact path="/creategoal" component={CreateGoal} />
           <Route component={NotFound} />
           {isAuthenticated && <LogoutButton />}
         </Switch>
-        }
-
+      )}
     </div>
   );
 }
