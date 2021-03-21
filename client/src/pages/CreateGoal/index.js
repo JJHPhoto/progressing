@@ -12,12 +12,12 @@ import {
   AnotherMilestoneDropdown,
   DoneButton,
   Summary,
-  SubmitGoal,
+  // SubmitGoal,
 } from "../../components/GoalForm/GoalForm";
 import { Header } from "../../components/Header/Header";
 import NavBar from "..//../components/NavBar/NavBar";
 import { useAuthenticatedUser } from "../../utils/auth";
-import goalAPI from "../../utils/goalApi";
+// import goalAPI from "../../utils/goalApi";
 
 function CreateGoal() {
 
@@ -31,12 +31,21 @@ function CreateGoal() {
     description: "",
     goalType: "",
     endDate: "",
-    milestones: [{}],
+    milestones: [
+      {
+        name: "",
+        actionItems: [
+          {
+            name: ""
+          }
+        ]
+      }
+    ],
   });
 
   const [newGoalState, setNewGoalState] = useState({});
 
-  const handleInputChange = e => {
+  const handleInputChange = ( e ) => {
     const value = e.target.value;
     const name = e.target.name;
     console.log("value", value)
@@ -67,7 +76,7 @@ function CreateGoal() {
 
   // }
 
-  const handleDoneButton = e => {
+  const handleDoneButton = ( e ) => {
     e.preventDefault();
     setNewGoalState({
       title: goalFormState.title,
@@ -78,42 +87,38 @@ function CreateGoal() {
       // actionItems: [goalFormState.actionItems],
       user_id: user._id
     });
-
     console.log("newGoalState", newGoalState)
-
   }
 
-  const handleFormSubmit = e => {
-    e.preventDefault();
+  // const handleFormSubmit = ( e ) => {
+  //   e.preventDefault();
 
-    goalAPI.saveGoal(newGoalState)
-      .then(res => console.log("res", res))
-      .catch(err => console.log("err", err));
+  //   goalAPI.saveGoal(newGoalState)
+  //     .then(res => console.log("res", res))
+  //     .catch(err => console.log("err", err));
     
-  }
-
-  // console.log("goalFormState", goalFormState)
+  // }
 
   return (
     <div className="container">
       <NavBar />
       <Header />
-      <GoalTitle handleInputChange={handleInputChange}/>
-      <GoalDescription handleInputChange={handleInputChange}/>
-      <GoalTypeDropdown {...goalFormState} handleInputChange={handleInputChange}/>
-      <GoalEndDate handleInputChange={handleInputChange}/>
+      <GoalTitle inputValue={goalFormState} onInputChange={handleInputChange}/>
+      <GoalDescription inputValue={goalFormState} onInputChange={handleInputChange}/>
+      <GoalTypeDropdown {...goalFormState} inputValue={goalFormState} onClick={handleInputChange}/>
+      <GoalEndDate inputValue={goalFormState} onInputChange={handleInputChange}/>
       {/* <GoalMilestones 
         {...goalFormState}
         handleActionItems={handleActionItems}
       /> */}
-      <GoalMilestones handleInputChange={handleInputChange}/>
-      <ActionItemDropdown handleInputChange={handleInputChange}/>
-      <GoalActionItem handleInputChange={handleInputChange}/>
-      <AnotherActionItemDropdown handleInputChange={handleInputChange}/>
-      <AnotherMilestoneDropdown handleInputChange={handleInputChange}/>
-      <DoneButton handleDoneButton={handleDoneButton}/>
+      <GoalMilestones inputValue={goalFormState} onInputChange={handleInputChange}/>
+      <ActionItemDropdown inputValue={goalFormState} onClick={handleInputChange}/>
+      <GoalActionItem inputValue={goalFormState} onInputChange={handleInputChange}/>
+      <AnotherActionItemDropdown inputValue={goalFormState} onClick={handleInputChange}/>
+      <AnotherMilestoneDropdown inputValue={goalFormState} onClick={handleInputChange}/>
+      <DoneButton inputValue={newGoalState} onClick={handleDoneButton}/>
       <Summary newGoalState={newGoalState}/>
-      <SubmitGoal handleFormSubmit={handleFormSubmit}/>
+      {/* <SubmitGoal onClick={handleFormSubmit}/> */}
     </div>
   );
 }
