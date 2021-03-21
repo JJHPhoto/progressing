@@ -10,7 +10,8 @@ mongoose.connect(
   "mongodb://localhost/progressing"
 );
 
-const goalSeed = [{
+const goalSeed = [
+  {
     title: "Be more active",
     description: "I want to move more and be less sedantary",
     goalType: "event",

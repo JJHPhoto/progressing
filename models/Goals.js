@@ -72,9 +72,11 @@ GoalSchema.virtual("totalStepsPerGoal").get( function () {
 
 //             //add up the total of all true action steps and the total of all true validatedMilestones
 //         } else {
-
+//             totalStepsPerGoal = totalStepsPerGoal + 1;
 //         }
+//         console.log("milestones", milestones)
 //     })
+//     return totalStepsPerGoal;
 // });
 
 //date virtual, how much time is left
