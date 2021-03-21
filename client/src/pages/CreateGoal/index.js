@@ -31,7 +31,7 @@ function CreateGoal() {
     description: "",
     goalType: "",
     endDate: "",
-    milestones: [],
+    milestones: [{}],
   });
 
   const [newGoalState, setNewGoalState] = useState({});
@@ -75,7 +75,7 @@ function CreateGoal() {
       goalType: goalFormState.goalType,
       endDate: goalFormState.endDate,
       milestones: [goalFormState.milestones],
-      actionItems: [goalFormState.actionItems],
+      // actionItems: [goalFormState.actionItems],
       user_id: user._id
     });
 
