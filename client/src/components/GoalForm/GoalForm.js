@@ -4,12 +4,11 @@ import { Dropdown } from "react-bootstrap";
 import "./style.css";
 
 
-export function GoalTitle({ inputValue, onInputChange }) {
+export function GoalTitle({ onInputChange }) {
     return (
         <div className="form-group goalTitle">
             Name your goal
             <input
-                // value={inputValue}
                 onChange={onInputChange}
                 name="title"
                 className="form-control"
@@ -20,12 +19,11 @@ export function GoalTitle({ inputValue, onInputChange }) {
     );
 }
 
-export function GoalDescription({ inputValue, onInputChange }) {
+export function GoalDescription({ onInputChange }) {
     return (
         <div className="form-group goalDescription">
             Describe your goal
             <textarea
-                // value={inputValue}
                 onChange={onInputChange}
                 name="description"
                 className="form-control"
@@ -37,7 +35,7 @@ export function GoalDescription({ inputValue, onInputChange }) {
 
 }
 
-export function GoalTypeDropdown({ inputValue, onClick }) {
+export function GoalTypeDropdown({ onClick }) {
     return (
         <Dropdown>
             Is your goal time based or event based?
@@ -47,7 +45,6 @@ export function GoalTypeDropdown({ inputValue, onClick }) {
             <Dropdown.Menu>
                 <Dropdown.Item
                     value="time"
-                    eventKey={inputValue}
                     name="goalType"
                     onClick={onClick}
                     id="time"
@@ -56,7 +53,6 @@ export function GoalTypeDropdown({ inputValue, onClick }) {
                 </Dropdown.Item>
                 <Dropdown.Item
                     value="event"
-                    eventKey={inputValue}
                     name="goalType"
                     onClick={onClick}
                     id="event"
@@ -68,12 +64,11 @@ export function GoalTypeDropdown({ inputValue, onClick }) {
     );
 }
 
-export function GoalEndDate({ inputValue, onInputChange }) {
+export function GoalEndDate({ onInputChange }) {
     return (
         <div className="form-group goalEndDate">
             Completion Date
             <input
-                // value={inputValue}
                 onChange={onInputChange}
                 name="endDate"
                 className="form-control"
@@ -83,13 +78,12 @@ export function GoalEndDate({ inputValue, onInputChange }) {
     );
 }
 
-export function GoalMilestones({ inputValue, onInputChange }) {
+export function GoalMilestones({ onInputChange }) {
     return (
         <div className="form-group goalMilestones">
             
                 Milestone
                 <input
-                    // value={inputValue}
                     onChange={onInputChange}
                     name="milestones"
                     className="form-control"
@@ -99,7 +93,7 @@ export function GoalMilestones({ inputValue, onInputChange }) {
     );
 }
 
-export function ActionItemDropdown({ inputValue, onClick }) {
+export function ActionItemDropdown({ onClick }) {
     return (
         <Dropdown>
             Do you want to break your milstone in to action items?
@@ -109,7 +103,6 @@ export function ActionItemDropdown({ inputValue, onClick }) {
             <Dropdown.Menu>
                 <Dropdown.Item 
                     value={true}
-                    eventKey={inputValue}
                     name="actionItems?"
                     onClick={onClick}
                     id="Yes" 
@@ -118,7 +111,6 @@ export function ActionItemDropdown({ inputValue, onClick }) {
                 </Dropdown.Item>
                 <Dropdown.Item 
                     value={false}
-                    eventKey={inputValue}
                     name="actionItems?"
                     onClick={onClick}
                     id="No" 
@@ -130,12 +122,11 @@ export function ActionItemDropdown({ inputValue, onClick }) {
     );
 }
 
-export function GoalActionItem({ inputValue, onInputChange }) {
+export function GoalActionItem({ onInputChange }) {
     return (
         <div className="form-group goalActionItem">
             Action Item
             <input 
-                // value={inputValue}
                 onChange={onInputChange}
                 name="actionItems"
                 className="form-control"
@@ -145,7 +136,7 @@ export function GoalActionItem({ inputValue, onInputChange }) {
     );
 }
 
-export function AnotherActionItemDropdown({ inputValue, onClick }) {
+export function AnotherActionItemDropdown({ onClick }) {
     return (
         <Dropdown>
             Do you want to add another action item to this mileston?
@@ -155,7 +146,6 @@ export function AnotherActionItemDropdown({ inputValue, onClick }) {
             <Dropdown.Menu>
                 <Dropdown.Item 
                     value={true}
-                    eventKey={inputValue}
                     name="moreActionItems?"
                     onClick={onClick}
                     id="Yes" 
@@ -164,7 +154,6 @@ export function AnotherActionItemDropdown({ inputValue, onClick }) {
                 </Dropdown.Item>
                 <Dropdown.Item 
                     value={false}
-                    eventKey={inputValue}
                     name="moreActionItems?"
                     onClick={onClick}
                     id="No" 
@@ -176,7 +165,7 @@ export function AnotherActionItemDropdown({ inputValue, onClick }) {
     );
 }
 
-export function AnotherMilestoneDropdown({ inputValue, onClick }) {
+export function AnotherMilestoneDropdown({ onClick }) {
     return (
         <Dropdown>
             Do you want to add another milestone to your goal?
@@ -186,7 +175,6 @@ export function AnotherMilestoneDropdown({ inputValue, onClick }) {
             <Dropdown.Menu>
                 <Dropdown.Item 
                     value={true}
-                    eventKey={inputValue}
                     name="moreMilestones?"
                     onClick={onClick}
                     id="Yes" 
@@ -195,7 +183,6 @@ export function AnotherMilestoneDropdown({ inputValue, onClick }) {
                 </Dropdown.Item>
                 <Dropdown.Item 
                     value={false}
-                    eventKey={inputValue}
                     name="moreMilestones?"
                     onClick={onClick}
                     id="No" 
@@ -207,11 +194,10 @@ export function AnotherMilestoneDropdown({ inputValue, onClick }) {
     );
 }
 
-export function DoneButton({ inputValue, onClick }) {
+export function DoneButton({ onClick }) {
     return (
         <button
             type="button"
-            // value={inputValue}
             onClick={onClick} 
             style={{ float: "right", marginBottom: 10 }} 
             className="btn btn-success submitBtn">
@@ -237,11 +223,10 @@ export function Summary({ newGoalState }) {
     );
 }
 
-export function SubmitGoal({ inputValue, onClick }) {
+export function SubmitGoal({ onClick }) {
     return (
         <button
             type="button"
-            // value={inputValue}
             onClick={onClick} 
             style={{ float: "right", marginBottom: 10 }} 
             className="btn btn-success submitBtn">

@@ -22,9 +22,6 @@ import { useAuthenticatedUser } from "../../utils/auth";
 function CreateGoal() {
 
   const user = useAuthenticatedUser();
-  // const isAuthenticated = useIsAuthenticated();
-  // console.log("user._id", user._id);
-  // console.log("isAuthenticated", isAuthenticated);
 
   const [goalFormState, setGoalFormState] = useState({
     title: "",
@@ -87,6 +84,7 @@ function CreateGoal() {
       // actionItems: [goalFormState.actionItems],
       user_id: user._id
     });
+    console.log("goalFormState", goalFormState)
     console.log("newGoalState", newGoalState)
   }
 
@@ -103,20 +101,20 @@ function CreateGoal() {
     <div className="container">
       <NavBar />
       <Header />
-      <GoalTitle inputValue={goalFormState} onInputChange={handleInputChange}/>
-      <GoalDescription inputValue={goalFormState} onInputChange={handleInputChange}/>
-      <GoalTypeDropdown {...goalFormState} inputValue={goalFormState} onClick={handleInputChange}/>
-      <GoalEndDate inputValue={goalFormState} onInputChange={handleInputChange}/>
+      <GoalTitle onInputChange={handleInputChange}/>
+      <GoalDescription onInputChange={handleInputChange}/>
+      <GoalTypeDropdown {...goalFormState} onClick={handleInputChange}/>
+      <GoalEndDate onInputChange={handleInputChange}/>
       {/* <GoalMilestones 
         {...goalFormState}
         handleActionItems={handleActionItems}
       /> */}
-      <GoalMilestones inputValue={goalFormState} onInputChange={handleInputChange}/>
-      <ActionItemDropdown inputValue={goalFormState} onClick={handleInputChange}/>
-      <GoalActionItem inputValue={goalFormState} onInputChange={handleInputChange}/>
-      <AnotherActionItemDropdown inputValue={goalFormState} onClick={handleInputChange}/>
-      <AnotherMilestoneDropdown inputValue={goalFormState} onClick={handleInputChange}/>
-      <DoneButton inputValue={newGoalState} onClick={handleDoneButton}/>
+      <GoalMilestones onInputChange={handleInputChange}/>
+      <ActionItemDropdown onClick={handleInputChange}/>
+      <GoalActionItem onInputChange={handleInputChange}/>
+      <AnotherActionItemDropdown onClick={handleInputChange}/>
+      <AnotherMilestoneDropdown onClick={handleInputChange}/>
+      <DoneButton onClick={handleDoneButton}/>
       <Summary newGoalState={newGoalState}/>
       {/* <SubmitGoal onClick={handleFormSubmit}/> */}
     </div>
