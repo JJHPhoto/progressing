@@ -81,14 +81,20 @@ export function GoalEndDate({ onInputChange }) {
 export function GoalMilestones({ onInputChange }) {
     return (
         <div className="form-group goalMilestones">
-            
-                Milestone
-                <input
-                    onChange={onInputChange}
-                    name="milestones"
-                    className="form-control"
-                    placeholder="Name this milestone"
-                />
+            Milestone
+            <input
+                onChange={onInputChange}
+                name="milestones"
+                className="form-control"
+                placeholder="Name this milestone"
+            />
+            {/* <button
+                type="button"
+                onSubmit={onSubmit}
+                style={{ float: "right", marginBottom: 10 }}
+                className="btn btn-success submitBtn">
+                Submit Milestone
+            </button> */}
         </div>
     );
 }
@@ -101,21 +107,21 @@ export function ActionItemDropdown({ onClick }) {
                 Action Item?
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                <Dropdown.Item 
+                <Dropdown.Item
                     value={true}
                     name="actionItems?"
                     onClick={onClick}
-                    id="Yes" 
+                    id="Yes"
                     as="button">
-                        Yes
+                    Yes
                 </Dropdown.Item>
-                <Dropdown.Item 
+                <Dropdown.Item
                     value={false}
                     name="actionItems?"
                     onClick={onClick}
-                    id="No" 
+                    id="No"
                     as="button">
-                        No
+                    No
                 </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
@@ -126,11 +132,11 @@ export function GoalActionItem({ onInputChange }) {
     return (
         <div className="form-group goalActionItem">
             Action Item
-            <input 
+            <input
                 onChange={onInputChange}
                 name="actionItems"
                 className="form-control"
-                placeholder="Name this action Item" 
+                placeholder="Name this action Item"
             />
         </div>
     );
@@ -144,21 +150,21 @@ export function AnotherActionItemDropdown({ onClick }) {
                 Action Item?
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                <Dropdown.Item 
+                <Dropdown.Item
                     value={true}
                     name="moreActionItems?"
                     onClick={onClick}
-                    id="Yes" 
+                    id="Yes"
                     as="button">
-                        Yes
+                    Yes
                 </Dropdown.Item>
-                <Dropdown.Item 
+                <Dropdown.Item
                     value={false}
                     name="moreActionItems?"
                     onClick={onClick}
-                    id="No" 
+                    id="No"
                     as="button">
-                        No
+                    No
                 </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
@@ -173,21 +179,21 @@ export function AnotherMilestoneDropdown({ onClick }) {
                 Milestone?
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                <Dropdown.Item 
+                <Dropdown.Item
                     value={true}
                     name="moreMilestones?"
                     onClick={onClick}
-                    id="Yes" 
+                    id="Yes"
                     as="button">
-                        Yes
+                    Yes
                 </Dropdown.Item>
-                <Dropdown.Item 
+                <Dropdown.Item
                     value={false}
                     name="moreMilestones?"
                     onClick={onClick}
-                    id="No" 
+                    id="No"
                     as="button">
-                        No
+                    No
                 </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
@@ -198,16 +204,16 @@ export function DoneButton({ onClick }) {
     return (
         <button
             type="button"
-            onClick={onClick} 
-            style={{ float: "right", marginBottom: 10 }} 
+            onClick={onClick}
+            style={{ float: "right", marginBottom: 10 }}
             className="btn btn-success submitBtn">
-                Done
+            Done
         </button>
     )
 }
 
 export function Summary({ newGoalState }) {
-    return(
+    return (
 
         // What to do with the summary page.
         <div className="form-group goalSummary">
@@ -217,7 +223,7 @@ export function Summary({ newGoalState }) {
             <p>Goal Type: {newGoalState.goalType}</p>
             <p>End Date: {newGoalState.endDate}</p>
             <p>Milestones: {newGoalState.milestones}</p>
-            <p>Action Items: {newGoalState.actionItems}</p>
+            {/* <p>Action Items: {newGoalState.actionItems}</p> */}
         </div>
 
     );
@@ -227,10 +233,10 @@ export function SubmitGoal({ onClick }) {
     return (
         <button
             type="button"
-            onClick={onClick} 
-            style={{ float: "right", marginBottom: 10 }} 
+            onClick={onClick}
+            style={{ float: "right", marginBottom: 10 }}
             className="btn btn-success submitBtn">
-                Submit New Goal
+            Submit New Goal
         </button>
     );
 }
