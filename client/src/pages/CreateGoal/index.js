@@ -22,21 +22,27 @@ import goalAPI from "../../utils/goalApi";
 function CreateGoal() {
 
   const user = useAuthenticatedUser();
-  // const isAuthenticated = useIsAuthenticated();
-  // console.log("user._id", user._id);
-  // console.log("isAuthenticated", isAuthenticated);
 
   const [goalFormState, setGoalFormState] = useState({
     title: "",
     description: "",
     goalType: "",
     endDate: "",
-    milestones: [{}],
+    milestones: [
+      {
+        name: "",
+        actionItems: [
+          {
+            name: ""
+          }
+        ]
+      }
+    ],
   });
 
   const [newGoalState, setNewGoalState] = useState({});
 
-  const handleInputChange = e => {
+  const handleInputChange = ( e ) => {
     const value = e.target.value;
     const name = e.target.name;
     console.log("value", value)
@@ -48,26 +54,29 @@ function CreateGoal() {
     });
   };
 
-  // const handleActionItems = (e, index) => {
-  //   const { target } = e;
-  //   const { name } = target;
-  //   const { value } = target;
-  //   console.log("value", value)
-  //   console.log("name", name)
+  const handleMilestones = ( e ) => {
+    e.preventDefault();
+    const { target } = e;
+    const { name } = target;
+    const { value } = target;
+    console.log("value", value)
+    console.log("name", name)
+    
+    const isMilestones = (milestones) => milestones.name === "";
+    const elementsIndex = goalFormState.milestones.findIndex(isMilestones)
+    let newMilstoneArray = [...goalFormState.milestones]
+    console.log("elementIndex", elementsIndex);
+    console.log("newMilstoneArray", newMilstoneArray);
 
-  //   setGoalFormState( goalFormState => {
-  //     const milestone = [...goalFormState.milestones];
-  //     const actionItem = [...goalFormState.milestones.actionItems];
-  //     milestone[index] = {...milestone[index], [name]: value};
-  //     actionItem[milestone] = {...actionItem[milestone], [name]: value};
-  //     console.log("actionItem", actionItem)
-  //     console.log("milstone", milestone)
-  //     return { milestone };
-  //   });
+    newMilstoneArray[elementsIndex] = {...newMilstoneArray[elementsIndex], name: value}
+    
+    setGoalFormState(() => ({
+      ...goalFormState, 
+      milestones: newMilstoneArray 
+    }));
+  }
 
-  // }
-
-  const handleDoneButton = e => {
+  const handleDoneButton = ( e ) => {
     e.preventDefault();
     setNewGoalState({
       title: goalFormState.title,
@@ -78,12 +87,11 @@ function CreateGoal() {
       // actionItems: [goalFormState.actionItems],
       user_id: user._id
     });
-
+    console.log("goalFormState", goalFormState)
     console.log("newGoalState", newGoalState)
-
   }
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = ( e ) => {
     e.preventDefault();
 
     goalAPI.saveGoal(newGoalState)
@@ -91,29 +99,24 @@ function CreateGoal() {
       .catch(err => console.log("err", err));
     
   }
-
-  // console.log("goalFormState", goalFormState)
-
+  console.log("goalFormState", goalFormState)
   return (
     <div className="container">
       <NavBar />
       <Header />
-      <GoalTitle handleInputChange={handleInputChange}/>
-      <GoalDescription handleInputChange={handleInputChange}/>
-      <GoalTypeDropdown {...goalFormState} handleInputChange={handleInputChange}/>
-      <GoalEndDate handleInputChange={handleInputChange}/>
-      {/* <GoalMilestones 
-        {...goalFormState}
-        handleActionItems={handleActionItems}
-      /> */}
-      <GoalMilestones handleInputChange={handleInputChange}/>
-      <ActionItemDropdown handleInputChange={handleInputChange}/>
-      <GoalActionItem handleInputChange={handleInputChange}/>
-      <AnotherActionItemDropdown handleInputChange={handleInputChange}/>
-      <AnotherMilestoneDropdown handleInputChange={handleInputChange}/>
-      <DoneButton handleDoneButton={handleDoneButton}/>
+      <GoalTitle onInputChange={handleInputChange}/>
+      <GoalDescription onInputChange={handleInputChange}/>
+      <GoalTypeDropdown {...goalFormState} onClick={handleInputChange}/>
+      <GoalEndDate onInputChange={handleInputChange}/>
+      <GoalMilestones onInputChange={handleMilestones}/>
+      {/* <GoalMilestones onInputChange={handleInputChange}/> */}
+      <ActionItemDropdown onClick={handleInputChange}/>
+      <GoalActionItem onInputChange={handleInputChange}/>
+      <AnotherActionItemDropdown onClick={handleInputChange}/>
+      <AnotherMilestoneDropdown onClick={handleInputChange}/>
+      <DoneButton onClick={handleDoneButton}/>
       <Summary newGoalState={newGoalState}/>
-      <SubmitGoal handleFormSubmit={handleFormSubmit}/>
+      <SubmitGoal onClick={handleFormSubmit}/>
     </div>
   );
 }
