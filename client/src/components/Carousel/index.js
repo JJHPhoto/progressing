@@ -22,12 +22,13 @@ function GoalCarousel(props)  {
 
         return (
             <Carousel.Item>
-                <Chart chartGoal={obj} />
+                <Chart chartGoal={obj} />        
             </Carousel.Item>
         )
     })}     
 
     </Carousel>
+    
   );
 }
 

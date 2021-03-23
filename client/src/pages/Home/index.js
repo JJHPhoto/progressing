@@ -6,6 +6,8 @@ import NavBar from "../../components/NavBar/NavBar";
 import "./style.css";
 import goalAPI from "../../utils/goalApi";
 import GoalCarousel from "../../components/Carousel";
+import BarChart from "../../components/BarChart";
+import ProgFooter from "../../components/Footer";
 
 function Home() {
   // State to display goals
@@ -32,7 +34,8 @@ function Home() {
       <NavBar />
       <Header />
       <GoalCarousel chartGoal={goals} />
-      
+      <BarChart />
+      <ProgFooter />
     </div>
   );
 }
