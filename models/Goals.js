@@ -38,8 +38,10 @@ const GoalSchema = new Schema({
     user_id: String,
     notes: String,
 }, {
+    toObject: { virtuals: true },
     toJSON: { virtuals: true }
-});
+}
+);
 
 GoalSchema.virtual("totalStepsPerGoal").get( function () {
     let totalStepsPerGoal = 0;
@@ -51,48 +53,49 @@ GoalSchema.virtual("totalStepsPerGoal").get( function () {
             totalStepsPerGoal = totalStepsPerGoal + 1;
         }
     })
+    console.log("totalStepsPerGoal", totalStepsPerGoal)
     return totalStepsPerGoal;
 });
 
+GoalSchema.virtual("totalTrueCompletes").get( function () {
+    let totalTrueCompletes = 0
+    let actionArray = []
+    let actionComplete = []
+    let milestoneArray = []
+    let milestoneComplete = []
 
-// GoalSchema.virtual("totalAllMilestonesActions").get( function () {
-//     let totalAllMilestonesActions = 0;
-//     this.milestones.forEach( function (milestone) {
-//         if ( milestones.actionItems.length > 0 ) {
-//             totalAllMilestonesActions += //add the sum of whatever the total actions are and the validatedMilestones
-//         }
-//     })
-// });
+    this.milestones.forEach( function (milestone) {
+        if(milestone.actionItems) {
+            actionArray.push(milestone.actionItems)
+            var merged = [].concat.apply([], actionArray);
+            merged.forEach(function(item) {
+                let {complete} = item
+                actionComplete.push(complete);
+            })
+                var trueActionComplete = actionComplete.filter(function(complete) {
+                return complete === true;
+            })
+            totalTrueCompletes = totalTrueCompletes + trueActionComplete.length
+        }
+        if (milestone.actionItems.length == 0){
+            milestoneArray.push(milestone);
+            milestoneArray.forEach(function(milestone) {
+                let {complete} = milestone
+                milestoneComplete.push(complete);
+            })
+                var trueMilestoneComplete = milestoneComplete.filter(function(complete) {
+                return complete === true;
+            })
+            return totalTrueCompletes = totalTrueCompletes + trueMilestoneComplete.length;
+        }
+        console.log("totalTrueCompletes", totalTrueCompletes)
+    })
+});
 
-// GoalSchema.virtual("trueMilestoneActions").get( function () {
-//     let trueMilestoneActions = 0;
-//     this.milestones.forEach( function (milestone) {
-//         if ( milestone.actionItems.length > 0 ) {
-//            trueMilestoneActions += 
+// date virtual, how much time is left
+// take end date and subtract by current date 
+// potential calendar
 
-//             //add up the total of all true action steps and the total of all true validatedMilestones
-//         } else {
-//             totalStepsPerGoal = totalStepsPerGoal + 1;
-//         }
-//         console.log("milestones", milestones)
-//     })
-//     return totalStepsPerGoal;
-// });
-
-//date virtual, how much time is left
-//take end date and subtract by current date 
-//potential calendar
-
-//daily goals, take all false milestone with steps and divide equally based off enddate
-
-
-// GoalSchema.virtual("goalSummary").get( function () {
-//     let goalSummary = 0;
-//     this.milestones.forEach( function (milestone) {
-//         if ( milestones.actionItems.length > 0 ) {
-//             //take the trueMilestoneActions and divide by totalAllMilestoneActions
-//     })
-// });
-
+// daily goals, take all false milestone with steps and divide equally based off enddate
 
 module.exports = Goals = mongoose.model("goals", GoalSchema);
