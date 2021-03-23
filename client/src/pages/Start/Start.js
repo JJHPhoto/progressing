@@ -4,6 +4,7 @@ import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { StartHeader } from "../../components/StartHeader";
 import ProgFooter from "../../components/Footer";
+import ProgInfo from "../../components/StartInfo";
 
 function Start() {
   return (
@@ -29,8 +30,9 @@ function Start() {
               </Link>
             </Button>
           </div>
-          <h1 className="text-center" style={{ marginTop: "80px" }}>Your Goals, Your Milestones</h1>
+          <h1 className="text-center" style={{ marginTop: "40px" }}>Your Goals, Your Milestones</h1>
         </div>
+        <ProgInfo />
         <ProgFooter />
       </Container>
     </>
