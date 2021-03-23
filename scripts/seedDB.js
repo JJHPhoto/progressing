@@ -15,6 +15,7 @@ const goalSeed = [
     title: "Be more active",
     description: "I want to move more and be less sedantary",
     goalType: "event",
+    // endDate: 2021-1-04,
     milestones: [
       {
       name: "create physical activity routine",
@@ -35,6 +36,7 @@ const goalSeed = [
     title: "Brush up on C#",
     description: "I haven't worked with C# in years and want familiarize myself with it",
     goalType: "event",
+    // endDate: 2021-12-04,
     milestones: [
       {
       name: "Improve skill with C#",
@@ -42,7 +44,8 @@ const goalSeed = [
         {
           name: "Read about a C# topic every day"
           }, {
-          name: "Do a C# programming exercise every day"
+          name: "Do a C# programming exercise every day",
+          complete: true
           }
         ]
       }
@@ -52,21 +55,20 @@ const goalSeed = [
     title: "Learn to play guitar",
     description: "I want to learn to play guitar as a creative outlet",
     goaltype: "event",
+    // endDate: 2021-5-04,
     milestones: [{
       name: "Learn to read guitar tabs",
-        actionItems: [{
-        name: "practice reading tabs"
-          }, {
-        name: "practice finger positioning for tabs"
-          }  
-        ]
+        actionItems: [],
+        complete: true
       }, 
       {
         name: "Establish a practice routine",
         actionItems: [{
-          name: "something random 1"
+          name: "something random 1",
+          complete: true
             }, {
-          name: "something random 2"
+          name: "something random 2",
+          complete: true
             },
             {
           name: "something random 3"  
