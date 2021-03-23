@@ -35,6 +35,7 @@ function Home() {
       <Header />
       <GoalCarousel chartGoal={goals} />
       <BarChart />
+      <ProgFooter />
     </div>
   );
 }

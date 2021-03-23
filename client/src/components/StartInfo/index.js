@@ -4,6 +4,7 @@ import img from "../photos/AboutUs2.png";
 import img2 from "../photos/HowTo2.png";
 import img3 from "../photos/Developers2.png";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 function ProgInfo() {
 
@@ -11,27 +12,36 @@ function ProgInfo() {
         <Container >
             <Row>
                 <Col className="infoCol mb-5">
-                    <img
-                        className="d-block w-100"
-                        src={img}
-                        alt="About Us"
-                    />
+                    <Link to="/about">
+
+                        <img
+                            className="d-block w-100"
+                            src={img}
+                            alt="About Us"
+                        />
+                        
+                    </Link>
+                    
                     
                 </Col>
                 <Col className="infoCol mb-5" >
-                    <img
-                        className="d-block w-100"
-                        src={img2}
-                        alt="About Us"
-                    />
+                    <Link to="/howto">
+                        <img
+                            className="d-block w-100"
+                            src={img2}
+                            alt="How To"
+                        />
+                    </Link>
                 </Col>
 
                 <Col className="infoCol mb-5">
+                    <Link to="/developers">
                     <img
                         className="d-block w-100"
                         src={img3}
-                        alt="About Us"
+                        alt="Developers"
                     />
+                    </Link>
                 </Col>
             </Row>
         </Container >
