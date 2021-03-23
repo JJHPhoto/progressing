@@ -1,0 +1,26 @@
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px;
+  width: 4%;
+  background-size: 100%, 100%;
+  border-radius: 80%;
+  background-color: #01a35a; 
+}
+
+.carousel-control-next-icon:after
+{
+  /* content: '>'; */
+  font-size: 100px;
+  color: #01a35a;
+  opacity:1 !important;
+}
+
+.carousel-control-prev-icon:after {
+  /* content: '<'; */
+  font-size: 100px;
+  color: #01a35a;
+}
+
+.carousel-control {
+    color: #01a35a;
+}
