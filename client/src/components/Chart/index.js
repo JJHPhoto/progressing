@@ -1,7 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import BarChart from "../BarChart";
 
 function Chart(props) {
   return (
@@ -25,7 +24,7 @@ function Chart(props) {
           <Card.Subtitle className="mb-2 text-muted">Notes:</Card.Subtitle>
           <Card.Text>{props.chartGoal.notes}</Card.Text>
         </Card.Body>
-        <BarChart />
+        
       </Card>
     </div>
   );

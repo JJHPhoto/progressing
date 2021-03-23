@@ -3,6 +3,7 @@ import "./style.css";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { StartHeader } from "../../components/StartHeader";
+import ProgFooter from "../../components/Footer";
 
 function Start() {
   return (
@@ -28,8 +29,9 @@ function Start() {
               </Link>
             </Button>
           </div>
-          <h1 className="text-center" style={{ marginTop: "80px" }}>Every Journey Begins with the First Step</h1>
+          <h1 className="text-center" style={{ marginTop: "80px" }}>Your Goals, Your Milestones</h1>
         </div>
+        <ProgFooter />
       </Container>
     </>
   );
