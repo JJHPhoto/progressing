@@ -5,9 +5,21 @@ import {
   // Pie
 } from "react-chartjs-2";
 
+// import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+// const percentage = 66;
+
 const BarChart = () => {
   return (
     <div className="chartjs">
+      {/* <CircularProgressbar
+        value={percentage}
+        text={`${percentage}%`}
+        styles={buildStyles({
+          textColor: "red",
+          pathColor: "turquoise",
+          trailColor: "gold",
+        })}
+      /> */}
       <Bar
         data={{
           labels: [

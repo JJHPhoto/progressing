@@ -32,7 +32,6 @@ function Home() {
       <NavBar />
       <Header />
       <GoalCarousel chartGoal={goals} />
-      
     </div>
   );
 }
