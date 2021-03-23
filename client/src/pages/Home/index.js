@@ -5,6 +5,7 @@ import { Header } from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import "./style.css";
 import goalAPI from "../../utils/goalApi";
+import GoalCarousel from "../../components/Carousel";
 
 function Home() {
   // State to display goals
@@ -30,11 +31,7 @@ function Home() {
     <div className="container">
       <NavBar />
       <Header />
-      {goals.map(goals => {
-        return (
-          <Chart chartGoal={goals} />
-        )
-      })}      
+      <GoalCarousel chartGoal={goals} />
       
     </div>
   );
