@@ -30,9 +30,12 @@ function Home() {
     <div className="container">
       <NavBar />
       <Header />
-      {goals.map((goals) => {
-        return <Chart className="mt-2" chartGoal={goals} />;
-      })}
+      {goals.map(goals => {
+        return (
+          <Chart chartGoal={goals} />
+        )
+      })}      
+      
     </div>
   );
 }

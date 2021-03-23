@@ -10,16 +10,23 @@ mongoose.connect(
   "mongodb://localhost/progressing"
 );
 
-const goalSeed = [{
+const goalSeed = [
+  {
     title: "Be more active",
     description: "I want to move more and be less sedantary",
     goalType: "event",
-    milestones: [{
-      type: "create physical activity routine",
-      actionItems: [{
-            type: "daily walk in the park for at least 30 minutes"
+    milestones: [
+      {
+      name: "create physical activity routine",
+      actionItems: []
+      },
+      {
+       name: "eat better",
+       actionItems: [
+          {
+            name: "eat veggies"
           }
-        ]
+        ], 
       }
     ],
     user_id: process.env.USER_ID,
@@ -28,12 +35,14 @@ const goalSeed = [{
     title: "Brush up on C#",
     description: "I haven't worked with C# in years and want familiarize myself with it",
     goalType: "event",
-    milestones: [{
-      type: "Improve skill with C#",
-      actionItems: [{
-            type: "Read about a C# topic every day"
+    milestones: [
+      {
+      name: "Improve skill with C#",
+      actionItems: [
+        {
+          name: "Read about a C# topic every day"
           }, {
-            type: "Do a C# programming exercise every day"
+          name: "Do a C# programming exercise every day"
           }
         ]
       }
@@ -44,15 +53,25 @@ const goalSeed = [{
     description: "I want to learn to play guitar as a creative outlet",
     goaltype: "event",
     milestones: [{
-        type: "Learn to read guitar tabs",
+      name: "Learn to read guitar tabs",
         actionItems: [{
-            type: "practice reading tabs"
+        name: "practice reading tabs"
           }, {
-            type: "practice finger positioning for tabs"
+        name: "practice finger positioning for tabs"
           }  
         ]
-      }, {
-        type: "Establish a practice routine"
+      }, 
+      {
+        name: "Establish a practice routine",
+        actionItems: [{
+          name: "something random 1"
+            }, {
+          name: "something random 2"
+            },
+            {
+          name: "something random 3"  
+            }  
+          ]
       }
     ],
     user_id: process.env.USER_ID,
