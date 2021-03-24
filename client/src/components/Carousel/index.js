@@ -16,7 +16,7 @@ function GoalCarousel(props)  {
   console.log(renderObjects);
     
   return (
-    <Carousel className="carousel slide" interval={null} activeIndex={index} onSelect={handleSelect}>
+    <Carousel className="bg-dark mt-4" interval={null} activeIndex={index} onSelect={handleSelect} style={{height: "220px"}}>
 
     {renderObjects.map(obj => {
 

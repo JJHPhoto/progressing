@@ -1,13 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import Chart from "../../components/Chart";
 import { Header } from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import "./style.css";
 import goalAPI from "../../utils/goalApi";
 import GoalCarousel from "../../components/Carousel";
-import BarChart from "../../components/BarChart";
 import ProgFooter from "../../components/Footer";
+import Goal from "../../components/Goal";
 
 function Home() {
   // State to display goals
@@ -34,7 +33,7 @@ function Home() {
       <NavBar />
       <Header />
       <GoalCarousel chartGoal={goals} />
-      <BarChart />
+      <Goal chartGoal={goals}/>
       <ProgFooter />
     </div>
   );

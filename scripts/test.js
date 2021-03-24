@@ -3,15 +3,15 @@ const goal =
     title: "Learn to play guitar",
     description: "I want to learn to play guitar as a creative outlet",
     goaltype: "event",
-    milestones: [
+    steps: [
         {
         name: "Learn to read guitar tabs",
-        actionItems: [],
+        steps: [],
         complete: true
       }, 
       {
         name: "Establish a practice routine",
-        actionItems: [
+        steps: [
             {
                 name: "something random 1",
                 complete: true
@@ -31,12 +31,12 @@ const goal =
     user_id: process.env.USER_ID,
   }
 
- function getSteps() { let totalStepsPerGoal = 0;
-    goal.milestones.forEach( function (milestone) {
-        if ( milestone.actionItems ) {
-            totalStepsPerGoal = totalStepsPerGoal + milestone.actionItems.length;
+   function getSteps() { let totalStepsPerGoal = 0;
+    goal.steps.forEach( function (step) {
+        if ( step.steps ) {
+            totalStepsPerGoal = totalStepsPerGoal + step.steps.length;
         } 
-        if (milestone.actionItems.length == 0){
+        if (step.steps.length == 0){
             totalStepsPerGoal = totalStepsPerGoal + 1;
         }
     })
@@ -55,10 +55,10 @@ let milestoneComplete = []
 
 let totalTrueCompletes = 0
 
-goal.milestones.forEach( function (milestone) {
+goal.steps.forEach( function (step) {
 
-    if(milestone.actionItems) {
-        actionArray.push(milestone.actionItems)
+    if(step.steps) {
+        actionArray.push(step.steps)
         var merged = [].concat.apply([], actionArray);
 
         merged.forEach(function(item) {
@@ -73,11 +73,11 @@ goal.milestones.forEach( function (milestone) {
 
         totalTrueCompletes = totalTrueCompletes + trueActionComplete.length
     }
-    if (milestone.actionItems.length == 0){
-        milestoneArray.push(milestone);
+    if (step.steps.length == 0){
+        milestoneArray.push(step);
 
-        milestoneArray.forEach(function(milestone) {
-            let {complete} = milestone
+        milestoneArray.forEach(function(step) {
+            let {complete} = step
             milestoneComplete.push(complete);
         })
     
@@ -95,3 +95,49 @@ goal.milestones.forEach( function (milestone) {
 
 getTrue();
 
+function GoalList() {
+
+// let milestoneObj = []
+// let actionItemName= []
+
+    console.log("single goal", goal);
+        // milestoneObj.push(step);
+        // console.log("milestoneObjt", milestoneObj) 
+        // console.log(step.steps)
+        console.log("goalSteps", goal.steps.length)
+    // })
+}
+
+
+ // const [actionItem, setActionItem] = useState([]);
+
+    // let milestoneObj = []
+  
+    // chartGoal.milestones.forEach( function (milestone) {
+    
+        // if(milestone.actionItems) {
+        //     milestoneObj.push(milestone);
+        //     console.log("milestoneObjt", milestoneObj) 
+            
+        //     // var actionItemMerge = [].concat.apply([], milestoneObj);
+    
+        //     // console.log("actionItem", actionItemMerge)
+            
+        //     // setActionItem(actionItemMerge);
+        // }   
+        
+        
+    // }) 
+
+GoalList();
+
+
+
+{/* {goals.milestones.map(milestone => {
+            return ( 
+              <h2>{milestone.name}
+                <ActionItemList chartGoal={goals}/>
+              </h2>
+           )
+           })} 
+           <ActionItemList chartGoal={goals}/>  */}
