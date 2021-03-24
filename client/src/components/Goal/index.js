@@ -17,12 +17,11 @@ function Goal({chartGoal}) {
                   <div>
                       <h3 className="text-success text-center mr-1 mb-3">Days Left: 10</h3>
                       <PieProgressBar chartGoal={goal}/>
-                      {/* component for note area here? */}
+                      <h2 className="text-center" style={{marginTop: "80px"}}>Note Pad</h2>
                   </div>
               </div>
-              <div className="" style={{marginTop: "80px"}}  >
+              <div className="" style={{marginTop: "20px"}}  >
                 <BarChart />
-                <h2 className="text-center" style={{marginTop: "80px", marginLeft: "100px"}}>Note Pad</h2>
               </div>
           </div>
           )

@@ -3,10 +3,8 @@ import { useLogin } from "../../utils/auth";
 import api from "../../utils/API";
 import { StartHeader } from "../../components/StartHeader";
 import { Container } from "react-bootstrap";
-// import { ReturnToStart } from "../../components/Login/LoginForm";
 import ErrorNotification from "../../components/ErrorNotification";
 import ProgFooter from "../../components/Footer";
-import ProgInfo from "../../components/StartInfo";
 
 function SignUp() {
   const emailRef = useRef();

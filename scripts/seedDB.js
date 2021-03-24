@@ -12,6 +12,104 @@ mongoose.connect(
 
 const goalSeed = [
   {
+    title: "Project 3 with React",
+    description: "This is our final group project for the UW Bootcamp",
+    goalType: "event",
+    // endDate: 2021-1-04,
+    steps: [
+      {
+        name: "Presentation",
+        steps: [
+          {
+            name: "Present to class"
+          },
+          {
+            name: "Think of content for slideshow"
+          },
+          {
+            name: "Create slideshow"
+          },
+          {
+            name: "Update final styling"
+          }
+        ]
+        },
+      {
+        name: "Style page",
+        steps: [
+          {
+            name: "Set up carousel to display goals"
+          },
+          {
+            name: "Configure custom colors"
+          },
+          {
+            name: "Use custom logos and images"
+          },
+          {
+            name: "Create mocks"
+          }
+        ]
+        },
+      {
+        name: "Develop functionility of page",
+        steps: [
+          {
+            name: "Set up form and push to database"
+          },
+          {
+            name: "Render listed data onto goal component"
+          },
+          {
+            name: "Develop progress bar with algorithm"
+          },
+          {
+            name: "Apply update api's for toggle features"
+          },
+          {
+            name: "Find a way to keep track of time left (moment js?)"
+          },
+        ]
+        },
+      {
+        name: "Set up login and sign up page",
+        steps: [
+          {
+            name: "Handle error messages"
+          },
+          {
+            name: "Establish routes with react-router-dom"
+          },
+          {
+            name: "Establish authorization with passport"
+          },
+          {
+            name: "Create schema and set up MongoDB"
+          },
+        ]
+        },
+      {
+      name: "Develop initial page",
+      steps: [
+        {
+          name: "Create login component"
+        },
+        {
+          name: "Create sign up component"
+        },
+        {
+          name: "Create home component"
+        },
+        {
+          name: "Create other pages/components"
+        },
+      ]
+      }
+    ],
+    user_id: process.env.USER_ID,
+    notes: null
+  },
+  {
     title: "Be more active",
     description: "I want to move more and be less sedantary",
     goalType: "event",
