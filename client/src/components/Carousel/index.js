@@ -16,7 +16,7 @@ function GoalCarousel(props)  {
   console.log(renderObjects);
     
   return (
-    <Carousel data-interval="null" activeIndex={index} onSelect={handleSelect}>
+    <Carousel className="carousel slide" interval={null} activeIndex={index} onSelect={handleSelect}>
 
     {renderObjects.map(obj => {
 

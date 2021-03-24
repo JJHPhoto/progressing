@@ -8,7 +8,7 @@ function Chart(props) {
       {/* {console.log("charts", props)} */}
       <Card className="mt-2">
         <Card.Body>
-          <Card.Header className="bg-success mb-2 pb-2">
+          <Card.Header style={{backgroundColor:"#01a35a"}} className="mb-2 pb-2">
             <Link
               className="text-white"
               style={{ textDecoration: "none", color: "black" }}
