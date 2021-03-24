@@ -7,7 +7,7 @@ import {
 
 const BarChart = () => {
   return (
-    <div className="chartjs">
+    <div className="chartjs mb-5">
       <Bar
         data={{
           labels: [
