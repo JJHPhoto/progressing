@@ -1,11 +1,9 @@
 import { useRef, useState } from "react";
 import { StartHeader } from "../../components/StartHeader";
-// import { ReturnToStart } from "../../components/Login/LoginForm";
 import { useLogin } from "../../utils/auth";
 import { Container } from "react-bootstrap";
 import ErrorNotification from "../../components/ErrorNotification";
 import ProgFooter from "../../components/Footer";
-import ProgInfo from "../../components/StartInfo";
 
 
 function Login() {
