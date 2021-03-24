@@ -21,7 +21,11 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+  setGoals: [{
+    type: Schema.Types.ObjectId,
+    ref: "Goals",
+  }]
 });
 
 module.exports = User = mongoose.model("users", UserSchema);

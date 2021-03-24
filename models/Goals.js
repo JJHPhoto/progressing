@@ -35,7 +35,11 @@ const GoalSchema = new Schema({
             ]
         }
     ],
-    user_id: String,
+    user_id: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    },
     notes: String,
 }, {
     toObject: { virtuals: true },
