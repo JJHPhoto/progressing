@@ -7,9 +7,7 @@ import {Link, NavLink} from "react-router-dom";
 import { useAuthenticatedUser } from "../../utils/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBars,
-  faEllipsisH,
-  faEllipsisV,
+  faBars
 } from "@fortawesome/free-solid-svg-icons";
 
 function NavBar() {

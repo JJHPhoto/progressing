@@ -1,0 +1,15 @@
+.milestone-header {
+    /* text-decoration: underline; */
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.steps-header {
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.checklist {
+    margin-top: 15px;
+}

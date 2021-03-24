@@ -16,14 +16,14 @@ const goalSeed = [
     description: "I want to move more and be less sedantary",
     goalType: "event",
     // endDate: 2021-1-04,
-    milestones: [
+    steps: [
       {
       name: "create physical activity routine",
-      actionItems: []
+      steps: []
       },
       {
        name: "eat better",
-       actionItems: [
+       steps: [
           {
             name: "eat veggies"
           }
@@ -37,10 +37,10 @@ const goalSeed = [
     description: "I haven't worked with C# in years and want familiarize myself with it",
     goalType: "event",
     // endDate: 2021-12-04,
-    milestones: [
+    steps: [
       {
       name: "Improve skill with C#",
-      actionItems: [
+      steps: [
         {
           name: "Read about a C# topic every day"
           }, {
@@ -56,14 +56,14 @@ const goalSeed = [
     description: "I want to learn to play guitar as a creative outlet",
     goaltype: "event",
     // endDate: 2021-5-04,
-    milestones: [{
+    steps: [{
       name: "Learn to read guitar tabs",
-        actionItems: [],
+        steps: [],
         complete: true
       }, 
       {
         name: "Establish a practice routine",
-        actionItems: [{
+        steps: [{
           name: "something random 1",
           complete: true
             }, {
