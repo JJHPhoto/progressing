@@ -1,9 +1,12 @@
 import React from "react";
-import { 
-  Bar, 
-  // Line, 
-  // Pie 
+import {
+  Bar,
+  // Line,
+  // Pie
 } from "react-chartjs-2";
+
+// import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+// const percentage = 66;
 
 const BarChart = () => {
   return (
@@ -44,10 +47,12 @@ const BarChart = () => {
               borderWidth: 1,
             },
             {
-              label: "Goals Made",
+              label: "Milestones completed",
               data: [1, 2, 3, 4, 5, 6, 7],
-              backgroundColor: "blue",
-              borderWidth: "green",
+              backgroundColor: "#01A35A",
+              // backgroundColor: "rbga(1, 163, 90, 0.2)",
+              //rbg values of same color. trying to get working so that i can change oppacity.
+              borderWidth: "#01A35A",
             },
           ],
         }}
