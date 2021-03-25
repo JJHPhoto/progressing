@@ -99,4 +99,4 @@ GoalSchema.virtual("totalStepsPerGoal").get( function () {
 // });
 
 
-module.exports = Goals = mongoose.model("goals", GoalSchema);
+module.exports = Goals = mongoose.model("Goals", GoalSchema);

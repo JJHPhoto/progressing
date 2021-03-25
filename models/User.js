@@ -22,10 +22,17 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  setGoals: [{
-    type: Schema.Types.ObjectId,
-    ref: "Goals",
-  }]
+},
+  {timestamps: true}
+);
+
+UserSchema.virtual('goalsSet', {
+  ref: 'Goals',
+  localField: '_id',
+  foreignField: 'user_id',
 });
+
+UserSchema.set('toObject', {virtuals: true});
+UserSchema.set('toJSON', {virtuals: true});
 
 module.exports = User = mongoose.model("users", UserSchema);
