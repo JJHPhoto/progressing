@@ -1,0 +1,10 @@
+.card {
+  height: 35rem;
+}
+
+.card-header {
+  background-color: #01a35a !important;
+  height: 5rem;
+  text-align: center;
+  color: white;
+}
