@@ -1,20 +1,35 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import DeveloperCards from "../../components/DeveloperCards";
+import devs from "../../components/devs";
 import ProgFooter from "../../components/Footer";
 import { Header } from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
+import Wrapper from "../../components/Wrapper";
 
 function Developers() {
-
-    return (
-        
-        <Container >
-            <NavBar />
-            <Header />
-
-            <h1>Developers</h1>
-            <Row >
+  return (
+    <Container>
+      <NavBar />
+      <Header />
+      <Wrapper>
+        {devs.map((dev) => {
+          return (
+            <DeveloperCards
+              name={dev.name}
+              image={dev.image}
+              role={dev.role}
+              github={dev.github}
+              linkedin={dev.linkedin}
+              description={dev.description}
+              title={dev.title}
+              phone={dev.phone}
+            />
+          );
+        })}
+      </Wrapper>
+      {/* <Row >
                 <Col className="devCard">
                     <Card >
                         <Card.Body>
@@ -81,12 +96,11 @@ function Developers() {
                         </Card.Body>
                     </Card>
                 </Col>
-            </Row>
+            </Row> */}
 
-            <ProgFooter />
-        </Container>
-        
-    )
+      <ProgFooter />
+    </Container>
+  );
 }
 
 export default Developers;

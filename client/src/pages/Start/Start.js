@@ -30,7 +30,9 @@ function Start() {
               </Link>
             </Button>
           </div>
-          <h1 className="text-center" style={{ marginTop: "40px" }}>Your Goals, Your Milestones</h1>
+          <h1 className="text-center" style={{ marginTop: "40px" }}>
+            Your Goals, Your Milestones
+          </h1>
         </div>
         <ProgInfo />
         <ProgFooter />

@@ -1,0 +1,33 @@
+.card {
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+/* body {
+  background: radial-gradient(#01a35a, #ffff, #01a35a);
+} */
+
+/* old styling for ref */
+/* .dev-card {
+  background: #fff;
+  border-radius: 2px;
+  height: 520px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  text-align: left;
+} */
+
+/* .dev-card > .img-container > img {
+  width: 50%;
+} */
+
+/* .dev-card > .content {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  /* font-size: 18px; */
+/* } */
+
+/* .dev-card > .content > ul {
+  list-style-type: none;
+} */

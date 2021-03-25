@@ -12,12 +12,14 @@
 ## Project Team
 
 - [Bryson](https://github.com/Bryson-Palmer)
-- [Dan](https://github.com/DanZosh)
 - [Ian](https://github.com/Ianaac27)
 - [Ilya](https://github.com/ilya-libershteyn)
+- [Josh](https://github.com/JJHPhoto)
 - [Thomas](https://github.com/Tskading)
 
 ## Application Descrition
+
+Our application lets you to track your progress on life goals that you set!
 
 ## Application Demo
 
@@ -31,13 +33,23 @@ To watch a video of the application being fully demo'd please use this link: [Ap
   <img src="https://img.shields.io/badge/-heroku-red" />
   <img src="https://img.shields.io/badge/Passport-9cf" />
   <img src="https://img.shields.io/badge/Javascript-yellow" />
+  <img src="https://img.shields.io/badge/-axios-red" />
   <img src="https://img.shields.io/badge/HTML-orange" />
   <img src="https://img.shields.io/badge/-css-success" />
   <img src="https://img.shields.io/badge/-node.js-green" />
-  <img src="https://img.shields.io/badge/-axios-green" />
   <img src="https://img.shields.io/badge/bcryptjs-informational" />
   <img src="https://img.shields.io/badge/-express-9fc" />
   <img src="https://img.shields.io/badge/-passport-red" />
+
+## Resources
+
+[Shields.io](https://shields.io/)
+
+[React Icons](https://react-icons.github.io/react-icons/)
+
+[Font Awesome](https://fontawesome.com/)
+
+[Screencastify](https://www.screencastify.com/)
 
 ## Workflow
 
@@ -63,12 +75,4 @@ Last bit
 
 - Final sprint.
 
-## Resources
-
-[Shields.io](https://shields.io/)
-
-[React Icons](https://react-icons.github.io/react-icons/)
-
-[Font Awesome](https://fontawesome.com/)
-
-[Screencastify](https://www.screencastify.com/)
+## Future Development
