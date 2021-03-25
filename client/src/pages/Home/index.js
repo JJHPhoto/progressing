@@ -33,7 +33,7 @@ function Home() {
       <NavBar />
       <Header />
       <GoalCarousel chartGoal={goals} />
-      <Goal chartGoal={goals}/>
+      {/* <Goal chartGoal={goals}/> */}
       <ProgFooter />
     </div>
   );

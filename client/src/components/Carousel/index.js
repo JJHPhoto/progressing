@@ -15,7 +15,8 @@ function GoalCarousel(props) {
   console.log(renderObjects);
 
   return (
-    <Carousel className="bg-dark mt-4" interval={null} activeIndex={index} onSelect={handleSelect} style={{height: "220px"}}>
+    
+    <Carousel fade className="p-0 goalCarousel mt-4" interval={null} activeIndex={index} onSelect={handleSelect} >
 
     {renderObjects.map(obj => {
         return (

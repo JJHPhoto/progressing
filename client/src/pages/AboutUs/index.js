@@ -15,14 +15,14 @@ function About() {
         <Header />
  
         <h1>About Us</h1>
-            <Row >
+            <Row className="flex-wrap " >
                 <Col >
                 <p className="text-left mt-5 font-weight-light">
                     You are here because you care.  You care about always moving forward, always growing, always progressing.  Progressing was built and designed by like minded individuals.  Having a way to manage and track your personal growth is more important than ever, given the fast paced world in which we all live.  We are always looking for ways to continually improve ourselves.  We built Progressing because we wanted a way to not only track our goals, but a way to break a substantial goal into smaller actionable pieces.  We did not design Progressing to be your daily 'drink three cups of water' goal app.  We are here because we are looking to better ourselves, and these types of ambitions make defining and tracking your goals more difficult.  This is where we step in, we strongly believe in the S.M.A.R.T (specific, measurable, attainable, relevant, time-bound) acronym in terms of building out your goals.  Head over to the <Link to="/howto">How to Use Progressing</Link> page to learn more!
                 </p>
                 </Col>
  
-                <Col className="img mt-0 mb-5">
+                <Col  className=" img mt-0 mb-5">
                     <img
                         className="d-block w-100"
                         src={Img}
