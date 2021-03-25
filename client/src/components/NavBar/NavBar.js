@@ -28,7 +28,7 @@ function NavBar() {
         </NavDropdown.Item>
 
         <NavDropdown.Item as={Link} to="/about" style={{ textDecoration: 'none', color: 'black'}}>
-          About Us
+          About
         </NavDropdown.Item>
 
         <NavDropdown.Item as={Link} to="/howto" style={{ textDecoration: 'none', color: 'black'}}>

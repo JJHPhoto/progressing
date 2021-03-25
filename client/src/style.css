@@ -1,3 +1,9 @@
 .bg-success {
     background-color: #01A35A !important;
 }
+
+body {
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+ }
