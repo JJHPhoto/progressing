@@ -25,9 +25,16 @@ class API {
    */
   register(userData) {
     console.log("userData", userData)
-    return this.axios.post("/api/register", userData);
+    return this.axios.post("/auth/register", userData);
   }
 
+  lookup(id) {
+    return this.axios.get("/api/user/" + id);
+  }
+
+  lookupAll() {
+    return this.axios.get("/api/user");
+  }
   /**
    * @param {object} userData
    * @param {String} userData.email
@@ -38,11 +45,11 @@ class API {
    * @returns {Promise}
    */
   login(userData) {
-    return this.axios.post("/api/login", userData);
+    return this.axios.post("/auth/login", userData);
   }
 
   authenticated() {
-    return this.axios.post("/api/authenticated");
+    return this.axios.post("/auth/authenticated");
   }
 }
 

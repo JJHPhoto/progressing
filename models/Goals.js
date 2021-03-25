@@ -102,4 +102,4 @@ GoalSchema.virtual("totalTrueCompletes").get( function () {
 
 // daily goals, take all false milestone with steps and divide equally based off enddate
 
-module.exports = Goals = mongoose.model("goals", GoalSchema);
+module.exports = Goals = mongoose.model("Goals", GoalSchema);
