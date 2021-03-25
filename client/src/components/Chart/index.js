@@ -29,7 +29,7 @@ function Chart(props) {
            >
               <div className="d-flex flex-wrap-reverse justify-content-between">
                   <div className="d-flex-column">
-                    <StepsList chartGoal={props.chartGoal} />
+                    <StepsList className="p-0" style={{height: "75%"}} chartGoal={props.chartGoal} />
                   </div>
                   <div>
                       <h3 className="text-success text-center mr-1 mb-3">Days Left: 10</h3>
