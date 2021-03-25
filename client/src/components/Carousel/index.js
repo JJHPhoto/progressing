@@ -16,7 +16,7 @@ function GoalCarousel(props) {
 
   return (
     
-    <Carousel fade className="p-0 goalCarousel mt-4" interval={null} activeIndex={index} onSelect={handleSelect} >
+    <Carousel fade className="p-0 d-block h-100 mb-5 mt-4" interval={null} activeIndex={index} onSelect={handleSelect} >
 
     {renderObjects.map(obj => {
         return (
