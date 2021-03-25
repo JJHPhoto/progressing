@@ -15,8 +15,9 @@ function GoalCarousel(props) {
   console.log(renderObjects);
 
   return (
-    <Carousel data-interval="null" activeIndex={index} onSelect={handleSelect}>
-      {renderObjects.map((obj) => {
+    <Carousel className="bg-dark mt-4" interval={null} activeIndex={index} onSelect={handleSelect} style={{height: "220px"}}>
+
+    {renderObjects.map(obj => {
         return (
           <Carousel.Item>
             <Chart chartGoal={obj} />

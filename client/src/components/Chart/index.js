@@ -1,28 +1,20 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 function Chart(props) {
   return (
-    <div className="mt-4">
+    <div>
       {/* {console.log("charts", props)} */}
-      <Card className="mt-2">
+      <Card className="bg-dark"  style={{height: "220px"}}>
         <Card.Body>
-          <Card.Header className="bg-success mb-2 pb-2">
-            <Link
-              className="text-white"
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <h3>{props.chartGoal.title}</h3>
-            </Link>
-          </Card.Header>
-          <br />
-          <Card.Subtitle className="mb-2 text-muted">
+          {/* <Card.Header className="mb-2 pb-2 bg-dark"> */}
+              <h1 className="text-white text-center mb-5">{props.chartGoal.title}</h1>
+          {/* </Card.Header> */}
+          {/* <br /> */}
+          <Card.Subtitle className="mb-2 text-white text-left" style={{marginLeft: "100px"}}>
             Description:
           </Card.Subtitle>
-          <Card.Text>{props.chartGoal.description}</Card.Text>
-          <Card.Subtitle className="mb-2 text-muted">Notes:</Card.Subtitle>
-          <Card.Text>{props.chartGoal.notes}</Card.Text>
+          <Card.Text className="text-white text-left" style={{marginLeft: "100px"}}>{props.chartGoal.description}</Card.Text>
         </Card.Body>
         
       </Card>

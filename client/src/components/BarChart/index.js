@@ -10,16 +10,7 @@ import {
 
 const BarChart = () => {
   return (
-    <div className="chartjs">
-      {/* <CircularProgressbar
-        value={percentage}
-        text={`${percentage}%`}
-        styles={buildStyles({
-          textColor: "red",
-          pathColor: "turquoise",
-          trailColor: "gold",
-        })}
-      /> */}
+    <div className="chartjs mb-5">
       <Bar
         data={{
           labels: [

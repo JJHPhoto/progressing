@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import { StartHeader } from "../../components/StartHeader";
-// import { ReturnToStart } from "../../components/Login/LoginForm";
 import { useLogin } from "../../utils/auth";
 import { Container } from "react-bootstrap";
 import ErrorNotification from "../../components/ErrorNotification";
+import ProgFooter from "../../components/Footer";
 
 
 function Login() {
@@ -53,8 +53,9 @@ function Login() {
         <button style={{ float: "right", marginBottom: 10 }} className="btn btn-success submitBtn">Submit</button>
         <div> {visible ? <ErrorNotification visible={visible} toggleVisible={toggleVisible} errorMessage={errorMessage}/> : null} </div>
       </form>
-      {/* <ReturnToStart /> */}
+      <ProgFooter />
       </Container>
+      
   );
 }
 

@@ -4,7 +4,6 @@ import Start from "./pages/Start/Start";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
-import Goal from "./pages/Goal";
 import About from "./pages/AboutUs";
 import HowTo from "./pages/HowTo";
 import Developers from "./pages/Developers";
@@ -40,10 +39,6 @@ function App() {
           <PrivateRoute
             exact path="/home"
             component={Home}
-          />
-          <PrivateRoute
-            exact path="/goal"
-            component={Goal}
           />
           <PrivateRoute
             exact path="/creategoal"

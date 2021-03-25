@@ -3,8 +3,8 @@ import { useLogin } from "../../utils/auth";
 import api from "../../utils/API";
 import { StartHeader } from "../../components/StartHeader";
 import { Container } from "react-bootstrap";
-// import { ReturnToStart } from "../../components/Login/LoginForm";
 import ErrorNotification from "../../components/ErrorNotification";
+import ProgFooter from "../../components/Footer";
 
 function SignUp() {
   const emailRef = useRef();
@@ -88,14 +88,14 @@ function SignUp() {
         />
         <br />
         <button
-          style={{ float: "right", marginBottom: 10 }}
-          className="btn btn-success submitBtn"
+          style={{ float: "right"}}
+          className="btn btn-success submitBtn mb-5"
         >
           Submit
         </button>
         <div> {visible ? <ErrorNotification visible={visible} toggleVisible={toggleVisible} errorMessage={errorMessage}/> : null} </div>
       </form>
-      {/* <ReturnToStart /> */}
+     <ProgFooter />
     </Container>
   );
 }

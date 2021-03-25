@@ -6,3 +6,7 @@
 #basic-nav-dropdown::after {
     content: none;
 }
+
+.header {
+    background-color: #01a35a !important;
+}

@@ -11,10 +11,10 @@ function PieProgressBar({chartGoal}) {
         let milestoneComplete = []
         let totalTrueCompletes = 0
         
-        chartGoal.milestones.forEach( function (milestone) {
+        chartGoal.steps.forEach( function (step) {
             
-            if(milestone.actionItems) {
-                actionArray.push(milestone.actionItems)
+            if(step.steps) {
+                actionArray.push(step.steps)
                 var merged = [].concat.apply([], actionArray);
                 merged.forEach(function(item) {
                     let {complete} = item
@@ -26,10 +26,10 @@ function PieProgressBar({chartGoal}) {
                 totalTrueCompletes = totalTrueCompletes + trueActionComplete.length
             }
 
-            if (milestone.actionItems.length === 0){
-                milestoneArray.push(milestone);
-                milestoneArray.forEach(function(milestone) {
-                    let {complete} = milestone
+            if (step.steps.length === 0){
+                milestoneArray.push(step);
+                milestoneArray.forEach(function(step) {
+                    let {complete} = step
                     milestoneComplete.push(complete);
                 })
                     var trueMilestoneComplete = milestoneComplete.filter(function(complete) {
@@ -47,9 +47,11 @@ function PieProgressBar({chartGoal}) {
         const percentage = (((totalTrueCompletes) /  (chartGoal.totalStepsPerGoal)) * 100)
 
         console.log(percentage);
+
+        // const percentage = 100;
         
     return (
-        <div style={{width: "200px"}}>
+        <div style={{width: "260px"}}>
             <CircularProgressbar value={percentage} text={`${percentage}%`} />
         </div>
         

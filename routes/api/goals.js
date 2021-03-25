@@ -7,8 +7,7 @@ router.route("/")
   .post(GoalsController.create);
 
 // Matches with "/api/Goals/:id"
-router
-  .route("/:id")
+router.route("/:id")
   .get(GoalsController.findById)
   .put(GoalsController.update)
   .delete(GoalsController.remove);
