@@ -30,13 +30,15 @@ function Home() {
   };
 
   return (
-    <div className="container">
-      <NavBar />
-      <Header />
-      <div className="goalcard">
+    <div>
+      <div className="container">
+        <NavBar />
+        <Header />
+        {/* <div className="goalcard"> */}
         <GoalCarousel chartGoal={goals} />
+        {/* </div> */}
+        {/* <Goal chartGoal={goals}/> */}
       </div>
-      {/* <Goal chartGoal={goals}/> */}
       <ProgFooter />
     </div>
   );
