@@ -74,5 +74,6 @@ Once we had that working, we were able to build in more components. This let us 
 Last bit
 
 - Final sprint.
+- heroku erros.
 
 ## Future Development
