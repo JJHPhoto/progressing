@@ -7,6 +7,7 @@ import goalAPI from "../../utils/goalApi";
 import GoalCarousel from "../../components/Carousel";
 import ProgFooter from "../../components/Footer";
 import Goal from "../../components/Goal";
+import { Container } from "react-bootstrap";
 
 function Home() {
   // State to display goals
@@ -29,11 +30,15 @@ function Home() {
   };
 
   return (
-    <div className="container">
-      <NavBar />
-      <Header />
-      <GoalCarousel chartGoal={goals} />
-      {/* <Goal chartGoal={goals}/> */}
+    <div>
+      <div className="container">
+        <NavBar />
+        <Header />
+        {/* <div className="goalcard"> */}
+        <GoalCarousel chartGoal={goals} />
+        {/* </div> */}
+        {/* <Goal chartGoal={goals}/> */}
+      </div>
       <ProgFooter />
     </div>
   );

@@ -4,15 +4,14 @@
   width: 4%;
   background-size: 100%, 100%;
   border-radius: 80%;
-  background-color: #01a35a; 
+  background-color: #01a35a;
 }
 
-.carousel-control-next-icon:after
-{
+.carousel-control-next-icon:after {
   /* content: '>'; */
   font-size: 100px;
   color: #01a35a;
-  opacity:1 !important;
+  opacity: 1 !important;
 }
 
 .carousel-control-prev-icon:after {
@@ -22,5 +21,9 @@
 }
 
 .carousel-control {
-    color: #01a35a;
+  color: #01a35a;
+}
+
+.carousel {
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
