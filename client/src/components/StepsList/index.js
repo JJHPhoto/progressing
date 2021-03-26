@@ -14,7 +14,7 @@ function StepsList({ chartGoal }) {
               type="checkbox"
               label={step.name}
             />
-            <ul>
+            {/* <ul>
               {step.steps.map((step) => {
                 return (
                   <Form.Check
@@ -24,7 +24,7 @@ function StepsList({ chartGoal }) {
                   />
                 );
               })}
-            </ul>
+            </ul> */}
           </Form>
           // </Card>
         );
