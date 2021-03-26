@@ -73,7 +73,7 @@ GoalSchema.virtual("totalTrueCompletes").get( function () {
             })
             totalTrueCompletes = totalTrueCompletes + trueActionComplete.length
         }
-        if (step.steps.length == 0){
+        if (step.steps.length === 0){
             milestoneArray.push(step);
             milestoneArray.forEach(function(step) {
                 let {complete} = step
