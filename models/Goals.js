@@ -15,24 +15,15 @@ const GoalSchema = new Schema({
         required: true
     },
     description: String,
-    goalType: String,
-    endDate: Date,
+    endDate: String,
     steps: [ 
         {
+            id: Number,
             name: { type: String},
             complete: {
                 type: Boolean,
                 default: false
             },
-            steps: [
-                {
-                    name: { type: String},
-                    complete: {
-                        type: Boolean,
-                        default: false
-                    },
-                }
-            ]
         }
     ],
     user_id: {
@@ -48,52 +39,10 @@ const GoalSchema = new Schema({
 );
 
 GoalSchema.virtual("totalStepsPerGoal").get( function () {
-    let totalStepsPerGoal = 0;
-    this.steps.forEach( function (step) {
-        if ( step.steps ) {
-            totalStepsPerGoal = totalStepsPerGoal + step.steps.length;
-        } 
-        if (step.steps.length == 0){
-            totalStepsPerGoal = totalStepsPerGoal + 1;
-        }
-    })
+    let totalStepsPerGoal = this.steps.length;
+    
     console.log("totalStepsPerGoal", totalStepsPerGoal);
     return totalStepsPerGoal;
-});
-
-GoalSchema.virtual("totalTrueCompletes").get( function () {
-    let totalTrueCompletes = 0
-    let actionArray = []
-    let actionComplete = []
-    let milestoneArray = []
-    let milestoneComplete = []
-
-    this.steps.forEach( function (step) {
-        if(step.steps) {
-            actionArray.push(step.steps)
-            var merged = [].concat.apply([], actionArray);
-            merged.forEach(function(item) {
-                let {complete} = item
-                actionComplete.push(complete);
-            })
-                var trueActionComplete = actionComplete.filter(function(complete) {
-                return complete === true;
-            })
-            totalTrueCompletes = totalTrueCompletes + trueActionComplete.length
-        }
-        if (step.steps.length == 0){
-            milestoneArray.push(step);
-            milestoneArray.forEach(function(step) {
-                let {complete} = step
-                milestoneComplete.push(complete);
-            })
-                var trueMilestoneComplete = milestoneComplete.filter(function(complete) {
-                return complete === true;
-            })
-           return totalTrueCompletes = totalTrueCompletes + trueMilestoneComplete.length;
-        }
-        console.log("totalTrueCompletes", totalTrueCompletes)
-    })
 });
 
 // date virtual, how much time is left

@@ -17,7 +17,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    console.log("Hi")
     console.log("req.body", req.body)
     db.Goals
       .create(req.body)
@@ -25,7 +24,10 @@ module.exports = {
         console.log("dbModel", dbModel)
         res.json(dbModel)
       })
-      .catch(err => res.status(422).json(err));
+      .catch(err => {res.status(422).json(err)
+        console.log("err", err);
+        console.log("status(422)", status(422));
+      });
   },
   update: function(req, res) {
     db.Goals

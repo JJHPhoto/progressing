@@ -1,3 +1,7 @@
+// Old Goal Form component
+// Exporting all the functional questions
+// Includes the logic for action items and conditional questions
+
 /* eslint-disable no-sequences */
 import React from "react";
 import { Dropdown } from "react-bootstrap";
@@ -23,7 +27,7 @@ export function GoalTitle({ onInputChange, onClick }) {
                 style={{ float: "right", marginBottom: 10 }}
                 className="btn btn-success submitBtn"
             >
-                Next
+                Save
             </button>
         </div>
     );
@@ -48,13 +52,13 @@ export function GoalDescription({ onInputChange, onClick }) {
                 style={{ float: "right", marginBottom: 10 }}
                 className="btn btn-success submitBtn"
             >
-                Next
+                Save
             </button>
         </div>
     );
 }
 
-export function Milestone({ onInputChange, onClick }) {
+export function GoalMilestones({ onInputChange, onClick }) {
     return (
         <div className="form-group goalMilestones">
             <label>
@@ -73,13 +77,96 @@ export function Milestone({ onInputChange, onClick }) {
                 style={{ float: "right", marginBottom: 10 }}
                 className="btn btn-success submitBtn"
             >
-                Next
+                Save
             </button>
         </div>
     );
 }
 
-export function MilestoneDropdown({ onClick }) {
+export function ActionItemDropdown({ onClick }) {
+    return (
+        <Dropdown>
+            Do you want to break your milstone in to action items?
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Action Item
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+                <Dropdown.Item
+                    value={true}
+                    name="actionItem"
+                    onClick={onClick}
+                    id="yes"
+                    as="button">
+                    Yes
+                </Dropdown.Item>
+                <Dropdown.Item
+                    value={false}
+                    name="actionItem"
+                    onClick={onClick}
+                    id="no"
+                    as="button">
+                    No
+                </Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
+    );
+}
+
+export function GoalActionItem({ onInputChange, onClick }) {
+    return (
+        <div className="form-group goalActionItem">
+            <label>
+                Action Item
+                <input
+                    onChange={onInputChange}
+                    type="text"
+                    name="stepsChildren"
+                    className="form-control"
+                    placeholder="Name this action Item"
+                />
+            </label>
+            <button
+                type="button"
+                onClick={onClick}
+                style={{ float: "right", marginBottom: 10 }}
+                className="btn btn-success submitBtn"
+            >
+                Save
+            </button>
+        </div>
+    );
+}
+
+export function AnotherActionItemDropdown({ onClick }) {
+    return (
+        <Dropdown>
+            Do you want to add another action item to this milestone?
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Action Item
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+                <Dropdown.Item
+                    value={true}
+                    name="anotherActionItem"
+                    onClick={onClick}
+                    id="yes"
+                    as="button">
+                    Yes
+                </Dropdown.Item>
+                <Dropdown.Item
+                    value={false}
+                    name="anotherActionItem"
+                    onClick={onClick}
+                    id="no"
+                    as="button">
+                    No
+                </Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
+    );
+}
+
+export function AnotherMilestoneDropdown({ onClick }) {
     return (
         <Dropdown>
             Do you want to add another milestone to your goal?
@@ -156,7 +243,7 @@ export function GoalEndDate({ onInputChange, onClick }) {
                 style={{ float: "right", marginBottom: 10 }}
                 className="btn btn-success submitBtn"
             >
-                Next
+                Save
             </button>
         </div>
     );
@@ -184,7 +271,7 @@ export function Summary({goalSummary}) {
             <p>Goal Description: {goalSummary.description}</p>
             <p>End Date: {goalSummary.endDate}</p>
             {goalSummary.steps.map(step => {
-                return <p key={step.id} >Milestones: {step.name}</p>
+                return <p>Milestones: {step.title}</p>
             })}
         </div>
 
