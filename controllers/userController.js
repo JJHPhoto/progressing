@@ -8,11 +8,14 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    console.log('finding user')
+    console.log('finding user', req.params.id)
     db.User.findById(req.params.id)
       .populate({path: 'goalsSet', model: 'Goals'})
       .then((dbModel) => res.json(dbModel))
-      .catch((err) => res.status(422).json(err));
+      .catch((err) => {
+        console.log(err);
+        
+        res.status(422).json(err)});
   },
   create: function (req, res) {
     db.User.create(req.body)
