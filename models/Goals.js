@@ -18,7 +18,11 @@ const GoalSchema = new Schema({
     endDate: String,
     steps: [ 
         {
+<<<<<<< Updated upstream
             id: Number,
+=======
+            _id: Number,
+>>>>>>> Stashed changes
             name: { type: String},
             complete: {
                 type: Boolean,
@@ -45,6 +49,7 @@ GoalSchema.virtual("totalStepsPerGoal").get( function () {
     return totalStepsPerGoal;
 });
 
+<<<<<<< Updated upstream
 // date virtual, how much time is left
 // take end date and subtract by current date 
 // potential calendar
@@ -52,3 +57,6 @@ GoalSchema.virtual("totalStepsPerGoal").get( function () {
 // daily goals, take all false milestone with steps and divide equally based off enddate
 
 module.exports = Goals = mongoose.model("Goals", GoalSchema);
+=======
+module.exports = Goals = mongoose.model("goals", GoalSchema);
+>>>>>>> Stashed changes
