@@ -15,6 +15,7 @@ import { Header } from "../../components/Header/Header";
 import NavBar from "..//../components/NavBar/NavBar";
 import { useAuthenticatedUser } from "../../utils/auth";
 import goalAPI from "../../utils/goalApi";
+
 // import { propTypes } from "react-bootstrap/esm/Image";
 
 function CreateGoal() {
@@ -163,7 +164,8 @@ function CreateGoal() {
     e.preventDefault();
 
     goalAPI.saveGoal(goalState)
-      .then(res => console.log("res", res))
+      .then(res => console.log("res", res)
+      )
       .catch(err => console.log("err", err));
 
   }
@@ -1121,7 +1123,7 @@ function CreateGoal() {
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
-            onClick={handleFormSubmit} />
+            onClick={handleFormSubmit}  />
         </div>
       }
 

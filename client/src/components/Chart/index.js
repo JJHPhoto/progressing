@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import { Card } from "react-bootstrap";
-import BarChart from "../BarChart";
+// import BarChart from "../BarChart";
 import PieProgressBar from "../PieProgressBar";
 import StepsList from "../StepsList";
 import "./style.css";
 
 function Chart(props) {
+
+  const [steps, setStep] = useState([]);
+
+  console.log("steps", steps)
+
   return (
     <div>
       {/* {console.log("charts", props)} */}
@@ -19,11 +24,11 @@ function Chart(props) {
           <br />
           <Card.Subtitle
             className="mb-2 text-left"
-            style={{ marginLeft: "40px" }}
+            style={{ marginLeft: "8%" }}
           >
             Description:
           </Card.Subtitle>
-          <Card.Text className="text-left" style={{ marginLeft: "60px" }}>
+          <Card.Text className="text-left" style={{ marginLeft: "10%" }}>
             {props.chartGoal.description}
           </Card.Text>
 
@@ -34,23 +39,25 @@ function Chart(props) {
             //  style={{marginLeft: "120px", marginRight: "120px", marginTop: "50px", marginBottom: "50px" }}
             >
               <div className="d-flex flex-wrap-reverse justify-content-between">
-                <div className="d-flex-column">
+                <div className="d-flex-column" style={{overflowY: "scroll", marginLeft: "10%", width: "40%" }}>
                   <StepsList
                     className="p-0"
                     style={{ height: "75%" }}
                     chartGoal={props.chartGoal}
+                    loadSteps={steps} 
+                    setStep={setStep}
                   />
                 </div>
-                <div>
+                <div style={{ marginRight: "17%" }}>
                   <h3 className="text-success text-center mr-1 mb-3">
                     Days Left: 10
                   </h3>
-                  <PieProgressBar chartGoal={props.chartGoal} />
-                  <h2 className="text-center" style={{ marginTop: "80px" }}>
-                    Note Pad
-                  </h2>
+                  <PieProgressBar chartGoal={props.chartGoal}/>
                 </div>
               </div>
+              <h2 className="text-center" style={{ marginTop: "50px" }}>
+                    Note Pad
+                  </h2>
             </div>
           </div>
         </Card.Body>
