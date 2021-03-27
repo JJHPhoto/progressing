@@ -38,6 +38,7 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
             toggleValue = false
             console.log("///////////")
             updateStep(listId, listName);
+
         }
        
     }
@@ -52,7 +53,7 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
                 "value": toggleValue 
             })
             .then(res => 
-
+                
                 loadGoals(user._id)
         )
     };
