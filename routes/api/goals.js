@@ -12,4 +12,7 @@ router.route("/:id")
   .put(GoalsController.update)
   .delete(GoalsController.remove);
 
+router.route("/:id/step")
+  .put(GoalsController.updateStep);
+
 module.exports = router;

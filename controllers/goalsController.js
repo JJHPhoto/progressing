@@ -46,6 +46,14 @@ module.exports = {
       });
   },
 
+  updateStep: function(req, res) {
+    db.Goals
+      .updateOne({"_id": req.params.id, "steps.id": req.body.id}, {"$set": {
+        "steps.$.complete": req.body.value}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
   remove: function(req, res) {
     db.Goals
       .findById({ _id: req.params.id })
