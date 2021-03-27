@@ -29,6 +29,7 @@ To watch a video of the application being fully demo'd please use this link: [Ap
 
 ## Technologies Used
 
+<p>
   <img src="https://img.shields.io/badge/-react-informational" />
   <img src="https://img.shields.io/badge/-heroku-red" />
   <img src="https://img.shields.io/badge/Passport-9cf" />
@@ -40,6 +41,7 @@ To watch a video of the application being fully demo'd please use this link: [Ap
   <img src="https://img.shields.io/badge/bcryptjs-informational" />
   <img src="https://img.shields.io/badge/-express-9fc" />
   <img src="https://img.shields.io/badge/-passport-red" />
+</p>
 
 ## Resources
 

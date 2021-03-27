@@ -8,8 +8,7 @@ import "./style.css";
 function Chart(props) {
 
   const [steps, setStep] = useState([]);
-
-  console.log("steps", steps)
+  const [updatedGoals, setUpdatedGoals] = useState([]);
 
   return (
     <div>
@@ -46,13 +45,18 @@ function Chart(props) {
                     chartGoal={props.chartGoal}
                     loadSteps={steps} 
                     setStep={setStep}
+                    setUpdatedGoals={setUpdatedGoals}
+                    updatedGoals={updatedGoals}
                   />
                 </div>
                 <div style={{ marginRight: "17%" }}>
                   <h3 className="text-success text-center mr-1 mb-3">
                     Days Left: 10
                   </h3>
-                  <PieProgressBar chartGoal={props.chartGoal}/>
+                  <PieProgressBar 
+                  chartGoal={props.chartGoal}
+                  updatedGoals={updatedGoals}
+                  />
                 </div>
               </div>
               <h2 className="text-center" style={{ marginTop: "50px" }}>
