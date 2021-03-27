@@ -39,7 +39,7 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
             console.log("///////////")
             updateStep(listId, listName);
         }
-        console.log()    
+       
     }
 
 // update api route
@@ -54,13 +54,15 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
                 loadGoals(user._id)
         )
     };
+
+    console.log("chartGoal.steps.id", chartGoal.steps.id)
    
 return (
     <>
       {chartGoal.steps.map((step) => {
         return (
                 <Form key={step.id} className="checklist m-5">   
-                    <Form.Check className="milestone-header" name={step.name} type="checkbox" style={{fontSize: "20px"}} id={step._id} value={step.complete} onChange={e => handleChange(e)} label={step.name} checked={step.complete}/>   
+                    <Form.Check className="milestone-header" name={step.name} type="checkbox" style={{fontSize: "20px"}} id={step.id} value={step.complete} onChange={e => handleChange(e)} label={step.name} checked={step.complete}/>   
                 </Form>   
                 )
             })} 
