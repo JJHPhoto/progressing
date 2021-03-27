@@ -14,7 +14,7 @@ function HowTo() {
 
             <Card className="mt-4" >
                 <Card.Header style={{backgroundColor: "#01a35a"}}>
-                    <h1 className="text-center text-white">How to Use Progressing</h1>
+                    <h1 className="text-center text-white" style={{fontSize: "1.25rem"}}>How to Use Progressing</h1>
                 </Card.Header>
             <Row>
                 <Col className="mt-4">
@@ -76,7 +76,7 @@ function HowTo() {
 
             <Card className="my-5">
                 <Card.Header style={{backgroundColor: "#01a35a"}}>
-                    <h1 className="text-center text-white">S.M.A.R.T. Goal Setting</h1>
+                    <h1 className="text-center text-white" style={{fontSize: "1.25rem"}}>S.M.A.R.T. Goal Setting</h1>
                 </Card.Header>
             <Row className="smart ml-3">
                 <h5>Specific</h5>

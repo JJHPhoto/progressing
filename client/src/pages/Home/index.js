@@ -8,6 +8,7 @@ import ProgFooter from "../../components/Footer";
 import { Container } from "react-bootstrap";
 import API from "../../utils/API";
 import {useAuthenticatedUser} from "../../utils/auth";
+import NoGoalsCard from "../../components/NoGoalsCard";
 
 function Home() {
   // State to display goals
@@ -41,9 +42,10 @@ function Home() {
       <div className="container">
         <NavBar />
         <Header />
-        {/* <div className="goalcard"> */}
+        {goals.length === 0 ? <NoGoalsCard />:
         <GoalCarousel chartGoal={goals} setGoals={setGoals} />
-        {/* </div> */}
+        }
+        
       </div>
       <ProgFooter />
     </div>
