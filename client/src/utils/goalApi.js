@@ -15,8 +15,8 @@ const goalAPI = {
     return axios.post("/api/goals", goalData);
   },
 
-  updateGoal: function(id) {
-      return axios.put("/api/goals/" + id)
+  updateGoal: function(id, data) {
+      return axios.put("/api/goals/" + id, data)
   },
 
   deleteGoal: function(id) {

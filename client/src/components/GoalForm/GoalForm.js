@@ -3,6 +3,7 @@ import React from "react";
 import { Dropdown } from "react-bootstrap";
 // import { propTypes } from "react-bootstrap/esm/Image";
 import "./style.css";
+import {Link} from "react-router-dom";
 
 
 export function GoalTitle({ onInputChange, onClick }) {
@@ -198,7 +199,9 @@ export function SubmitGoal({ onClick }) {
             onClick={onClick}
             style={{ float: "right", marginBottom: 10 }}
             className="btn btn-success submitBtn">
-            Submit New Goal
+            <Link to="/home" style={{ textDecoration: "none", color: "white" }}>
+                Submit New Goal
+            </Link>
         </button>
     );
 }

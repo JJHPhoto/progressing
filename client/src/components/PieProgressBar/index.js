@@ -1,62 +1,20 @@
 import React from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
-import 'react-circular-progressbar/dist/styles.css';
+import "react-circular-progressbar/dist/styles.css";
 
-function PieProgressBar({chartGoal}) {
+function PieProgressBar({ chartGoal }) {
+  // equation to get users progress
+  const percentage = Math.round(
+    (chartGoal.totalTrueCompletes / chartGoal.totalStepsPerGoal) * 100
+  );
 
-    //algorithm to collect all users true values
-        // let actionArray = []
-        // let actionComplete = []   
-        // let milestoneArray = []
-        // let milestoneComplete = []
-        // let totalTrueCompletes = 0
-        
-        // chartGoal.steps.forEach( function (step) {
-            
-        //     if(step.steps) {
-        //         actionArray.push(step.steps)
-        //         var merged = [].concat.apply([], actionArray);
-        //         merged.forEach(function(item) {
-        //             let {complete} = item
-        //             actionComplete.push(complete);
-        //         })
-        //             var trueActionComplete = actionComplete.filter(function(complete) {
-        //             return complete === true;
-        //         })
-        //         totalTrueCompletes = totalTrueCompletes + trueActionComplete.length
-        //     }
+  console.log(percentage);
 
-        //     if (step.steps.length === 0){
-        //         milestoneArray.push(step);
-        //         milestoneArray.forEach(function(step) {
-        //             let {complete} = step
-        //             milestoneComplete.push(complete);
-        //         })
-        //             var trueMilestoneComplete = milestoneComplete.filter(function(complete) {
-        //             return complete === true;
-        //         })
-    
-        //        return totalTrueCompletes = totalTrueCompletes + trueMilestoneComplete.length;
-        //     }    
-        // })
-
-        // console.log("totalTrueCompletes", totalTrueCompletes)
-        // console.log("totalStepsPerGoal", chartGoal.totalStepsPerGoal)
-
-        //equation to get users progress
-        // const percentage = (((totalTrueCompletes) /  (chartGoal.totalStepsPerGoal)) * 100)
-
-        // console.log(percentage);
-
-        const percentage = 70;
-        
-    return (
-        <div style={{width: "260px"}}>
-            <CircularProgressbar value={percentage} text={`${percentage}%`} />
-        </div>
-        
-    );
+  return (
+    <div style={{ width: "260px" }}>
+      <CircularProgressbar value={percentage} text={`${percentage}%`} />
+    </div>
+  );
 }
-        
-export default PieProgressBar;
 
+export default PieProgressBar;
