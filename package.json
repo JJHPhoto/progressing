@@ -25,6 +25,7 @@
     "express": "^4.16.3",
     "fastest-validator": "^1.10.1",
     "if-env": "^1.0.4",
+    "moment": "^2.29.1",
     "mongoose": "^5.12.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
