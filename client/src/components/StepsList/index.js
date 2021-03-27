@@ -2,23 +2,26 @@ import React, {useEffect, useState} from "react";
 import "./style.css";
 import {Form } from "react-bootstrap";
 import goalAPI from "../../utils/goalApi";
+import API from "../../utils/API";
+import {useAuthenticatedUser} from "../../utils/auth";
 
-function StepsList({chartGoal, setGoals, loadSteps, setStep, updatedGoals}) {
+function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
+
+  const user = useAuthenticatedUser();
 
     console.log("StepsList Component: chartGoal is each mapped goal ", chartGoal);
-    console.log("StepsList Component: updatedGoals state", updatedGoals)
 
     let toggleValue =""
     let listId = ""
     
       const loadGoals = (req, res) => {
-        goalAPI
-          .getGoals(res)
-          .then((res) => {
-            setGoals(res.data);
-            console.log("StepsList Component: reloadGoals API res.data", res.data);
-          })
-          .catch((err) => console.log(err));
+        API
+        .lookup(req)
+        .then((res) => {
+          setGoals(res.data.goalsSet);
+          console.log("Home Page: res.data", res.data);
+        })
+        .catch((err) => console.log(err));
       };
     
     const handleChange = (e) => {
@@ -50,7 +53,7 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep, updatedGoals}) {
             })
             .then(res => 
 
-                loadGoals()
+                loadGoals(user._id)
         )
     };
    

@@ -3,36 +3,34 @@ import React, { useState, useEffect } from "react";
 import { Header } from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import "./style.css";
-import goalAPI from "../../utils/goalApi";
 import GoalCarousel from "../../components/Carousel";
 import ProgFooter from "../../components/Footer";
 import { Container } from "react-bootstrap";
+import API from "../../utils/API";
+import {useAuthenticatedUser} from "../../utils/auth";
 
 function Home() {
   // State to display goals
   const [goals, setGoals] = useState([]);
 
-  function handleReloadState(req, res) {
-    goalAPI
-      .getGoals(res)
-      .then((res) => {
-        setGoals(res.data);
-        console.log("Home Page: res.data", res.data);
-      })
-      .catch((err) => console.log(err));
-  }
+  const user = useAuthenticatedUser();
+
+  console.log("user", user._id);
+
+  console.log(goals);
 
   useEffect(() => {
-    loadGoals();
+    loadGoals(user._id);
   }, []);
 
   console.log("Home Page: goals state", goals);
 
   const loadGoals = (req, res) => {
-    goalAPI
-      .getGoals(res)
+    console.log(req, res);
+    API
+      .lookup(req)
       .then((res) => {
-        setGoals(res.data);
+        setGoals(res.data.goalsSet);
         console.log("Home Page: res.data", res.data);
       })
       .catch((err) => console.log(err));
@@ -44,7 +42,7 @@ function Home() {
         <NavBar />
         <Header />
         {/* <div className="goalcard"> */}
-        <GoalCarousel chartGoal={goals} setGoals={setGoals} handleReloadState={handleReloadState} />
+        <GoalCarousel chartGoal={goals} setGoals={setGoals} />
         {/* </div> */}
       </div>
       <ProgFooter />
