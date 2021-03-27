@@ -3,33 +3,13 @@ import "./style.css";
 import {Form } from "react-bootstrap";
 import goalAPI from "../../utils/goalApi";
 
-function StepsList({chartGoal, loadSteps, setStep}) {
+function StepsList({chartGoal, loadSteps, setStep, setUpdatedGoals, updatedGoals}) {
 
-    const [updatedGoals, setUpdatedGoals] = useState([]);
-
-    const [currentCheckboxId, setCheckboxId] = useState({
-
-
-        complete: false
-    });
-
-    console.log(loadSteps);
-    console.log (currentCheckboxId);
+    console.log("chartGoal-list", chartGoal);
+    console.log("updatedGoals", updatedGoals)
 
     let toggleValue =""
     let listId = ""
-
-    useEffect(() => {
-        const data = {
-          complete: localStorage.getItem('complete') === 'true' ? true : false,
-        };
-        setCheckboxId(data);
-      }, []);
-
-    // function refreshData() {
-    //     window.location.reload();
-    //   }
-
 
     useEffect(() => {
         reloadGoals();
@@ -45,40 +25,18 @@ function StepsList({chartGoal, loadSteps, setStep}) {
           .catch((err) => console.log(err));
       };
     
-   
-
     const handleChange = (e) => {
         let isChecked = e.target.checked;
             listId = e.target.id;
         let listName = e.target.name;
         
         if (isChecked) {
-            localStorage.setItem("complete", isChecked);
             toggleValue = true
-            setCheckboxId(prevData => ({
-                ...prevData,
-                complete: isChecked
-              }));
-            // setStep({
-            //     complete: toggleValue, 
-            //     _id: listId, 
-            //     name: listName 
-            // });
             console.log("///////////")
             updateStep(listId, listName);
             
         } else {
-            localStorage.setItem("complete", false);
             toggleValue = false
-            setCheckboxId(prevData => ({
-                ...prevData,
-                complete: isChecked
-              }));
-            // setStep({
-            //     "steps.complete": toggleValue, 
-            //     "steps._id": listId, 
-            //     "steps.name": listName 
-            // });
             console.log("///////////")
             updateStep(listId, listName);
         }
@@ -97,23 +55,16 @@ function StepsList({chartGoal, loadSteps, setStep}) {
             .then(res => 
                 // console.log(res)
                 // refreshData()
-                // this.forceUpdate()
                 reloadGoals()
         )
     };
-
-
-
-// const checkedCheckmark = () =>{
-// //Keep check mark checked if the value is true
-// }
 
 return (
     <>
       {chartGoal.steps.map((step) => {
         return (
                 <Form className="checklist m-5">   
-                    <Form.Check className="milestone-header" name={step.name} type="checkbox" style={{fontSize: "20px"}} id={step._id} value={step.complete} onChange={e => handleChange(e)} label={step.name} checked={currentCheckboxId.complete}/>   
+                    <Form.Check className="milestone-header" name={step.name} type="checkbox" style={{fontSize: "20px"}} id={step._id} value={step.complete} onChange={e => handleChange(e)} label={step.name} checked={step.complete}/>   
                 </Form>   
                 )
             })} 

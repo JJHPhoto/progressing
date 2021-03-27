@@ -6,14 +6,14 @@ import "./style.css";
 import goalAPI from "../../utils/goalApi";
 import GoalCarousel from "../../components/Carousel";
 import ProgFooter from "../../components/Footer";
-import Goal from "../../components/Goal";
+// import Goal from "../../components/Goal";
 import { Container } from "react-bootstrap";
 
 function Home() {
   // State to display goals
   const [goals, setGoals] = useState([]);
 
-  console.log(goals);
+  console.log("goals-home", goals);
 
   useEffect(() => {
     loadGoals();
