@@ -3,23 +3,19 @@ import "./style.css";
 import {Form } from "react-bootstrap";
 import goalAPI from "../../utils/goalApi";
 
-function StepsList({chartGoal, loadSteps, setStep, setUpdatedGoals, updatedGoals}) {
+function StepsList({chartGoal, setGoals, loadSteps, setStep, updatedGoals}) {
 
     console.log("chartGoal-list", chartGoal);
     console.log("updatedGoals", updatedGoals)
 
     let toggleValue =""
     let listId = ""
-
-    useEffect(() => {
-        reloadGoals();
-      }, []);
     
-      const reloadGoals = (req, res) => {
+      const loadGoals = (req, res) => {
         goalAPI
           .getGoals(res)
           .then((res) => {
-            setUpdatedGoals(res.data);
+            setGoals(res.data);
             console.log(res.data);
           })
           .catch((err) => console.log(err));
@@ -53,12 +49,11 @@ function StepsList({chartGoal, loadSteps, setStep, setUpdatedGoals, updatedGoals
                 // "steps.name": name 
             })
             .then(res => 
-                // console.log(res)
-                // refreshData()
-                reloadGoals()
+
+                loadGoals()
         )
     };
-
+   
 return (
     <>
       {chartGoal.steps.map((step) => {
