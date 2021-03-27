@@ -1,16 +1,17 @@
 const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 // require("dotenv").config();
-const keys = require("../keys");
+// const keys = require("../keys");
+//josh's attempts to fix jwt issue
 
 const { User } = require("../models");
 
 const opts = {};
 
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = keys.secretOrKey;
-// opts.secretOrKey = process.env.JWT_SECRET;
+// opts.secretOrKey = keys.secretOrKey;
+opts.secretOrKey = process.env.JWT_SECRET;
 
 const authorizeJwtToken = (jwtPayload, done) => {
   User.findById(jwtPayload.id)

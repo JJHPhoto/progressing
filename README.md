@@ -75,5 +75,6 @@ Last bit
 
 - Final sprint.
 - heroku erros.
+- jwt secret.
 
 ## Future Development
