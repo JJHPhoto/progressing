@@ -4,7 +4,7 @@ import ian from "../photos/TeamAvatars-Ian.jpg";
 import ilya from "../photos/TeamAvatars-Ilya.jpg";
 import josh from "../photos/TeamAvatars-Josh.jpg";
 import thomas from "../photos/TeamAvatars-Thomas.jpg";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLink, FaLinkedin } from "react-icons/fa";
 
 const devs = [
   {
@@ -28,6 +28,14 @@ const devs = [
       "I am a husband, father, jiujiteiro, musician, and now a student. I have been a stay-at-home dad for nine years and now I'm transitioning into web development.",
     title: "Full-Stack Web Developer",
     role: "Back End",
+    portfolio: (
+      <Button
+        variant="success"
+        href="https://bryson-palmer.github.io/Portfolio/"
+      >
+        <FaLink /> Portfolio
+      </Button>
+    ),
   },
   {
     id: 2,
@@ -50,6 +58,14 @@ const devs = [
       "Developer with a BA in Mathematics & IT from Northwest University, and a Certificate from the University of Washington- Professional and Continuing Education",
     title: "Full-Stack Web Developer",
     role: "Front & Back End",
+    portfolio: (
+      <Button
+        variant="success"
+        href="https://portfolio-react-ifc.herokuapp.com/"
+      >
+        <FaLink /> Portfolio
+      </Button>
+    ),
   },
   {
     id: 3,
@@ -71,6 +87,11 @@ const devs = [
     description: "Back end guru",
     title: "Full-Stack WebDeveloper",
     role: "Back End",
+    portfolio: (
+      <Button variant="success" href="https://ilya-libershteyn.github.io/">
+        <FaLink /> Portfolio
+      </Button>
+    ),
   },
   {
     id: 4,
@@ -93,7 +114,14 @@ const devs = [
       "Full Stack Web Developer with a background in Photography and Graphic Design. International experience managing diverse groups.",
     title: "Full-Stack Web Developer || Photographer",
     role: "Front End",
-    phone: "206 235 9798",
+    portfolio: (
+      <Button
+        variant="success"
+        href="https://jjh-webdev-portfolio.herokuapp.com/"
+      >
+        <FaLink /> Portfolio
+      </Button>
+    ),
   },
   {
     id: 5,
@@ -116,6 +144,11 @@ const devs = [
       "Current web developer with a background in environmental science.",
     title: "Full-Stack Web Developer",
     role: "Front End",
+    portfolio: (
+      <Button variant="success" href="https://tskportfolioreact.herokuapp.com/">
+        <FaLink /> Portfolio
+      </Button>
+    ),
   },
 ];
 
