@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import { Card } from "react-bootstrap";
+import DeleteButton from "../DeleteButton";
 // import BarChart from "../BarChart";
 import PieProgressBar from "../PieProgressBar";
 import StepsList from "../StepsList";
 import "./style.css";
 
-function Chart({chartGoal, setGoals, handleReloadState}) {
+function Chart({chartGoal, setGoals}) {
 
   const [steps, setStep] = useState([]);
 
@@ -22,15 +23,20 @@ function Chart({chartGoal, setGoals, handleReloadState}) {
             {/* </h1> */}
           </Card.Header>
           <br />
-          <Card.Subtitle
-            className="mb-2 text-left"
-            style={{ marginLeft: "8%" }}
-          >
-            Description:
-          </Card.Subtitle>
-          <Card.Text className="text-left" style={{ marginLeft: "10%" }}>
-            {chartGoal.description}
-          </Card.Text>
+          <div className="d-flex flex-row justify-content-between">
+            <div className="d-flex flex-column">
+              <Card.Subtitle
+                className="mb-2 text-left"
+                style={{ marginLeft: "30%" }}
+              >
+                Description:
+              </Card.Subtitle>
+              <Card.Text className="text-left" style={{ marginLeft: "30%", width: "100%" }}>
+                {chartGoal.description}
+              </Card.Text>
+            </div>
+            <DeleteButton chartGoal={chartGoal} setGoals={setGoals} />
+          </div>
 
           {/* ********************************************************** */}
 
@@ -53,9 +59,7 @@ function Chart({chartGoal, setGoals, handleReloadState}) {
                   <h3 className="text-success text-center mr-1 mb-3">
                     Days Left: 10
                   </h3>
-                  <PieProgressBar 
-                  chartGoal={chartGoal}
-                  />
+                  <PieProgressBar chartGoal={chartGoal}/>
                 </div>
               </div>
               <h2 className="text-center" style={{ marginTop: "50px" }}>

@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Chart from "../../components/Chart";
 import "./style.css";
 
-function GoalCarousel({chartGoal, setGoals, handleReloadState}) {
+function GoalCarousel({chartGoal, setGoals}) {
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
@@ -21,7 +21,7 @@ function GoalCarousel({chartGoal, setGoals, handleReloadState}) {
     {renderObjects.map(obj => {
         return (
           <Carousel.Item key={obj.id}>
-            <Chart chartGoal={obj} setGoals={setGoals}  handleReloadState={handleReloadState}/>
+            <Chart chartGoal={obj} setGoals={setGoals}/>
           </Carousel.Item>
         );
       })}
