@@ -5,10 +5,11 @@ import PieProgressBar from "../PieProgressBar";
 import StepsList from "../StepsList";
 import "./style.css";
 
-function Chart(props) {
+function Chart({chartGoal, setGoals, handleReloadState}) {
 
   const [steps, setStep] = useState([]);
-  const [updatedGoals, setUpdatedGoals] = useState([]);
+
+  console.log("Chart Component: steps state", steps)
 
   return (
     <div>
@@ -17,7 +18,7 @@ function Chart(props) {
         <Card.Body>
           <Card.Header className="mb-2">
             {/* <h1 className="text-center mb-5" style={{ width: "100%" }}> */}
-            <h1>{props.chartGoal.title}</h1>
+            <h1>{chartGoal.title}</h1>
             {/* </h1> */}
           </Card.Header>
           <br />
@@ -28,7 +29,7 @@ function Chart(props) {
             Description:
           </Card.Subtitle>
           <Card.Text className="text-left" style={{ marginLeft: "10%" }}>
-            {props.chartGoal.description}
+            {chartGoal.description}
           </Card.Text>
 
           {/* ********************************************************** */}
@@ -42,11 +43,10 @@ function Chart(props) {
                   <StepsList
                     className="p-0"
                     style={{ height: "75%" }}
-                    chartGoal={props.chartGoal}
+                    chartGoal={chartGoal}
                     loadSteps={steps} 
                     setStep={setStep}
-                    setUpdatedGoals={setUpdatedGoals}
-                    updatedGoals={updatedGoals}
+                    setGoals={setGoals}
                   />
                 </div>
                 <div style={{ marginRight: "17%" }}>
@@ -54,8 +54,7 @@ function Chart(props) {
                     Days Left: 10
                   </h3>
                   <PieProgressBar 
-                  chartGoal={props.chartGoal}
-                  updatedGoals={updatedGoals}
+                  chartGoal={chartGoal}
                   />
                 </div>
               </div>
