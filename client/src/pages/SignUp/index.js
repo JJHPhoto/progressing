@@ -59,7 +59,7 @@ function SignUp() {
     <Container>
       {/* <StartHeader /> */}
       <Header />
-      <form className="form-group" onSubmit={handleSubmit}>
+      <form className="form-group mb-5" onSubmit={handleSubmit}>
         <h2>Start your Journey</h2>
         <input
           className="form-control"
@@ -91,7 +91,7 @@ function SignUp() {
         <br />
         <button
           style={{ float: "right" }}
-          className="btn btn-success submitBtn mb-5"
+          className="btn btn-success submitBtn"
         >
           Submit
         </button>
