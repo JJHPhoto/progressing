@@ -25,20 +25,9 @@ function DeleteButton({ chartGoal, setGoals }) {
   return (
     <Button
       className="delete p-1"
-      // type="button"
-      // className="delete btn btn-primary ml-2"
       style={{
         height: "35px",
         marginRight: "7%",
-        // width: "35px",
-        // width: "5rem",
-        // color: "black",
-        // padding: "1rem",
-        // backgroundColor: "white",
-        // borderColor: "lightgrey",
-        // fontSize: "17.5px",
-        // textAlign: "center",
-        // marginRight: "7%",
       }}
       variant="success"
       onClick={() => deleteGoal(chartGoal._id)}

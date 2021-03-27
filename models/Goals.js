@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const moment = require("moment");
 const Schema = mongoose.Schema;
 
 const GoalSchema = new Schema({
@@ -15,7 +16,7 @@ const GoalSchema = new Schema({
         required: true
     },
     description: String,
-    endDate: String,
+    endDate: Date,
     steps: [ 
         {
 
@@ -66,11 +67,16 @@ if (this.steps){
     }
 });   
 
-
-
 // date virtual, how much time is left
 // take end date and subtract by current date 
 // potential calendar
+GoalSchema.virtual("daysLeft").get( function () {
+    let start = moment(this.date);
+    let end = moment(this.endDate);
+
+    return end.diff(start, "days");
+})
+
 
 // daily goals, take all false milestone with steps and divide equally based off enddate
 

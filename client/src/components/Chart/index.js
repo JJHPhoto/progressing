@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import DeleteButton from "../DeleteButton";
-// import BarChart from "../BarChart";
 import PieProgressBar from "../PieProgressBar";
 import StepsList from "../StepsList";
 import "./style.css";
@@ -13,27 +12,18 @@ function Chart({ chartGoal, setGoals }) {
 
   return (
     <div>
-      {/* {console.log("charts", props)} */}
       <Card className="card-body p-0">
         <Card.Body>
           <Card.Header className="mb-2">
-            {/* <h1 className="text-center mb-5" style={{ width: "100%" }}> */}
             <h1>{chartGoal.title}</h1>
-            {/* </h1> */}
           </Card.Header>
           <br />
           <div className="d-flex flex-row justify-content-between">
             <div className="d-flex flex-column">
-              <Card.Subtitle
-                className="mb-2 text-left ml-3"
-                // style={{ marginLeft: "5%" }}
-              >
+              <Card.Subtitle className="mb-2 text-left ml-3">
                 Description:
               </Card.Subtitle>
-              <Card.Text
-                className="text-left ml-5"
-                // style={{ marginLeft: "5%" }}
-              >
+              <Card.Text className="text-left ml-5">
                 {chartGoal.description}
               </Card.Text>
             </div>
@@ -43,9 +33,7 @@ function Chart({ chartGoal, setGoals }) {
           {/* ********************************************************** */}
 
           <div className="p-0" style={{ width: "100%" }}>
-            <div
-            //  style={{marginLeft: "120px", marginRight: "120px", marginTop: "50px", marginBottom: "50px" }}
-            >
+            <div>
               <div className="d-flex flex-wrap-reverse justify-content-between">
                 <div
                   className="d-flex-column"
