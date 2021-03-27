@@ -12,7 +12,7 @@ function GoalCarousel(props) {
 
   let renderObjects = props.chartGoal;
 
-  console.log("renderObjects", renderObjects);
+  console.log("Carousel Component: renderObjects", renderObjects);
 
   return (
     
@@ -20,7 +20,7 @@ function GoalCarousel(props) {
 
     {renderObjects.map(obj => {
         return (
-          <Carousel.Item>
+          <Carousel.Item key={obj.id}>
             <Chart chartGoal={obj} />
           </Carousel.Item>
         );

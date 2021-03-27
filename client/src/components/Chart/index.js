@@ -10,6 +10,8 @@ function Chart(props) {
   const [steps, setStep] = useState([]);
   const [updatedGoals, setUpdatedGoals] = useState([]);
 
+  console.log("Chart Component: steps state", steps)
+
   return (
     <div>
       {/* {console.log("charts", props)} */}
