@@ -23,7 +23,7 @@ Our application lets you to track your progress on life goals that you set!
 
 ## Application Demo
 
-![](...)
+![image](./client/public/AppSS.jpg)
 
 To watch a video of the application being fully demo'd please use this link: [Application Demo](...).
 
@@ -80,4 +80,9 @@ After we had some feedback, we focused on getting our MVP. We were having some H
 
 With our MVP in sight, we had a good discussion on what we could accomplish before presenting. We decided that a few of our ambitions goals would be for future development. Those goals include:
 
--
+- Create sharable templates. This would allow users who are making goals, they would be able to use a different user's goal that is similar.
+- Create a leaderboard of users. This would be an opt-in option. If some users wanted to compete with their friends or peers to see who could accomplish goals this could be fun for motivation. We would have to make sure that the users could decide how much goals are worth to the entire group on the leaderboard.
+- We wanted to create badges that would stay on a user's profile to show them how much they have accomplished. This would be a fun reminder for the user.
+- We want to be able to remind our users if they are past a deadline for a goal they made. This would be done in a friendly way with the option to change their deadline.
+- We would like to have some animations whenever the user would create and or accomplish a goal. This would let the user know that their goal has been submitted and not keep clicking the submit button if the app lags.
+- We want to add a rich text editor to our Notes component. We think that this would make taking notes inside our app more enjoyable for the user.
