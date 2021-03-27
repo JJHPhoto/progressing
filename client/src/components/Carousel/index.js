@@ -12,7 +12,7 @@ function GoalCarousel(props) {
 
   let renderObjects = props.chartGoal;
 
-  console.log(renderObjects);
+  console.log("renderObjects", renderObjects);
 
   return (
     

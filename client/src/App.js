@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import { useAuthTokenStore, useIsAuthenticated } from "./utils/auth";
 import GuestRoute from "./components/GuestRoute";
 import PrivateRoute from "./components/PrivateRoute";
+// import Goal from "./components/Goal";
 // Importing to overwrite bootstrap 'bg-success' color, TSK 
 import "./style.css";
 
@@ -36,6 +37,11 @@ function App() {
             exact path="/signup"
             component={SignUp}
           />
+          {/* <GuestRoute
+            redirectTo="/home"
+            exact path="/goal"
+            component={Goal}
+          /> */}
           <PrivateRoute
             exact path="/home"
             component={Home}
