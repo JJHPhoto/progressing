@@ -16,11 +16,15 @@ const goalAPI = {
   },
 
   updateGoal: function(id, data) {
-      return axios.put("/api/goals/" + id, data)
+    return axios.put("/api/goals/" + id, data)
+  },
+
+  updateStep: function(id, data) {
+    return axios.put("/api/goals/" + id + "/step", data);
   },
 
   deleteGoal: function(id) {
-  return axios.delete("/api/goals/" + id);
+    return axios.delete("/api/goals/" + id);
   }
 
 };

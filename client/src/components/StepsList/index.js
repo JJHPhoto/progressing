@@ -46,10 +46,10 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
     const updateStep = (id, name) => {
         console.log("data", id, name)
         console.log("toggleValue", toggleValue)
-            goalAPI.updateGoal(chartGoal._id, {
-                "steps.0.complete": toggleValue,
-                // "steps._id": id,
-                // "steps.name": name 
+            goalAPI.updateStep(chartGoal._id, {
+                //"steps.0.complete": toggleValue,
+                "id": id,
+                "value": toggleValue 
             })
             .then(res => 
 
@@ -62,7 +62,7 @@ return (
       {chartGoal.steps.map((step) => {
         return (
                 <Form key={step.id} className="checklist m-5">   
-                    <Form.Check className="milestone-header" name={step.name} type="checkbox" style={{fontSize: "20px"}} id={step._id} value={step.complete} onChange={e => handleChange(e)} label={step.name} checked={step.complete}/>   
+                    <Form.Check className="milestone-header" name={step.name} type="checkbox" style={{fontSize: "20px"}} id={step.id} value={step.complete} onChange={e => handleChange(e)} label={step.name} checked={step.complete}/>   
                 </Form>   
                 )
             })} 
