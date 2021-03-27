@@ -15,15 +15,19 @@ function Chart({ chartGoal, setGoals }) {
       <Card className="card-body p-0">
         <Card.Body>
           <Card.Header className="mb-2">
-            <h1>{chartGoal.title}</h1>
+            <h1 style={{ fontSize: "1.25rem" }}>{chartGoal.title}</h1>
+            {/* </h1> */}
           </Card.Header>
           <br />
           <div className="d-flex flex-row justify-content-between">
             <div className="d-flex flex-column">
-              <Card.Subtitle className="mb-2 text-left ml-3">
+              <Card.Subtitle className=" ml-3 mb-2 text-left">
                 Description:
               </Card.Subtitle>
-              <Card.Text className="text-left ml-5">
+              <Card.Text
+                className="text-left ml-5"
+                style={{ marginLeft: "30%", width: "100%" }}
+              >
                 {chartGoal.description}
               </Card.Text>
             </div>
@@ -59,11 +63,9 @@ function Chart({ chartGoal, setGoals }) {
                   <PieProgressBar chartGoal={chartGoal} />
                 </div>
               </div>
-              <h2 className="text-center" style={{ marginTop: "50px" }}>
-                Note Pad
-              </h2>
             </div>
           </div>
+          <Notes chartGoal={chartGoal} setGoals={setGoals} />
         </Card.Body>
       </Card>
     </div>
