@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
 import { useLogin } from "../../utils/auth";
 import api from "../../utils/API";
-import { StartHeader } from "../../components/StartHeader";
+// import { StartHeader } from "../../components/StartHeader";
 import { Container } from "react-bootstrap";
 import ErrorNotification from "../../components/ErrorNotification";
 import ProgFooter from "../../components/Footer";
+import { Header } from "../../components/Header/Header";
 
 function SignUp() {
   const emailRef = useRef();
@@ -14,7 +15,7 @@ function SignUp() {
 
   const [errorMessage, setErrorMessage] = useState([]);
   const [visible, toggleVisible] = useState(false);
- 
+
   console.log(errorMessage);
 
   // Get the helper login function from the `useLogin` hook.
@@ -42,8 +43,8 @@ function SignUp() {
       // Handle error responses from the API. This will include
       if (err.response && err.response.data) {
         console.log(err.response.data);
-        setErrorMessage(err.response.data)
-        toggleNotification()
+        setErrorMessage(err.response.data);
+        toggleNotification();
       } else {
         console.log(err);
       }
@@ -51,12 +52,13 @@ function SignUp() {
   };
 
   const toggleNotification = () => {
-    toggleVisible(!visible)
-  }
+    toggleVisible(!visible);
+  };
 
   return (
     <Container>
-      <StartHeader />
+      {/* <StartHeader /> */}
+      <Header />
       <form className="form-group" onSubmit={handleSubmit}>
         <h2>Start your Journey</h2>
         <input
@@ -88,14 +90,23 @@ function SignUp() {
         />
         <br />
         <button
-          style={{ float: "right"}}
+          style={{ float: "right" }}
           className="btn btn-success submitBtn mb-5"
         >
           Submit
         </button>
-        <div> {visible ? <ErrorNotification visible={visible} toggleVisible={toggleVisible} errorMessage={errorMessage}/> : null} </div>
+        <div>
+          {" "}
+          {visible ? (
+            <ErrorNotification
+              visible={visible}
+              toggleVisible={toggleVisible}
+              errorMessage={errorMessage}
+            />
+          ) : null}{" "}
+        </div>
       </form>
-     <ProgFooter />
+      <ProgFooter />
     </Container>
   );
 }
