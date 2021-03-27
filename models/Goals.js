@@ -18,6 +18,7 @@ const GoalSchema = new Schema({
     endDate: String,
     steps: [ 
         {
+
             id: Number,
             name: { type: String},
             complete: {
@@ -45,6 +46,7 @@ GoalSchema.virtual("totalStepsPerGoal").get( function () {
     return totalStepsPerGoal;
 });
 
+
 GoalSchema.virtual("totalTrueCompletes").get( function () {
 let milestoneComplete = []
 
@@ -65,6 +67,7 @@ if (this.steps){
 });   
 
 
+
 // date virtual, how much time is left
 // take end date and subtract by current date 
 // potential calendar
@@ -72,3 +75,4 @@ if (this.steps){
 // daily goals, take all false milestone with steps and divide equally based off enddate
 
 module.exports = Goals = mongoose.model("Goals", GoalSchema);
+
