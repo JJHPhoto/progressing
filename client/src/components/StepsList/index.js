@@ -1,101 +1,124 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./style.css";
 import {Form } from "react-bootstrap";
 import goalAPI from "../../utils/goalApi";
 
 function StepsList({chartGoal, loadSteps, setStep}) {
 
+    const [updatedGoals, setUpdatedGoals] = useState([]);
+
+    const [currentCheckboxId, setCheckboxId] = useState({
+
+
+        complete: false
+    });
+
     console.log(loadSteps);
-    
+    console.log (currentCheckboxId);
+
     let toggleValue =""
+    let listId = ""
+
+    useEffect(() => {
+        const data = {
+          complete: localStorage.getItem('complete') === 'true' ? true : false,
+        };
+        setCheckboxId(data);
+      }, []);
+
+    // function refreshData() {
+    //     window.location.reload();
+    //   }
+
+
+    useEffect(() => {
+        reloadGoals();
+      }, []);
+    
+      const reloadGoals = (req, res) => {
+        goalAPI
+          .getGoals(res)
+          .then((res) => {
+            setUpdatedGoals(res.data);
+            console.log(res.data);
+          })
+          .catch((err) => console.log(err));
+      };
+    
+   
 
     const handleChange = (e) => {
         let isChecked = e.target.checked;
-        let listId = e.target.id;
+            listId = e.target.id;
         let listName = e.target.name;
         
         if (isChecked) {
+            localStorage.setItem("complete", isChecked);
             toggleValue = true
-            setStep({
-                complete: toggleValue, 
-                id: listId, 
-                name: listName 
-            });
+            setCheckboxId(prevData => ({
+                ...prevData,
+                complete: isChecked
+              }));
+            // setStep({
+            //     complete: toggleValue, 
+            //     _id: listId, 
+            //     name: listName 
+            // });
             console.log("///////////")
-            // updateStep(loadSteps);
+            updateStep(listId, listName);
             
         } else {
+            localStorage.setItem("complete", false);
             toggleValue = false
-            setStep({
-                complete: toggleValue, 
-                id: listId, 
-                name: listName 
-            });
+            setCheckboxId(prevData => ({
+                ...prevData,
+                complete: isChecked
+              }));
+            // setStep({
+            //     "steps.complete": toggleValue, 
+            //     "steps._id": listId, 
+            //     "steps.name": listName 
+            // });
             console.log("///////////")
-            // updateStep(loadSteps);
-        }    
+            updateStep(listId, listName);
+        }
+        console.log()    
     }
 
 // update api route
-    // const updateStep = (step) => {
-    //     console.log(step)
-    //         goalAPI.updateGoal(step.id, step.complete)
-    //         .then(res => console.log(res)
-    //     )};
+    const updateStep = (id, name) => {
+        console.log("data", id, name)
+        console.log("toggleValue", toggleValue)
+            goalAPI.updateGoal(chartGoal._id, {
+                "steps.0.complete": toggleValue,
+                // "steps._id": id,
+                // "steps.name": name 
+            })
+            .then(res => 
+                // console.log(res)
+                // refreshData()
+                // this.forceUpdate()
+                reloadGoals()
+        )
+    };
 
 
 
 // const checkedCheckmark = () =>{
 // //Keep check mark checked if the value is true
 // }
+
 return (
     <>
       {chartGoal.steps.map((step) => {
         return (
-<<<<<<< HEAD
                 <Form className="checklist m-5">   
-                    <Form.Check className="milestone-header" name={step.name} type="checkbox" style={{marginLeft: "30%"}} id={step.id} value={step.complete} onChange={e => handleChange(e)} label={step.name}/>   
-                    {/* <ul>
-                    {step.steps.map(step =>{
-                        return(
-                            // Maybe I can setState to the actionItem within the line to get the new value, which is changed within the onChange. Once I get the new value, I can pass that into the API route
-                            <Form.Check className="steps-header" type="checkbox" id={step.id} value={step.complete} onChange={null} label={step.name}  />   
-                        )
-                    })}  
-                    </ul> */}
+                    <Form.Check className="milestone-header" name={step.name} type="checkbox" style={{fontSize: "20px"}} id={step._id} value={step.complete} onChange={e => handleChange(e)} label={step.name} checked={currentCheckboxId.complete}/>   
                 </Form>   
                 )
             })} 
         </>
         )
-    }
-        
-=======
-          // <Card>
-          <Form className="checklist m-5">
-            <Form.Check
-              className="milestone-header"
-              type="checkbox"
-              label={step.name}
-            />
-            {/* <ul>
-              {step.steps.map((step) => {
-                return (
-                  <Form.Check
-                    className="steps-header"
-                    type="checkbox"
-                    label={step.name}
-                  />
-                );
-              })}
-            </ul> */}
-          </Form>
-          // </Card>
-        );
-      })}
-    </>
-  );
 }
-
->>>>>>> 74258aec31d429aec9437394538821c6d3f7dff6
+        
 export default StepsList;
