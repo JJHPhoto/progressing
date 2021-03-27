@@ -41,6 +41,7 @@ To watch a video of the application being fully demo'd please use this link: [Ap
   <img src="https://img.shields.io/badge/bcryptjs-informational" />
   <img src="https://img.shields.io/badge/-express-9fc" />
   <img src="https://img.shields.io/badge/-passport-red" />
+  <img src="https://img.shields.io/badge/moments-orange" />
 </p>
 
 ## Resources
@@ -73,10 +74,10 @@ We had a test demo a week before our presentation. So we wanted to have a workin
 
 Once we had that working, we were able to build in more components. This let us make our user's login page more customized. With this in place, we were eager to present to our peers to get some feedback before our last sprint.
 
-Last bit
-
-- Final sprint.
-- heroku erros.
-- jwt secret.
+After we had some feedback, we focused on getting our MVP. We were having some Heroku deployment issues as well as having to update the routes to our database. We pushed through and were able to start focusing on styling our MVP with a few days left till presentation.
 
 ## Future Development
+
+With our MVP in sight, we had a good discussion on what we could accomplish before presenting. We decided that a few of our ambitions goals would be for future development. Those goals include:
+
+-
