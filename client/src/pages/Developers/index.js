@@ -23,7 +23,7 @@ function Developers() {
               linkedin={dev.linkedin}
               description={dev.description}
               title={dev.title}
-              phone={dev.phone}
+              portfolio={dev.portfolio}
             />
           );
         })}
