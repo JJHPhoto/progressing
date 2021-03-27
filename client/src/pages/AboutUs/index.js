@@ -17,7 +17,7 @@ function About() {
         <Row className="flex-wrap ">
           {/* <Col > */}
           <Card className="aboutCard mt-5 mb-5">
-            <Card.Header style={{ backgroundColor: "#01a35a" }}>
+            <Card.Header style={{ backgroundColor: "#01a35a", fontSize: "1.25rem" }}>
               <h1 className="text-center text-white">About</h1>
             </Card.Header>
             <p className="text-left mx-5 mt-4 font-weight-light">
