@@ -46,8 +46,10 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
     const updateStep = (id, name) => {
         console.log("data", id, name)
         console.log("toggleValue", toggleValue)
-            goalAPI.updateGoal(chartGoal._id, {
-                "steps.0.complete": toggleValue,
+            goalAPI.updateStep(chartGoal._id, {
+                //"steps.0.complete": toggleValue,
+                "id": id,
+                "value": toggleValue 
             })
             .then(res => 
 
