@@ -12,7 +12,7 @@ function GoalCarousel({chartGoal, setGoals, handleReloadState}) {
 
   let renderObjects = chartGoal;
 
-  console.log("Carousel Component: renderObjects", renderObjects);
+  console.log("Carousel Component: renderObjects is all goals", renderObjects);
 
   return (
     
