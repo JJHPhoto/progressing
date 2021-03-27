@@ -62,8 +62,8 @@ function About() {
                     </p>
                 </Col>
             </Row> */}
+            <ProgFooter />
       </Container>
-      <ProgFooter />
     </div>
   );
 }

@@ -5,8 +5,8 @@ import goalAPI from "../../utils/goalApi";
 
 function StepsList({chartGoal, setGoals, loadSteps, setStep, updatedGoals}) {
 
-    console.log("chartGoal-list", chartGoal);
-    console.log("updatedGoals", updatedGoals)
+    console.log("StepsList Component: chartGoal is each mapped goal ", chartGoal);
+    console.log("StepsList Component: updatedGoals state", updatedGoals)
 
     let toggleValue =""
     let listId = ""
@@ -16,7 +16,7 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep, updatedGoals}) {
           .getGoals(res)
           .then((res) => {
             setGoals(res.data);
-            console.log(res.data);
+            console.log("StepsList Component: reloadGoals API res.data", res.data);
           })
           .catch((err) => console.log(err));
       };
@@ -58,7 +58,7 @@ return (
     <>
       {chartGoal.steps.map((step) => {
         return (
-                <Form className="checklist m-5">   
+                <Form key={step.id} className="checklist m-5">   
                     <Form.Check className="milestone-header" name={step.name} type="checkbox" style={{fontSize: "20px"}} id={step._id} value={step.complete} onChange={e => handleChange(e)} label={step.name} checked={step.complete}/>   
                 </Form>   
                 )
