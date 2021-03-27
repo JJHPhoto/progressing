@@ -44,7 +44,7 @@ function Login() {
     <Container>
       {/* <StartHeader /> */}
       <Header />
-      <form className="form-group" onSubmit={handleSubmit}>
+      <form className="form-group mb-5" onSubmit={handleSubmit}>
         <h2>Login</h2>
         <input
           className="form-control"
@@ -76,7 +76,7 @@ function Login() {
             />
           ) : null}{" "}
         </div>
-      </form>
+      </form>      
       <ProgFooter />
     </Container>
   );

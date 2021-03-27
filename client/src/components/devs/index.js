@@ -12,7 +12,11 @@ const devs = [
     name: "Bryson Palmer",
     image: bryson,
     github: (
-      <Button variant="success" href="https://github.com/Bryson-Palmer">
+      <Button
+        variant="success"
+        href="https://github.com/Bryson-Palmer"
+        target="_blank"
+      >
         <FaGithub /> GitHub
       </Button>
     ),
@@ -20,6 +24,7 @@ const devs = [
       <Button
         variant="success"
         href="https://www.linkedin.com/in/bryson-palmer-555b3862/"
+        target="_blank"
       >
         <FaLinkedin /> LinkedIn
       </Button>
@@ -32,6 +37,7 @@ const devs = [
       <Button
         variant="success"
         href="https://bryson-palmer.github.io/Portfolio/"
+        target="_blank"
       >
         <FaLink /> Portfolio
       </Button>
@@ -42,7 +48,11 @@ const devs = [
     name: "Ian Fleshman-Cooper",
     image: ian,
     github: (
-      <Button variant="success" href="https://github.com/Ianaac27">
+      <Button
+        variant="success"
+        href="https://github.com/Ianaac27"
+        target="_blank"
+      >
         <FaGithub /> GitHub
       </Button>
     ),
@@ -50,6 +60,7 @@ const devs = [
       <Button
         variant="success"
         href="https://www.linkedin.com/in/ian-fleshman-cooper/"
+        target="_blank"
       >
         <FaLinkedin /> LinkedIn
       </Button>
@@ -62,6 +73,7 @@ const devs = [
       <Button
         variant="success"
         href="https://portfolio-react-ifc.herokuapp.com/"
+        target="_blank"
       >
         <FaLink /> Portfolio
       </Button>
@@ -72,7 +84,11 @@ const devs = [
     name: "Ilya Libershtyen",
     image: ilya,
     github: (
-      <Button variant="success" href="https://github.com/ilya-libershteyn">
+      <Button
+        variant="success"
+        href="https://github.com/ilya-libershteyn"
+        target="_blank"
+      >
         <FaGithub /> GitHub
       </Button>
     ),
@@ -80,6 +96,7 @@ const devs = [
       <Button
         variant="success"
         href="https://www.linkedin.com/in/ilya-libershteyn/"
+        target="_blank"
       >
         <FaLinkedin /> LinkedIn
       </Button>
@@ -88,7 +105,11 @@ const devs = [
     title: "Full-Stack WebDeveloper",
     role: "Back End",
     portfolio: (
-      <Button variant="success" href="https://ilya-libershteyn.github.io/">
+      <Button
+        variant="success"
+        href="https://ilya-libershteyn.github.io/"
+        target="_blank"
+      >
         <FaLink /> Portfolio
       </Button>
     ),
@@ -98,7 +119,11 @@ const devs = [
     name: "Joshua Haller",
     image: josh,
     github: (
-      <Button variant="success" href="https://github.com/JJHPhoto">
+      <Button
+        variant="success"
+        href="https://github.com/JJHPhoto"
+        target="_blank"
+      >
         <FaGithub /> GitHub
       </Button>
     ),
@@ -106,6 +131,7 @@ const devs = [
       <Button
         variant="success"
         href="https://www.linkedin.com/in/joshuajhaller/"
+        target="_blank"
       >
         <FaLinkedin /> LinkedIn
       </Button>
@@ -118,6 +144,7 @@ const devs = [
       <Button
         variant="success"
         href="https://jjh-webdev-portfolio.herokuapp.com/"
+        target="_blank"
       >
         <FaLink /> Portfolio
       </Button>
@@ -128,7 +155,11 @@ const devs = [
     name: "Thomas Kading",
     image: thomas,
     github: (
-      <Button variant="success" href="https://github.com/Tskading">
+      <Button
+        variant="success"
+        href="https://github.com/Tskading"
+        target="_blank"
+      >
         <FaGithub /> GitHub
       </Button>
     ),
@@ -136,6 +167,7 @@ const devs = [
       <Button
         variant="success"
         href="https://www.linkedin.com/in/thomas-kading/"
+        target="_blank"
       >
         <FaLinkedin /> LinkedIn
       </Button>
@@ -145,7 +177,11 @@ const devs = [
     title: "Full-Stack Web Developer",
     role: "Front End",
     portfolio: (
-      <Button variant="success" href="https://tskportfolioreact.herokuapp.com/">
+      <Button
+        variant="success"
+        href="https://tskportfolioreact.herokuapp.com/"
+        target="_blank"
+      >
         <FaLink /> Portfolio
       </Button>
     ),
