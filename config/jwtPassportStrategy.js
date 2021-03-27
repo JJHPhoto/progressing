@@ -2,7 +2,7 @@ const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const mongoose = require("mongoose");
 // require("dotenv").config();
-const keys = require("../controllers/keys");
+const keys = require("../keys");
 
 const { User } = require("../models");
 
