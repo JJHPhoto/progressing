@@ -27,7 +27,7 @@ function Chart({ chartGoal, setGoals }) {
               </Card.Subtitle>
               <Card.Text
                 className="text-left ml-5"
-                style={{ marginLeft: "30%", width: "100%" }}
+                style={{ marginLeft: "30%" }}
               >
                 {chartGoal.description}
               </Card.Text>
