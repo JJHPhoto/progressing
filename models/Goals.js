@@ -45,6 +45,26 @@ GoalSchema.virtual("totalStepsPerGoal").get( function () {
     return totalStepsPerGoal;
 });
 
+GoalSchema.virtual("totalTrueCompletes").get( function () {
+let milestoneComplete = []
+
+if (this.steps){
+        this.steps.forEach(function(step) {
+            let {complete} = step
+            milestoneComplete.push(complete);
+        })
+    
+        var trueMilestoneComplete = milestoneComplete.filter(function(complete) { 
+        return complete === true;     
+        })
+        
+        let totalTrueCompletes = trueMilestoneComplete.length;
+        console.log("totalTrueCompletes", totalTrueCompletes)
+        return totalTrueCompletes 
+    }
+});   
+
+
 // date virtual, how much time is left
 // take end date and subtract by current date 
 // potential calendar

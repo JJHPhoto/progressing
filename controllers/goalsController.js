@@ -29,12 +29,23 @@ module.exports = {
         console.log("status(422)", status(422));
       });
   },
+
+
+  //this is where we need to map the step
   update: function(req, res) {
+    console.log("req.body",req.body);
+    console.log("req.params.id",req.params.id);
     db.Goals
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .updateOne({_id: req.params.id }, {$set: req.body} )
+      .then(dbModel => {
+        res.json(dbModel)  
+        console.log("dbModel", dbModel);
+      })
+      .catch(err => {res.status(422).json(err)
+        console.log("err", err);
+      });
   },
+
   remove: function(req, res) {
     db.Goals
       .findById({ _id: req.params.id })
