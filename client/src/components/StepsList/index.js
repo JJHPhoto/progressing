@@ -48,7 +48,6 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
         console.log("data", id, name)
         console.log("toggleValue", toggleValue)
             goalAPI.updateStep(chartGoal._id, {
-                //"steps.0.complete": toggleValue,
                 "id": id,
                 "value": toggleValue 
             })

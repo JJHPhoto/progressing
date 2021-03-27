@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 // import { propTypes } from "react-bootstrap/esm/Image";
 import {
   GoalTitle,
@@ -61,6 +63,14 @@ function CreateGoal() {
       value
     );
   };
+
+  // Calendar picker state and handler
+  const [date, setDate] = useState(new Date());
+  const onChange = (date) => {
+    const newDate = date.toDateString("en-US");
+    setDate(date);
+    console.log("date", newDate)
+  }
 
   // End Date state and handler
   const [endDate, setEndDate] = useState("");
@@ -224,7 +234,9 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
         <div>
           <p>Let's get a target date for completing this goal. This will assist you in keeping track of your milestones.</p>
-          
+          <Calendar 
+            onChange={onChange} 
+            value={date} />
           <GoalEndDate
             onInputChange={handleEndDate}
             onClick={handleGoalState} />
