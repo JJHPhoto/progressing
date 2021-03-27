@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import DeleteButton from "../DeleteButton";
 import PieProgressBar from "../PieProgressBar";
 import StepsList from "../StepsList";
+import Notes from "../Notes";
 import "./style.css";
 
 function Chart({ chartGoal, setGoals }) {
