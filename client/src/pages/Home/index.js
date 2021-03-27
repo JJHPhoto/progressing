@@ -13,18 +13,18 @@ function Home() {
   // State to display goals
   const [goals, setGoals] = useState([]);
 
-  console.log("goals-home", goals);
-
   useEffect(() => {
     loadGoals();
   }, []);
+
+  console.log("Home Page: goals state", goals);
 
   const loadGoals = (req, res) => {
     goalAPI
       .getGoals(res)
       .then((res) => {
         setGoals(res.data);
-        console.log(res.data);
+        console.log("Home Page: res.data", res.data);
       })
       .catch((err) => console.log(err));
   };
