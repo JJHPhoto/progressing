@@ -47,7 +47,7 @@ function PieProgressBar({ chartGoal }) {
 
   // console.log(percentage);
 
-  const percentage = 100;
+  const percentage = 70;
 
   return (
     <div style={{ width: "260px" }}>
