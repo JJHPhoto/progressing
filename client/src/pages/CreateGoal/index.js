@@ -94,7 +94,7 @@ function CreateGoal() {
 
       setAllSteps([
         {
-          id: allSteps.length,
+          id: allSteps.length + 1,
           name: thisCurrentStep,
           complete: false
         }
@@ -104,7 +104,7 @@ function CreateGoal() {
 
       setAllSteps([
         ...allSteps, {
-          id: allSteps.length,
+          id: allSteps.length + 1,
           name: thisCurrentStep,
           complete: false
         }
