@@ -36,7 +36,7 @@ function Notes({chartGoal, setGoals}) {
             <Card.Body>
                 <Form>
                     <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Goal Notes</Form.Label>
+                        <Form.Label>{chartGoal.title} Notes</Form.Label>
 
                         <Form.Control onChange={(value) => handleNoteValue(value)} defaultValue={chartGoal.notes} className="glowing-border" as="textarea" rows={3}/>
 
