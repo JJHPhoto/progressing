@@ -28,6 +28,7 @@ function StepsList({chartGoal, setGoals}) {
         }).then((res) => {
                 loadUpdatedGoal();
             })
+<<<<<<< Updated upstream
         .catch((err) => console.log(err));
       };
 
@@ -42,6 +43,22 @@ function StepsList({chartGoal, setGoals}) {
         .catch((err) => console.log(err));
       };
 
+=======
+        .catch((err) => console.log(err));
+      };
+
+      const loadUpdatedGoal = (req, res) => {
+        goalAPI
+        .getGoal(chartGoal._id)
+        .then((res) => {
+            checkCompleteStatus(res)
+          console.log("Updated Goal: res", res);
+            })
+        
+        .catch((err) => console.log(err));
+      };
+
+>>>>>>> Stashed changes
     const checkCompleteStatus = (res) => {
         console.log("check status full", res.data.completeFull)
         console.log("check status half", res.data.completeHalf)
