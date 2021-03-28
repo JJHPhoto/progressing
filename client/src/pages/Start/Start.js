@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import ProgFooter from "../../components/Footer";
 import ProgInfo from "../../components/StartInfo";
 import { Header } from "../../components/Header/Header";
-import Tagline from "../../components/Tagline";
 
 function Start() {
   return (
