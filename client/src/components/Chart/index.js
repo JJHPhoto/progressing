@@ -5,6 +5,7 @@ import PieProgressBar from "../PieProgressBar";
 import StepsList from "../StepsList";
 import Notes from "../Notes";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 function Chart({ chartGoal, setGoals }) {
   const [steps, setStep] = useState([]);
@@ -13,7 +14,7 @@ function Chart({ chartGoal, setGoals }) {
 
   return (
     <div>
-      <Card className="card-body p-0">
+      <Card className="card-body p-0" id="#">
         <Card.Body>
           <Card.Header className="mb-2">
             <h1 style={{ fontSize: "1.25rem" }}>{chartGoal.title}</h1>
@@ -27,12 +28,12 @@ function Chart({ chartGoal, setGoals }) {
               </Card.Subtitle>
               <Card.Text
                 className="text-left ml-5"
-                style={{ marginLeft: "30%", width: "100%" }}
+                style={{ marginLeft: "30%" }}
               >
                 {chartGoal.description}
               </Card.Text>
             </div>
-            <DeleteButton chartGoal={chartGoal} setGoals={setGoals} />
+              <DeleteButton chartGoal={chartGoal} setGoals={setGoals} />
           </div>
 
           {/* ********************************************************** */}
@@ -43,6 +44,7 @@ function Chart({ chartGoal, setGoals }) {
                 <div
                   className="d-flex-column"
                   style={{
+                    maxHeight: "250px",
                     overflowY: "scroll",
                     marginLeft: "10%",
                     width: "40%",

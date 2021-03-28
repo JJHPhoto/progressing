@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ProgFooter from "../../components/Footer";
 import { Header } from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
@@ -67,7 +68,7 @@ function HowTo() {
                         8. Additional Features:
 
                             <p className="ml-4 mx-4 font-weight-light">
-                                 From your home page, you can select any of your active goals, and then be taken to a goal page where you can update and complete Action Items, Milestiones, and eventually, your Progressing Goal!
+                                 From your home page, you can select any of your active goals, and then be taken to a goal page where you can update and complete Action Items, Milestiones, and eventually, your Progressing Goal! Checkout our <Link to="/developers">Developers</Link>{" "} page to see more projects from our team!
                             </p>
                     </ol>
                 </Col>
