@@ -68,9 +68,6 @@ if (this.steps){
     }
 });   
 
-// date virtual, how much time is left
-// take end date and subtract by current date 
-// potential calendar
 GoalSchema.virtual("daysLeft").get( function () {
     let start = moment(this.startDate);
     let end = moment(this.endDate);

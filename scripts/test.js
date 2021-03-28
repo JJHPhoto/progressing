@@ -51,3 +51,28 @@ if (goal.steps){
 }
 
 getTrue();
+
+
+getSteps();
+
+function getTrue() {
+
+let milestoneComplete = []
+
+if (goal.steps){
+        goal.steps.forEach(function(step) {
+            let {complete} = step
+            milestoneComplete.push(complete);
+        })
+    
+        var trueMilestoneComplete = milestoneComplete.filter(function(complete) { 
+        return complete === true;     
+        })
+        
+        let totalTrueCompletes = trueMilestoneComplete.length;
+        console.log("totalTrueCompletes", totalTrueCompletes)
+        return totalTrueCompletes 
+    }
+}
+
+getTrue();
