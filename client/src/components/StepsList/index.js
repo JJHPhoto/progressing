@@ -49,7 +49,7 @@ function StepsList({chartGoal, setGoals}) {
             toggleNotification();
         }
         if (res.data.completeHalf === true) {
-            // toggleNotification();
+            
         }
     }  
     
