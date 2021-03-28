@@ -7,7 +7,7 @@ function MessageHalf({visible, toggleVisible}) {
       <Row>
         <Col xs={6} >
           <div className="notification-card">
-            <Toast className="notification-toast" show={visible} onClose={() => toggleVisible(false)} delay={5000} autohide>
+            <Toast className="notification-toast" show={visible} onClose={() => toggleVisible(false)} delay={2000} autohide>
               <Toast.Header>
                 <img
                   src="holder.js/20x20?text=%20"
@@ -16,7 +16,7 @@ function MessageHalf({visible, toggleVisible}) {
                 />
                 <strong className="mr-auto">Almost there!</strong>
               </Toast.Header>
-              <Toast.Body>You are at least half way to reaching the end of your goal.</Toast.Body>
+              <Toast.Body>You are at least half way to reaching the end of your goal!</Toast.Body>
               <Toast.Body>Keep up the great work!</Toast.Body>
             </Toast>
           </div>

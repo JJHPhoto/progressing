@@ -7,10 +7,6 @@ const GoalSchema = new Schema({
         type: Date,
         default: new Date().toISOString()
     },
-    complete: {
-        type: Boolean,
-        default: false
-    },
     title: {
         type: String,
         required: true
@@ -57,16 +53,45 @@ if (this.steps){
             let {complete} = step
             milestoneComplete.push(complete);
         })
-    
         var trueMilestoneComplete = milestoneComplete.filter(function(complete) { 
         return complete === true;     
-        })
-        
+        })  
         let totalTrueCompletes = trueMilestoneComplete.length;
         console.log("totalTrueCompletes", totalTrueCompletes)
         return totalTrueCompletes 
     }
-});   
+}); 
+
+GoalSchema.virtual("completeFull").get( function () { 
+    let milestoneComplete = []
+    let completeFull = false
+    if (this.steps){
+            this.steps.forEach(function(step) {
+                let {complete} = step
+                milestoneComplete.push(complete);
+            })
+            completeFull = milestoneComplete.every(v => v === true);
+            return completeFull;
+      }
+    });   
+
+GoalSchema.virtual("completeHalf").get( function () {
+    let milestoneComplete = []
+    let completeHalf = false
+    if (this.steps){
+            this.steps.forEach(function(step) {
+                let {complete} = step
+                milestoneComplete.push(complete);
+            })
+            var trueMilestoneComplete = milestoneComplete.filter(function(complete) { 
+            return complete === true;     
+            })
+            if ((trueMilestoneComplete.length/milestoneComplete.length) >= .5 && (trueMilestoneComplete.length/milestoneComplete.length) < 1) {
+               completeHalf = true
+            }
+            return completeHalf;
+          }
+    });  
 
 GoalSchema.virtual("daysLeft").get( function () {
     let start = moment(this.startDate);

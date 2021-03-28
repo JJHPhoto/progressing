@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Button, Card, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./style.css";
 import goalAPI from "../../utils/goalApi";
 import API from "../../utils/API";
@@ -9,7 +9,7 @@ import {useAuthenticatedUser} from "../../utils/auth";
 
 function Notes({chartGoal, setGoals}) {
 
-    const [noteValue, setNoteValue] = useState("");
+    // const [noteValue, setNoteValue] = useState("");
 
     const user = useAuthenticatedUser();
 
@@ -27,21 +27,29 @@ function Notes({chartGoal, setGoals}) {
 
       const handleNoteValue = (value) => {
             // console.log(value.target.value);
-        setNoteValue(value.target.value) ;
+        // setNoteValue(value.target.value) ;
+        goalAPI.updateNote(chartGoal._id, {
+                
+            notes: value.target.value
+        })
+        .then(res => 
+            
+            loadGoals(user._id)
+    )
 
       }
 
-    const updateStep = (e) => {
-        e.preventDefault();
-            goalAPI.updateNote(chartGoal._id, {
+    // const updateStep = (e) => {
+    //     e.preventDefault();
+    //         goalAPI.updateNote(chartGoal._id, {
                 
-                notes: noteValue
-            })
-            .then(res => 
+    //             notes: noteValue
+    //         })
+    //         .then(res => 
                 
-                loadGoals(user._id)
-        )
-    };
+    //             loadGoals(user._id)
+    //     )
+    // };
 
     return (
 
@@ -58,13 +66,13 @@ function Notes({chartGoal, setGoals}) {
 
                 </Form>
 
-                <Button onClick={e => updateStep(e)}  variant="success" style={{ float: "right"}}>
+                {/* <Button onClick={e => updateStep(e)}  variant="success" style={{ float: "right"}}>
 
                         <Link className="text-white" >
                             Update Notes
                         </Link>
                     
-                </Button>
+                </Button> */}
 
             </Card.Body>
 

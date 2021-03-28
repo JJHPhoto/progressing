@@ -5,15 +5,22 @@ import goalAPI from "../../utils/goalApi";
 import API from "../../utils/API";
 import {useAuthenticatedUser} from "../../utils/auth";
 import MessageFull from "../MessageComplete";
+import MessageHalf from "../MessageHalf";
 
 function StepsList({chartGoal, setGoals}) {
 
-    const [visible, toggleVisible] = useState(false);
+    const [visibleFull, toggleVisibleFull] = useState(false);
+    const [visibleHalf, toggleVisibleHalf] = useState(false);
 
-    const toggleNotification = () => {
-          toggleVisible(!visible)
+    const toggleNotificationFull = () => {
+          toggleVisibleFull(!visibleFull)
           return;
         }  
+
+    const toggleNotificationHalf = () => {
+        toggleVisibleHalf(!visibleHalf)
+        return;
+        }      
 
   const user = useAuthenticatedUser();
 
@@ -46,10 +53,10 @@ function StepsList({chartGoal, setGoals}) {
         console.log("check status full", res.data.completeFull)
         console.log("check status half", res.data.completeHalf)
         if (res.data.completeFull === true) {
-            toggleNotification();
+            toggleNotificationFull();
         }
         if (res.data.completeHalf === true) {
-            
+            toggleNotificationHalf();
         }
     }  
     
@@ -86,7 +93,8 @@ function StepsList({chartGoal, setGoals}) {
    
 return (
     <>
-     <div>{visible ? <MessageFull visible={visible} toggleVisible={toggleVisible}/> : null}</div>
+     <div>{visibleHalf ? <MessageHalf visible={visibleHalf} toggleVisible={toggleVisibleFull}/> : null}</div>
+     <div>{visibleFull ? <MessageFull visible={visibleFull} toggleVisible={toggleVisibleHalf}/> : null}</div>
       {chartGoal.steps.map((step) => {
         return (
                 <Form key={step.id} className="checklist m-5">   

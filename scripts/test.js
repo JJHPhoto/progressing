@@ -10,7 +10,7 @@ const goal =
       }, 
       {
         name: "Establish a practice routine",
-        complete: false
+        complete: true
       },
       {
         name: "Establish a practice routine",
@@ -76,3 +76,48 @@ if (goal.steps){
 }
 
 getTrue();
+
+function completeFull() {
+
+  let milestoneComplete = []
+  let completeFull = false
+  
+  if (goal.steps){
+          goal.steps.forEach(function(step) {
+              let {complete} = step
+              milestoneComplete.push(complete);
+          })
+
+        completeFull = milestoneComplete.every(v => v === true);
+
+        console.log("completeFull", completeFull);
+
+        return completeFull;
+      
+      }
+  }
+  
+  completeFull();
+
+  function completeHalf() {
+
+    let milestoneComplete = []
+    let completeHalf = false
+    
+    if (goal.steps){
+            goal.steps.forEach(function(step) {
+                let {complete} = step
+                milestoneComplete.push(complete);
+            })
+            var trueMilestoneComplete = milestoneComplete.filter(function(complete) { 
+            return complete === true;     
+            })
+            
+            if ((trueMilestoneComplete.length/milestoneComplete.length) >= .5 && (trueMilestoneComplete.length/milestoneComplete.length) < 1) {
+               completeHalf = true
+            }
+            return completeHalf;
+          }
+    }
+    
+    completeHalf();
