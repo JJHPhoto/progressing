@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card } from "react-bootstrap";
 import DeleteButton from "../DeleteButton";
 import PieProgressBar from "../PieProgressBar";
 import StepsList from "../StepsList";
 import Notes from "../Notes";
 import "./style.css";
-import { Link } from "react-router-dom";
 
-function Chart({ chartGoal, setGoals }) {
-  const [steps, setStep] = useState([]);
-
-  console.log("Chart Component: steps state", steps);
+function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice }) {
 
   return (
+    <>
     <div>
       <Card className="card-body p-0" id="#">
         <Card.Body>
@@ -54,19 +51,20 @@ function Chart({ chartGoal, setGoals }) {
                     className="p-0"
                     style={{ height: "75%" }}
                     chartGoal={chartGoal}
-                    loadSteps={steps}
-                    setStep={setStep}
-                    setGoals={setGoals}
+                    setGoals={setGoals} 
+                    checkCompleteStatus={checkCompleteStatus}
                   />
                 </div>
-                <div style={{ marginRight: "17%" }}>
+                <div style={{ marginRight: "17%" }}  value={chartGoal.daysLeft} id={chartGoal.daysLeftHalf} onChange= {value => handleDeadlineNotice(value)}>
                   {chartGoal.daysLeft ? 
                     <h3 
                       className="text-success text-center mr-1 mb-3">
                       Days Left: {chartGoal.daysLeft}
                     </h3>
                   : null}
-                  <PieProgressBar chartGoal={chartGoal} />
+                  <PieProgressBar 
+                  chartGoal={chartGoal}
+                  />
                 </div>
               </div>
             </div>
@@ -75,6 +73,7 @@ function Chart({ chartGoal, setGoals }) {
         </Card.Body>
       </Card>
     </div>
+    </>
   );
 }
 

@@ -6,15 +6,15 @@ const goal =
     steps: [
         {
         name: "Learn to read guitar tabs",
-        complete: true
+        complete: false
       }, 
       {
         name: "Establish a practice routine",
-        complete: true
+        complete: false
       },
       {
         name: "Establish a practice routine",
-        complete: true
+        complete: false
       }
     ],
     user_id: process.env.USER_ID,
@@ -116,8 +116,33 @@ function completeFull() {
             if ((trueMilestoneComplete.length/milestoneComplete.length) >= .5 && (trueMilestoneComplete.length/milestoneComplete.length) < 1) {
                completeHalf = true
             }
+            console.log("completeHalf", completeHalf)
             return completeHalf;
           }
     }
     
     completeHalf();
+
+    function completeFirst() {
+
+      let milestoneComplete = []
+      let completeFirst = false
+      
+      if (goal.steps){
+              goal.steps.forEach(function(step) {
+                  let {complete} = step
+                  milestoneComplete.push(complete);
+              })
+              var trueMilestoneComplete = milestoneComplete.filter(function(complete) { 
+              return complete === true;     
+              })
+              
+              if ((trueMilestoneComplete.length) === 1 ) {
+                 completeFirst = true
+              }
+              console.log("completeFirst", completeFirst)
+              return completeFirst;
+            }
+      }
+      
+      completeFirst();
