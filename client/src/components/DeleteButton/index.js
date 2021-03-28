@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import { useAuthenticatedUser } from "../../utils/auth";
 import "./style.css";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 function DeleteButton({ chartGoal, setGoals }) {
   const user = useAuthenticatedUser();
@@ -32,7 +33,9 @@ function DeleteButton({ chartGoal, setGoals }) {
       variant="success"
       onClick={() => deleteGoal(chartGoal._id)}
     >
-      <RiDeleteBinLine />
+      {/* <Link to="/home#"> */}
+        <RiDeleteBinLine />
+      {/* </Link> */}
     </Button>
   );
 }
