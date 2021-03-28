@@ -27,7 +27,7 @@ function StepsList({chartGoal, setGoals, checkCompleteStatus}) {
         goalAPI
         .getGoal(chartGoal._id)
         .then((res) => {
-            checkCompleteStatus(res);
+            checkCompleteStatus(res)
           console.log("Updated Goal: res", res);
             })
         

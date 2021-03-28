@@ -5,6 +5,7 @@ import PieProgressBar from "../PieProgressBar";
 import StepsList from "../StepsList";
 import Notes from "../Notes";
 import "./style.css";
+import badge from "../photos/star.png"
 
 function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice }) {
 
@@ -15,7 +16,6 @@ function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice 
         <Card.Body>
           <Card.Header className="mb-2">
             <h1 style={{ fontSize: "1.25rem" }}>{chartGoal.title}</h1>
-            {/* </h1> */}
           </Card.Header>
           <br />
           <div className="d-flex flex-row justify-content-between">
@@ -56,12 +56,19 @@ function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice 
                   />
                 </div>
                 <div style={{ marginRight: "17%" }}  value={chartGoal.daysLeft} id={chartGoal.daysLeftHalf} onChange= {value => handleDeadlineNotice(value)}>
-                  {chartGoal.daysLeft ? 
-                    <h3 
-                      className="text-success text-center mr-1 mb-3">
-                      Days Left: {chartGoal.daysLeft}
-                    </h3>
-                  : null}
+                  <div className="d-flex">
+                    {chartGoal.completeFull === true ? 
+                      <img style={{width: "35px", height: "35px", marginRight: "28px"}}
+                      src={badge}
+                      alt="Badge"/>
+                    : null}
+                    {chartGoal.daysLeft ? 
+                      <h3 
+                        className="text-success text-center mr-1 mb-3">
+                        Days Left: {chartGoal.daysLeft}
+                      </h3>
+                    : null}
+                  </div>
                   <PieProgressBar 
                   chartGoal={chartGoal}
                   />

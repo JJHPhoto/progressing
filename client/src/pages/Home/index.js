@@ -156,7 +156,6 @@ function Home() {
         checkCompleteStatus={checkCompleteStatus}
         handleDeadlineNotice={handleDeadlineNotice} />
         }
-        
       </div>
       <ProgFooter />
     </div>
