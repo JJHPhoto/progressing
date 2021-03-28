@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import "./style.css";
 import {Form } from "react-bootstrap";
 import goalAPI from "../../utils/goalApi";
@@ -40,7 +40,7 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
             updateStep(listId, listName);
 
         }
-        console.log(listId);    
+       
     }
 
 // update api route
@@ -48,7 +48,6 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
         console.log("data", id, name)
         console.log("toggleValue", toggleValue)
             goalAPI.updateStep(chartGoal._id, {
-                //"steps.0.complete": toggleValue,
                 "id": id,
                 "value": toggleValue 
             })
@@ -57,6 +56,8 @@ function StepsList({chartGoal, setGoals, loadSteps, setStep}) {
                 loadGoals(user._id)
         )
     };
+
+    console.log("chartGoal.steps.id", chartGoal.steps.id)
    
 return (
     <>

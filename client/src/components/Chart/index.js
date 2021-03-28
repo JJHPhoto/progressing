@@ -60,9 +60,12 @@ function Chart({ chartGoal, setGoals }) {
                   />
                 </div>
                 <div style={{ marginRight: "17%" }}>
-                  <h3 className="text-success text-center mr-1 mb-3">
-                    Days Left: 10
-                  </h3>
+                  {chartGoal.daysLeft ? 
+                    <h3 
+                      className="text-success text-center mr-1 mb-3">
+                      Days Left: {chartGoal.daysLeft}
+                    </h3>
+                  : null}
                   <PieProgressBar chartGoal={chartGoal} />
                 </div>
               </div>
