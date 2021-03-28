@@ -6,16 +6,14 @@ import { Link } from "react-router-dom";
 import ProgFooter from "../../components/Footer";
 import ProgInfo from "../../components/StartInfo";
 import { Header } from "../../components/Header/Header";
+import Tagline from "../../components/Tagline";
 
 function Start() {
   return (
-    <>
+    <div>
       <Container>
-        {/* <StartHeader /> */}
         <Header />
-
         <div className="start-header mb-4 d-flex justify-content-center flex-row ">
-          {/* <div className="start-buttons d-flex flex-column"> */}
           <Button
             className="main-button mt-4"
             style={{ width: "120px", margin: "10px" }}
@@ -43,15 +41,10 @@ function Start() {
             </Link>
           </Button>
         </div>
-
-        <h1 className="text-center" style={{ marginTop: "40px" }}>
-          Your Goals, Your Milestones
-        </h1>
-
         <ProgInfo />
         <ProgFooter />
       </Container>
-    </>
+    </div>
   );
 }
 
