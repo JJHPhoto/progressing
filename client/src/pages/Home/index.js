@@ -22,7 +22,7 @@ function Home() {
 
   useEffect(() => {
     loadGoals(user._id);
-  }, []);
+  }, [user._id]);
 
   console.log("Home Page: goals state", goals);
 

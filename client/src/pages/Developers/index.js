@@ -16,6 +16,7 @@ function Developers() {
         {devs.map((dev) => {
           return (
             <DeveloperCards
+              key={dev.id}
               name={dev.name}
               image={dev.image}
               role={dev.role}
