@@ -1,10 +1,11 @@
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  height: 5%;
+  height: 175px;
   width: 4%;
-  background-size: 100%, 100%;
-  border-radius: 80%;
-  background-color: #01a35a !important;
+  background-size: 150%, 150%;
+  border-radius: 100%;
+  background-color: #a6a6a6 !important;
+  color: #a6a6a6;
 }
 
 .carousel-control-prev-icon {
@@ -31,8 +32,7 @@
 .carousel-control-prev-icon:after {
   /* content: '<'; */
   font-size: 100px;
-  color: #01a35a;
-
+  color: #a6a6a6;
 }
 
 .carousel-control-prev {
