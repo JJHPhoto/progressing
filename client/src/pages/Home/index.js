@@ -100,18 +100,18 @@ function Home() {
   }
 
   //Notification for deleted goals
-  const deleteGoal = (id) => {
-    goalAPI.deleteGoal(id).then((res) => reloadGoals(user._id), notifyDelete());
-  };
+  // const deleteGoal = (id) => {
+  //   goalAPI.deleteGoal(id).then((res) => reloadGoals(user._id), notifyDelete());
+  // };
 
-  const reloadGoals = (req, res) => {
-    API.lookup(req)
-      .then((res) => {
-        setGoals(res.data.goalsSet);
-        console.log("Home Page: res.data", res.data);
-      })
-      .catch((err) => console.log(err));
-  };
+  // const reloadGoals = (req, res) => {
+  //   API.lookup(req)
+  //     .then((res) => {
+  //       setGoals(res.data.goalsSet);
+  //       console.log("Home Page: res.data", res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   const notifyDelete = () => toast.error('Your goal was deleted! 🗑️', {
     position: "top-center",
@@ -179,7 +179,8 @@ function Home() {
         setGoals={setGoals} 
         checkCompleteStatus={checkCompleteStatus}
         handleDeadlineNotice={handleDeadlineNotice}
-        deleteGoal={deleteGoal}
+        // deleteGoal={deleteGoal}
+        notifyDelete={notifyDelete}
         />
         }
       </div>

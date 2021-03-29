@@ -7,7 +7,7 @@ import Notes from "../Notes";
 import "./style.css";
 import badge from "../photos/star.png"
 
-function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice, deleteGoal }) {
+function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice, deleteGoal, setIndex, notifyDelete }) {
 
   return (
     <>
@@ -30,7 +30,7 @@ function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice,
                 {chartGoal.description}
               </Card.Text>
             </div>
-              <DeleteButton chartGoal={chartGoal} setGoals={setGoals} deleteGoal={deleteGoal} />
+              <DeleteButton chartGoal={chartGoal} setGoals={setGoals} deleteGoal={deleteGoal} setIndex={setIndex} notifyDelete={notifyDelete} />
           </div>
 
           {/* ********************************************************** */}
