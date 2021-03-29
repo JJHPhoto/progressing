@@ -18,6 +18,8 @@ import NavBar from "..//../components/NavBar/NavBar";
 import { useAuthenticatedUser } from "../../utils/auth";
 import goalAPI from "../../utils/goalApi";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function CreateGoal() {
 
@@ -46,9 +48,10 @@ function CreateGoal() {
   const handleTitle = (e) => {
     const { target } = e;
     const { value } = target;
+    const updatedValue= value.charAt(0).toUpperCase() + value.slice(1);
 
     setTitle(
-      value
+      updatedValue
     );
   };
 
@@ -57,9 +60,10 @@ function CreateGoal() {
   const handleDescription = (e) => {
     const { target } = e;
     const { value } = target;
+    const updatedValue= value.charAt(0).toUpperCase() + value.slice(1);
 
     setDescription(
-      value
+      updatedValue
     );
   };
 
@@ -92,7 +96,8 @@ function CreateGoal() {
   const [allSteps, setAllSteps] = useState([]);
   const handleAllSteps = () => {
 
-    const thisCurrentStep = thisStep.value;
+    const updatedValue = thisStep.value;
+    const thisCurrentStep= updatedValue.charAt(0).toUpperCase() + updatedValue.slice(1);
 
     if (allSteps[0] === "") {
 
@@ -173,11 +178,22 @@ function CreateGoal() {
     e.preventDefault();
 
     goalAPI.saveGoal(goalState)
-      .then(res => console.log("res", res)
+      .then(res => notifyCreate()
       )
       .catch(err => console.log("err", err));
 
   }
+
+   //Notification for created goal
+   const notifyCreate = () => toast.info('You have successfully created a goal! 🎯', {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+  });
 
   // Console log different values
   console.log("questionSteps[indexOfCurrentStep]", questionSteps[indexOfCurrentStep]);
@@ -350,6 +366,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -373,6 +397,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -442,6 +474,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -465,6 +505,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -534,6 +582,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -557,6 +613,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -626,6 +690,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -649,6 +721,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -718,6 +798,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -741,6 +829,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -810,6 +906,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -833,6 +937,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -902,6 +1014,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -925,6 +1045,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -994,6 +1122,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -1017,6 +1153,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -1086,6 +1230,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -1109,6 +1261,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -1121,6 +1281,14 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
+           <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
@@ -1133,11 +1301,20 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
+          <ToastContainer 
+            position="top-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable/>
           <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
             onClick={handleFormSubmit}  />
+           
         </div>
       }
 
