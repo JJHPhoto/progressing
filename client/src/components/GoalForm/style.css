@@ -1,11 +1,19 @@
-.titleContainer {
-    max-width: 675px;
-    height: 41vh;
+/****** re-useable ******/
+.goalContainer{
+    max-width: 925px;
+    height: 100%;
     margin: 0rem auto;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
-.goalTitle {
+.paragraph {
+    width: 100%;
+    max-width: 925px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.myContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -21,38 +29,55 @@
     background-color: #01a35a !important;
 }
 
+.toggleButton {
+    margin-left: 2rem;
+}
+
+.progressing {
+    color: #01a35a
+}
+
+.footer{
+    /* height: 10vw; */
+}
+
+
+
+
+/* Media queries */
+
 @media (max-width: 1024px){
-    .titleContainer{
+    .goalContainer{
         height: 62vh !important;
     }
 }
 
 @media (max-width: 768px){
-    .titleContainer{
+    .goalContainer{
         height: 49vh !important;
     }
 }
 
 @media (max-width: 500px){
-    .titleContainer{
+    .goalContainer{
         height: 100% !important;
     }
 }
 
 @media (max-width: 411px){
-    .titleContainer{
+    .goalContainer{
         height: 100% !important;
     }
 }
 
 @media (max-width: 375px){
-    .titleContainer{
-        height: 39vh !important;
+    .goalContainer{
+        height: 100% !important;
     }
 }
 
 @media (max-width: 360px){
-    .titleContainer{
+    .goalContainer{
         height: 100% !important;
     }
 }
