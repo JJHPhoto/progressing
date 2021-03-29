@@ -1,6 +1,6 @@
 /* eslint-disable no-sequences */
 import React from "react";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, Card } from "react-bootstrap";
 // import { propTypes } from "react-bootstrap/esm/Image";
 import "./style.css";
 import {Link} from "react-router-dom";
@@ -8,8 +8,10 @@ import {Link} from "react-router-dom";
 
 export function GoalTitle({ onInputChange, onClick }) {
     return (
-        <div className="titleContainer">
-            <p className="titeText">Let's title your goal.</p>
+        <Card className="titleContainer">
+            <Card.Header style={{backgroundColor: "#01a35a"}}>
+                <h1 className="text-center text-white pt-3" style={{fontSize: "1.25rem"}}>Let's title your goal.</h1>
+            </Card.Header>
             <div
                 className="form-group goalTitle">
                 <input
@@ -28,7 +30,7 @@ export function GoalTitle({ onInputChange, onClick }) {
                     Next
                 </button>
             </div>
-        </div>
+        </Card>
     );
 }
 
