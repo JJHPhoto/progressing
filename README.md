@@ -86,3 +86,5 @@ With our MVP in sight, we had a good discussion on what we could accomplish befo
 - We want to be able to remind our users if they are past a deadline for a goal they made. This would be done in a friendly way with the option to change their deadline.
 - We would like to have some animations whenever the user would create and or accomplish a goal. This would let the user know that their goal has been submitted and not keep clicking the submit button if the app lags.
 - We want to add a rich text editor to our Notes component. We think that this would make taking notes inside our app more enjoyable for the user.
+
+- Adding a line in to make a commit.
