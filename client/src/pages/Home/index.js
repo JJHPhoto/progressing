@@ -11,6 +11,7 @@ import {useAuthenticatedUser} from "../../utils/auth";
 import NoGoalsCard from "../../components/NoGoalsCard";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import goalAPI from "../../utils/goalApi";
 
 function Home() {
   // State to display goals
@@ -40,9 +41,9 @@ function Home() {
       console.log("check status first", res.data.completeFirst)
 
 
-      const percentage = Math.round(
-        (res.data.totalTrueCompletes / res.data.totalStepsPerGoal) * 100
-      )
+    const percentage = Math.round(
+      (res.data.totalTrueCompletes / res.data.totalStepsPerGoal) * 100
+    )
 
     const notifyFirst = () => toast.info('You completed your first step! You can do this! 🙌 ', {
         position: "top-center",
@@ -98,8 +99,31 @@ function Home() {
     }
   }
 
-  //Notifications for deadline
+  //Notification for deleted goals
+  const deleteGoal = (id) => {
+    goalAPI.deleteGoal(id).then((res) => reloadGoals(user._id), notifyDelete());
+  };
 
+  const reloadGoals = (req, res) => {
+    API.lookup(req)
+      .then((res) => {
+        setGoals(res.data.goalsSet);
+        console.log("Home Page: res.data", res.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const notifyDelete = () => toast.error('Your goal was deleted! 🗑️', {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+  });
+
+  // Notifications for deadline
   const handleDeadlineNotice = (value) => {
     let daysLeft = value.target.value;
     let daysLeftHalf = value.target.id
@@ -107,7 +131,7 @@ function Home() {
     console.log("daysLeft", daysLeft)
     console.log("daysLeftHalf", daysLeftHalf)
 
-    const notifyDeadlineHalf = () => toast.warning("You are half way from your deadline! You got this! 🎯", {
+    const notifyDeadlineHalf = () => toast.warning("You are half way from your deadline! You got this! 🕜", {
       position: "top-center",
       autoClose: 10000,
       hideProgressBar: false,
@@ -131,10 +155,10 @@ function Home() {
       notifyDeadlineHalf()
       return;
   }
-  if (daysLeft === 0) {
-    notifyDeadline()
-    return;
-}
+    if (daysLeft === 0) {
+      notifyDeadline()
+      return;
+  }
 }
 
   return (
@@ -154,7 +178,9 @@ function Home() {
         <GoalCarousel chartGoal={goals} 
         setGoals={setGoals} 
         checkCompleteStatus={checkCompleteStatus}
-        handleDeadlineNotice={handleDeadlineNotice} />
+        handleDeadlineNotice={handleDeadlineNotice}
+        deleteGoal={deleteGoal}
+        />
         }
       </div>
       <ProgFooter />
