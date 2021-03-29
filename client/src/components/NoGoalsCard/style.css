@@ -1,0 +1,53 @@
+@media only screen and (max-width: 768px) {
+    .noGoalsButton {
+        justify-content: center;
+        margin-right: 22%;
+    }
+    
+  
+  }
+
+
+@media only screen and (max-width: 500px) {
+    .noGoalHeader {
+        margin-top: -2% !important;
+        padding-bottom: 10px;
+        z-index: 1;
+    }
+    .ngHeader {
+        margin-top: 1%;
+    }
+
+    .noGoalsButton {
+        margin-top: 1%;
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+    
+  
+  }
+
+
+@media only screen and (max-width: 375px) {
+    .noGoalHeader {
+        margin-top: -6% !important;
+        padding-bottom: 10px;
+        z-index: 1;
+    }
+    .ngHeader {
+        margin-top: 1%;
+    }
+
+    .noGoal {
+
+        margin-left: -3% !important;
+    }
+
+    .noGoalsButton {
+        margin-left: 20%;
+    }
+    
+  
+  }
+
+
