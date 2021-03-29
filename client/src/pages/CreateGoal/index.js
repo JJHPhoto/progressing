@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-// import "./style.css";
+import "./style.css";
+import ProgFooter from "../../components/Footer";
 // import { propTypes } from "react-bootstrap/esm/Image";
 import {
   GoalTitle,
@@ -1246,7 +1247,7 @@ function CreateGoal() {
         </div>
       }
 
-{currentStep === 24 &&
+      {currentStep === 24 &&
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
@@ -1317,7 +1318,7 @@ function CreateGoal() {
            
         </div>
       }
-
+    <ProgFooter />
     </div>
   );
 }
