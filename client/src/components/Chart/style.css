@@ -8,3 +8,83 @@
   text-align: center;
   color: white;
 }
+
+.days {
+  margin-right: 10%;
+  margin-top: 6%;
+  
+}
+
+.pie {
+  margin-left: 42%;
+  margin-top: 10%;
+}
+
+.badge {
+  margin-left: 40%;
+}
+
+.steps {
+  margin-bottom: 6%;
+}
+
+@media only screen and (max-width: 992px){
+
+  .daysDiv {
+    margin-left: 13%;
+    margin-top: 20px;
+  }
+
+  .steps {
+    margin-left: 26% !important;
+    width: 80% !important;
+  }
+}
+
+@media only screen and (max-width: 768px){
+
+  .daysDiv {
+    margin-left: 18%;
+    margin-top: 20px;
+  }
+
+  .steps {
+    margin-left: 16% !important ;
+    width: 80% !important ;
+  }
+
+  .pie {
+    margin-left: 8%;
+  }
+
+  .badge {
+    margin-left: 7%
+  }
+
+  .description {
+    max-width: 200px;
+  }
+  
+}
+
+@media only screen and (max-width: 500px) {
+
+  .badge {
+    margin-left: -4%
+  }
+  .pie {
+    margin-left: -8%;
+  }
+
+  .steps {
+    margin-left: 12% !important ;
+    width: 100% !important ;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+
+  .pie {
+    margin-left: -12%;
+  }
+}
