@@ -48,9 +48,10 @@ function CreateGoal() {
   const handleTitle = (e) => {
     const { target } = e;
     const { value } = target;
+    const updatedValue= value.charAt(0).toUpperCase() + value.slice(1);
 
     setTitle(
-      value
+      updatedValue
     );
   };
 
@@ -59,9 +60,10 @@ function CreateGoal() {
   const handleDescription = (e) => {
     const { target } = e;
     const { value } = target;
+    const updatedValue= value.charAt(0).toUpperCase() + value.slice(1);
 
     setDescription(
-      value
+      updatedValue
     );
   };
 
@@ -94,7 +96,8 @@ function CreateGoal() {
   const [allSteps, setAllSteps] = useState([]);
   const handleAllSteps = () => {
 
-    const thisCurrentStep = thisStep.value;
+    const updatedValue = thisStep.value;
+    const thisCurrentStep= updatedValue.charAt(0).toUpperCase() + updatedValue.slice(1);
 
     if (allSteps[0] === "") {
 
