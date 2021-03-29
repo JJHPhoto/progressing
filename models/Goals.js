@@ -113,9 +113,9 @@ GoalSchema.virtual("completeFirst").get( function () {
     }); 
 
 GoalSchema.virtual("daysLeft").get( function () {
-    let curr = moment(new Date().toISOString()).format("DDD");
-    let start = moment(this.date).format("DDD");
-    let end = moment(this.endDate).format("DDD");
+    let curr = moment(new Date()).toISOString();
+    let start = moment(this.date);
+    let end = moment(this.endDate);
 
     if(curr.diff(start, "days") < 0) {
         return end.diff(start, "days");
