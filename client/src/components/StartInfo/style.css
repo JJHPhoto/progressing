@@ -1,5 +1,6 @@
 .startContainer {
     height: 52vh !important;
+    margin-bottom: 120px;
 }
 
 .infoContainer {
@@ -33,7 +34,7 @@
 @media (max-width: 411px){
     .startContainer{
         height: 58vh !important;
-        margin-bottom: -40px;
+        margin-top: 40px;
     }
 }
 

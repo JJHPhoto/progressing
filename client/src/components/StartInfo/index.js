@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 function ProgInfo() {
 
     return (
-        <Container className="startContainer" style={{marginBottom: "80px"}}>
+        <Container className="startContainer">
             <Row className="infoContainer">
                 <Col className="infoCol mb-5">
                     <Link to="/about">
