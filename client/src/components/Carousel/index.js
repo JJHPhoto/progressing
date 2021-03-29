@@ -6,11 +6,13 @@ import "./style.css";
 function GoalCarousel({chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice, deleteGoal}) {
   const [index, setIndex] = useState(0);
 
+  console.log('carousel', index)
+
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
-  let renderObjects = chartGoal;
+  let renderObjects = chartGoal.reverse(chartGoal.date);
 
   console.log("Carousel Component: renderObjects is all goals", renderObjects);
 
