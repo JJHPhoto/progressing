@@ -12,7 +12,7 @@ function GoalCarousel({chartGoal, setGoals, checkCompleteStatus, handleDeadlineN
     setIndex(selectedIndex);
   };
 
-  let renderObjects = chartGoal.reverse(chartGoal.date);
+  let renderObjects = chartGoal;
 
   console.log("Carousel Component: renderObjects is all goals", renderObjects);
 
