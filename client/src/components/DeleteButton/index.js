@@ -1,27 +1,9 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import goalAPI from "../../utils/goalApi";
-import API from "../../utils/API";
-import { useAuthenticatedUser } from "../../utils/auth";
 import "./style.css";
 import { RiDeleteBinLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
 
-function DeleteButton({ chartGoal, setGoals }) {
-  const user = useAuthenticatedUser();
-
-  const deleteGoal = (id) => {
-    goalAPI.deleteGoal(id).then((res) => loadGoals(user._id));
-  };
-
-  const loadGoals = (req, res) => {
-    API.lookup(req)
-      .then((res) => {
-        setGoals(res.data.goalsSet);
-        console.log("Home Page: res.data", res.data);
-      })
-      .catch((err) => console.log(err));
-  };
+function DeleteButton({ chartGoal, setGoals, deleteGoal }) {
 
   return (
     <Button

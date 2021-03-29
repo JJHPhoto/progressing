@@ -7,7 +7,7 @@ import Notes from "../Notes";
 import "./style.css";
 import badge from "../photos/star.png"
 
-function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice }) {
+function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice, deleteGoal }) {
 
   return (
     <>
@@ -30,7 +30,7 @@ function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice 
                 {chartGoal.description}
               </Card.Text>
             </div>
-              <DeleteButton chartGoal={chartGoal} setGoals={setGoals} />
+              <DeleteButton chartGoal={chartGoal} setGoals={setGoals} deleteGoal={deleteGoal} />
           </div>
 
           {/* ********************************************************** */}
@@ -55,7 +55,7 @@ function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice 
                     checkCompleteStatus={checkCompleteStatus}
                   />
                 </div>
-                <div style={{ marginRight: "17%" }}  value={chartGoal.daysLeft} id={chartGoal.daysLeftHalf} onChange= {value => handleDeadlineNotice(value)}>
+                <div style={{ marginRight: "17%" }}> 
                   <div className="d-flex">
                     {chartGoal.completeFull === true ? 
                       <img style={{width: "35px", height: "35px", marginRight: "28px"}}
@@ -63,8 +63,8 @@ function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice 
                       alt="Badge"/>
                     : null}
                     {chartGoal.daysLeft ? 
-                      <h3 
-                        className="text-success text-center mr-1 mb-3">
+                      <h3 value={chartGoal.daysLeft} id={chartGoal.daysLeftHalf} onChange={value => handleDeadlineNotice(value)}
+                        className="text-success text-center mr-1 mb-3" >
                         Days Left: {chartGoal.daysLeft}
                       </h3>
                     : null}
