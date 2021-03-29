@@ -11,7 +11,7 @@ function PieProgressBar({ chartGoal}) {
 
   return (
     <>
-      <div style={{ width: "260px" }}>
+      <div className="pie" style={{ width: "260px" }}>
         <CircularProgressbar
           className="mb-4"
           value={percentage}
