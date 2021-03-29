@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Chart from "../../components/Chart";
 import "./style.css";
 
-function GoalCarousel({chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice, deleteGoal}) {
+function GoalCarousel({chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice, deleteGoal, notifyDelete}) {
   const [index, setIndex] = useState(0);
 
   console.log('carousel', index)
@@ -28,6 +28,8 @@ function GoalCarousel({chartGoal, setGoals, checkCompleteStatus, handleDeadlineN
             checkCompleteStatus={checkCompleteStatus} 
             handleDeadlineNotice={handleDeadlineNotice}
             deleteGoal={deleteGoal}
+            setIndex={setIndex}
+            notifyDelete={notifyDelete}
             />
           </Carousel.Item>
         );
