@@ -6,6 +6,7 @@ import { Container } from "react-bootstrap";
 import ErrorNotification from "../../components/ErrorNotification";
 import ProgFooter from "../../components/Footer";
 import { Header } from "../../components/Header/Header";
+import "./style.css";
 
 function SignUp() {
   const emailRef = useRef();
@@ -59,7 +60,7 @@ function SignUp() {
     <Container>
       {/* <StartHeader /> */}
       <Header />
-      <form className="form-group mb-5" onSubmit={handleSubmit}>
+      <form className="form-group signUpContainer" onSubmit={handleSubmit}>
         <h2>Start your Journey</h2>
         <input
           className="form-control"

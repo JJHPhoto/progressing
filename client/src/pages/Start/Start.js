@@ -41,7 +41,7 @@ function Start() {
           </Button>
         </div>
         <ProgInfo />
-        <ProgFooter />
+        <ProgFooter className="" />
       </Container>
     </div>
   );

@@ -1,0 +1,39 @@
+.signUpContainer {
+    height: 63vh !important;
+}
+
+@media (max-width: 1024px){
+    .signUpContainer{
+        height: 76vh !important;
+    }
+}
+
+@media (max-width: 768px){
+    .signUpContainer{
+        height: 68vh !important;
+    }
+}
+
+@media (max-width: 500px){
+    .signUpContainer{
+        height: 67vh !important;
+    }
+}
+
+@media (max-width: 411px){
+    .signUpContainer{
+        height: 70vh !important;
+    }
+}
+
+@media (max-width: 375px){
+    .signUpContainer{
+        height: 72vh !important;
+    }
+}
+
+@media (max-width: 360px){
+    .signUpContainer{
+        height: 65vh !important;
+    }
+}

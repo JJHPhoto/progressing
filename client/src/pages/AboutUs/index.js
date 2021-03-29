@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ProgFooter from "../../components/Footer";
 import { Header } from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
+import "./style.css";
 // import Img from "../../components/photos/SquaresRight.png"
 // import Img2 from "../../components/photos/SquaresLeft.png"
 
@@ -14,9 +15,9 @@ function About() {
         <NavBar />
         <Header />
 
-        <Row className="flex-wrap ">
+        <div className="flex-wrap aboutContainer">
           {/* <Col > */}
-          <Card className="aboutCard mt-5 mb-5">
+          <Card className="aboutCard my-5">
             <Card.Header style={{ backgroundColor: "#01a35a", fontSize: "1.25rem" }}>
               <h1 className="text-center text-white">About</h1>
             </Card.Header>
@@ -47,14 +48,13 @@ function About() {
                         src={Img}
                         alt="First slide"
                     />         
-                </Col> */}
-        </Row>
+              </Col> */}
+        </div>
         {/* <h1 className="text-right">Progressing</h1>
             <Row >
  
                 <Col className="img mt-0 mb-5"> */}
-
-        {/* </Col>
+              {/* </Col>
  
                 <Col >
                     <p className="text-right font-weight-light mt-5 mb-0">
@@ -62,7 +62,7 @@ function About() {
                     </p>
                 </Col>
             </Row> */}
-            <ProgFooter />
+          <ProgFooter />
       </Container>
     </div>
   );

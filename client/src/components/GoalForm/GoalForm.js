@@ -8,24 +8,26 @@ import {Link} from "react-router-dom";
 
 export function GoalTitle({ onInputChange, onClick }) {
     return (
-        <div
-            className="form-group goalTitle">
-                Name your goal
-            <input
-                onChange={onInputChange}
-                name="title"
-                className="form-control"
-                placeholder="Goal Title (required)"
-            />
+        <div className="titleContainer">
+            <p className="titeText">Let's title your goal.</p>
+            <div
+                className="form-group goalTitle">
+                <input
+                    onChange={onInputChange}
+                    name="title"
+                    className="form-control inputField"
+                    placeholder="Goal Title (required)"
+                />
 
-            <button
-                type="button"
-                onClick={onClick}
-                style={{ float: "right", marginBottom: 10 }}
-                className="btn btn-success submitBtn"
-            >
-                Next
-            </button>
+                <button
+                    type="button"
+                    onClick={onClick}
+                    style={{ float: "right", marginBottom: 10 }}
+                    className="btn btn-success submitBtn"
+                >
+                    Next
+                </button>
+            </div>
         </div>
     );
 }
