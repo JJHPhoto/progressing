@@ -1,3 +1,48 @@
+.startContainer {
+    height: 52vh !important;
+}
+
+.infoContainer {
+    position: relative;
+    top: 20%;
+}
+
 .infoCol {
    
+}
+
+@media (max-width: 1024px){
+    .startContainer{
+        height: 69vh !important;
+    }
+}
+
+@media (max-width: 768px){
+    .startContainer{
+        height: 59vh !important;
+    }
+}
+
+@media (max-width: 500px){
+    .startContainer{
+        height: 55vh !important;
+    }
+}
+
+@media (max-width: 411px){
+    .startContainer{
+        height: 58vh !important;
+    }
+}
+
+@media (max-width: 375px){
+    .startContainer{
+        height: 60vh !important;
+    }
+}
+
+@media (max-width: 360px){
+    .startContainer{
+        height: 50vh !important;
+    }
 }

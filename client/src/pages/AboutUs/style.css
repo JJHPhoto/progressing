@@ -1,10 +1,10 @@
 .aboutContainer {
-    height: 77vh !important;
+    height: 55vh !important;
 }
 
 @media (max-width: 1024px){
     .aboutContainer{
-        height: 71vh !important;
+        height: 70vh !important;
     }
 }
 
