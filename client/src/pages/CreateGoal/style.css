@@ -1,0 +1,18 @@
+.titleCard {
+
+}
+
+.titleParagraph {
+    width: 80%;
+    max-width: 800px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.goals {
+    color: #01a35a
+}
+
+.progressing {
+    color: #01a35a
+}

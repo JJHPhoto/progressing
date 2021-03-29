@@ -42,7 +42,6 @@ function Login() {
 
   return (
     <Container>
-      {/* <StartHeader /> */}
       <Header />
       <form className="form-group mb-5" onSubmit={handleSubmit}>
         <h2>Login</h2>
@@ -66,7 +65,6 @@ function Login() {
         >
           Submit
         </button>
-        <div>
           {" "}
           {visible ? (
             <ErrorNotification
@@ -75,7 +73,6 @@ function Login() {
               errorMessage={errorMessage}
             />
           ) : null}{" "}
-        </div>
       </form>      
       <ProgFooter />
     </Container>

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 // import { propTypes } from "react-bootstrap/esm/Image";
 import {
   GoalTitle,
@@ -6,7 +8,6 @@ import {
   Milestone,
   MilestoneDropdown,
   GoalTypeDropdown,
-  GoalEndDate,
   DoneButton,
   Summary,
   SubmitGoal,
@@ -15,8 +16,6 @@ import { Header } from "../../components/Header/Header";
 import NavBar from "..//../components/NavBar/NavBar";
 import { useAuthenticatedUser } from "../../utils/auth";
 import goalAPI from "../../utils/goalApi";
-
-// import { propTypes } from "react-bootstrap/esm/Image";
 
 function CreateGoal() {
 
@@ -62,16 +61,19 @@ function CreateGoal() {
     );
   };
 
-  // End Date state and handler
-  const [endDate, setEndDate] = useState("");
-  const handleEndDate = (e) => {
-    const { target } = e;
-    const { value } = target;
+  // Calendar picker state and handler
+  const [startDate, setStartDate] = useState(new Date());
+  const handleStartDate = (startDate) => {
+    setStartDate(startDate);
+    console.log("startDate", startDate)
+  }
 
-    setEndDate(
-      value
-    );
-  };
+  // Calendar picker state and handler
+  const [endDate, setEndDate] = useState(new Date());
+  const handleEndDate = (endDate) => {
+    setEndDate(endDate);
+    console.log("endDate", endDate)
+  }
 
   // The user's current step state and handler
   const [thisStep, setThisStep] = useState("");
@@ -135,13 +137,15 @@ function CreateGoal() {
 
     const thisTitle = title;
     const thisDescription = description;
-    const thisEndDate = endDate;
+    const thisStartDate = startDate.toISOString();
+    const thisEndDate = endDate.toISOString();
 
     setGoalState({
       ...goalState,
       complete: false,
       title: thisTitle,
       description: thisDescription,
+      startDate: thisStartDate,
       endDate: thisEndDate
     });
 
@@ -178,9 +182,6 @@ function CreateGoal() {
   if (description) {
     console.log("description", description);
   }
-  if (endDate) {
-    console.log("endDate", endDate);
-  }
   console.log("thisStep", thisStep);
   console.log("allSteps", allSteps);
   console.log("conditionalQs", conditionalQs);
@@ -194,7 +195,6 @@ function CreateGoal() {
       {currentStep === 1 &&
         <div>
           <p>Let's define your goal at the root level. Type in a phrase that generally sums up what you hope to accomplish.</p>
-          
           <GoalTitle
             onInputChange={handleTitle}
             onClick={handleGoalState} />
@@ -224,10 +224,20 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
         <div>
           <p>Let's get a target date for completing this goal. This will assist you in keeping track of your milestones.</p>
-          
-          <GoalEndDate
-            onInputChange={handleEndDate}
-            onClick={handleGoalState} />
+          <Calendar 
+            onChange={handleStartDate} 
+            value={startDate} />
+          <Calendar 
+            onChange={handleEndDate} 
+            value={endDate} />
+          <button
+                type="button"
+                onClick={handleGoalState}
+                style={{ float: "right", marginBottom: 10 }}
+                className="btn btn-success submitBtn"
+            >
+                Next
+            </button>
         </div>
       }
           
