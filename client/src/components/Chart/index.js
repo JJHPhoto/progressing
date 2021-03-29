@@ -20,12 +20,13 @@ function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice,
           <br />
           <div className="d-flex flex-row justify-content-between">
             <div className="d-flex flex-column">
-              <Card.Subtitle className=" ml-3 mb-2 text-left">
+              <Card.Subtitle className=" ml-3 mb-3 text-left">
                 Description:
               </Card.Subtitle>
               <Card.Text
-                className="text-left ml-5"
-                style={{ marginLeft: "30%" }}
+                className="description text-left mb-0
+                 ml-5"
+                style={{ marginLeft: "30%", }}
               >
                 {chartGoal.description}
               </Card.Text>
@@ -39,7 +40,7 @@ function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice,
             <div>
               <div className="d-flex flex-wrap-reverse justify-content-between">
                 <div
-                  className="d-flex-column"
+                  className="steps d-flex-column"
                   style={{
                     maxHeight: "250px",
                     overflowY: "scroll",
@@ -55,8 +56,8 @@ function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice,
                     checkCompleteStatus={checkCompleteStatus}
                   />
                 </div>
-                <div style={{ marginRight: "17%" }}> 
-                  <div className="d-flex">
+                <div className="daysDiv" style={{ marginRight: "17%" }}  value={chartGoal.daysLeft} id={chartGoal.daysLeftHalf} onChange= {value => handleDeadlineNotice(value)}>
+                  <div className="badge days d-flex">
                     {chartGoal.completeFull === true ? 
                       <img style={{width: "35px", height: "35px", marginRight: "28px"}}
                       src={badge}

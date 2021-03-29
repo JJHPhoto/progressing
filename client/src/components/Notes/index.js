@@ -32,7 +32,7 @@ function Notes({chartGoal, setGoals}) {
 
     return (
 
-        <Card>
+        <Card className="mt-3">
             <Card.Body>
                 <Form>
                     <Form.Group controlId="exampleForm.ControlTextarea1">
