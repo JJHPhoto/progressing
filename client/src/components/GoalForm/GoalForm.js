@@ -4,7 +4,6 @@ import { Dropdown, Card } from "react-bootstrap";
 // import { propTypes } from "react-bootstrap/esm/Image";
 import "./style.css";
 import {Link} from "react-router-dom";
-import ProgFooter from "../../components/Footer";
 
 
 export function GoalTitle({ onInputChange, onClick }) {
@@ -32,7 +31,6 @@ export function GoalTitle({ onInputChange, onClick }) {
                     Next
                 </button>
             </div>
-            <ProgFooter className="footer"/>
         </Card>
     );
 }
@@ -63,7 +61,6 @@ export function GoalDescription({ onInputChange, onClick }) {
                     Next
                 </button>
             </div>
-            <ProgFooter className="footer"/>
         </Card>
     );
 }
@@ -94,7 +91,6 @@ export function Milestone({ onInputChange, onClick }) {
                     Next
                 </button>
             </div>
-            <ProgFooter className="footer"/>
         </Card>
     );
 }
@@ -134,7 +130,6 @@ export function MilestoneDropdown({ onClick }) {
                     </Dropdown.Menu>
                 </Dropdown>
             </div>
-            <ProgFooter className="footer"/>
         </Card>
     );
 }
@@ -174,7 +169,6 @@ export function GoalTypeDropdown({ onClick }) {
                     </Dropdown.Menu>
                 </Dropdown>
             </div>
-            <ProgFooter className="footer"/>
         </Card>
     );
 }

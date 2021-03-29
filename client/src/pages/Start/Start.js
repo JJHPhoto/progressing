@@ -3,7 +3,6 @@ import "./style.css";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 // import { StartHeader } from "../../components/StartHeader";
-import ProgFooter from "../../components/Footer";
 import ProgInfo from "../../components/StartInfo";
 import { Header } from "../../components/Header/Header";
 
@@ -41,7 +40,6 @@ function Start() {
           </Button>
         </div>
         <ProgInfo />
-        <ProgFooter className="" />
       </Container>
     </div>
   );

@@ -4,14 +4,11 @@ import { Header } from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import "./style.css";
 import GoalCarousel from "../../components/Carousel";
-import ProgFooter from "../../components/Footer";
-import { Container } from "react-bootstrap";
 import API from "../../utils/API";
 import {useAuthenticatedUser} from "../../utils/auth";
 import NoGoalsCard from "../../components/NoGoalsCard";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import goalAPI from "../../utils/goalApi";
 
 function Home() {
   // State to display goals
@@ -99,20 +96,6 @@ function Home() {
     }
   }
 
-  //Notification for deleted goals
-  // const deleteGoal = (id) => {
-  //   goalAPI.deleteGoal(id).then((res) => reloadGoals(user._id), notifyDelete());
-  // };
-
-  // const reloadGoals = (req, res) => {
-  //   API.lookup(req)
-  //     .then((res) => {
-  //       setGoals(res.data.goalsSet);
-  //       console.log("Home Page: res.data", res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
   const notifyDelete = () => toast.error('Your goal was deleted! 🗑️', {
     position: "top-center",
     autoClose: 5000,
@@ -184,7 +167,6 @@ function Home() {
         />
         }
       </div>
-      <ProgFooter />
     </div>
   );
 }

@@ -29,7 +29,6 @@ function Developers() {
           );
         })}
       </Wrapper>
-      <ProgFooter />
     </Container>
   );
 }

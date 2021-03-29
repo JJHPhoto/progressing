@@ -4,7 +4,6 @@ import api from "../../utils/API";
 // import { StartHeader } from "../../components/StartHeader";
 import { Container } from "react-bootstrap";
 import ErrorNotification from "../../components/ErrorNotification";
-import ProgFooter from "../../components/Footer";
 import { Header } from "../../components/Header/Header";
 import "./style.css";
 
@@ -107,7 +106,6 @@ function SignUp() {
           ) : null}{" "}
         </div>
       </form>
-      <ProgFooter />
     </Container>
   );
 }
