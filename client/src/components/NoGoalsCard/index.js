@@ -7,25 +7,29 @@ import "./style.css";
 function NoGoalsCard() {
 
     return (
-        <Card className="mb-5" >          
+        <Card className="mb-5" >
 
             <Card.Header className="ngHeader mb-1 p-4">
                 <div className="">
+
                 <h1 className="noGoalHeader" style={{fontSize: "1.1rem"}}>
                     Lets get you started by creating your first goal, click the button below!
+
                 </h1>
                 </div>
             </Card.Header>
             <Card.Body>
 
                 <Row >
+
                     <ul className="noGoal ml-4 mx-4 font-weight-light"> 
                     Remember you're S.M.A.R.T - specific, measurable, attainable, relevant, time-bound! 
+
                     </ul>
 
                     <ul className="noGoal ml-4 mx-4 font-weight-light">
 
-                        As your creating your goal, think of the milestones you will check off to complete it.  This gives you a way to break your goal down into managable, actionable pieces.
+                        As you're creating your goal, think of the milestones you will check off to complete it.  This gives you a way to break your goal down into managable, actionable pieces.
 
                     </ul>
 
@@ -44,14 +48,12 @@ function NoGoalsCard() {
                 <Link className="text-white" to="/createGoal" >
                     <p className="mt-3" >
                         Click Here to Make Your First Goal!
+
                     </p>
-                </Link>
-            </Button>
+                    </Link>
+                </Button>
 
             </Card.Body>
-
-           
-
 
         </Card>
 
