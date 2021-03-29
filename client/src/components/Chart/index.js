@@ -15,7 +15,7 @@ function Chart({ chartGoal, setGoals, checkCompleteStatus, handleDeadlineNotice,
       <Card className="card-body p-0" id="#">
         <Card.Body>
           <Card.Header className="mb-2">
-            <h1 style={{ fontSize: "1.25rem" }}>{chartGoal.title}</h1>
+            <h1 className="title" style={{ fontSize: "1.25rem", marginTop:"1.4%" }}>{chartGoal.title}</h1>
           </Card.Header>
           <br />
           <div className="d-flex flex-row justify-content-between">

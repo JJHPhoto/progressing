@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import "./style.css";
-import ProgFooter from "../../components/Footer";
 // import { propTypes } from "react-bootstrap/esm/Image";
 import {
   GoalTitle,
@@ -18,7 +17,6 @@ import { Header } from "../../components/Header/Header";
 import NavBar from "..//../components/NavBar/NavBar";
 import { useAuthenticatedUser } from "../../utils/auth";
 import goalAPI from "../../utils/goalApi";
-import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -214,8 +212,7 @@ function CreateGoal() {
       <NavBar />
       <Header />
       {currentStep === 1 &&
-        <div className="titleCard">
-          <p  className="titleParagraph">In every moment of every day ad-infinitum, going after your goals can be one of the hardest things you can do. We help you define, break down, and outline your goal. We give you easy to read data that helps you keep track of how you're <Link to="/howto" className="progressing">Progressing</Link>.</p>
+        <div>
           <GoalTitle
             onInputChange={handleTitle}
             onClick={handleGoalState} />
@@ -224,8 +221,6 @@ function CreateGoal() {
 
       {currentStep === 2 &&
         <div>
-          <p>Here you can describe, in more detail, what this goal means to you. Why do you want to start this goal? When do you want to complete it?</p>
-          
           <GoalDescription
             onInputChange={handleDescription}
             onClick={handleGoalState} />
@@ -234,8 +229,6 @@ function CreateGoal() {
 
       {currentStep === 3 &&
         <div>
-          <p>Is this goal time based? Do you have an end date?</p>
-          
           <GoalTypeDropdown
             onClick={handleConditionals} />
         </div>
@@ -244,7 +237,6 @@ function CreateGoal() {
       {currentStep === 4 &&
       (conditionalQs.goalType === "true") &&
         <div>
-          <p>Let's get a target date for completing this goal. This will assist you in keeping track of your milestones.</p>
           <Calendar 
             onChange={handleStartDate} 
             value={startDate} />
@@ -265,10 +257,6 @@ function CreateGoal() {
       {currentStep === 4 &&
       (conditionalQs.goalType === "false") &&
         <div>
-          <p><span>Milestone</span> : an important point in progress or development.</p>
-          
-          <p>What's the first milestone you need that will help you hit your goal?</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -278,10 +266,6 @@ function CreateGoal() {
       {currentStep === 5 &&
       (conditionalQs.goalType === "true") &&
         <div>
-          <p><span>Milestone</span> : an important point in progress or development.</p>
-          
-          <p>What's the first milestone you need that will help you hit your goal?</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -291,8 +275,6 @@ function CreateGoal() {
       {currentStep === 5 &&
       (conditionalQs.goalType === "false") &&
         <div>
-          <p>You're on a roll!</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -301,8 +283,6 @@ function CreateGoal() {
       {currentStep === 6 &&
       (conditionalQs.goalType === "true") &&
         <div>
-          <p>You're on a roll!</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -310,9 +290,7 @@ function CreateGoal() {
 
       {currentStep === 6 &&
       (conditionalQs.anotherMilestone === "true") &&
-        <div>
-          <p>What's the next milestone on the path to your goal?</p>
-          
+        <div>          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -322,8 +300,6 @@ function CreateGoal() {
       {currentStep === 6 &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -332,9 +308,7 @@ function CreateGoal() {
       {currentStep === 7 &&
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
-        <div>
-          <p>What's the next milestone on the path to your goal?</p>
-          
+        <div>          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -345,8 +319,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -1315,10 +1287,8 @@ function CreateGoal() {
             goalSummary={goalState} />
           <SubmitGoal
             onClick={handleFormSubmit}  />
-           
         </div>
       }
-    <ProgFooter />
     </div>
   );
 }

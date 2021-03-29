@@ -48,7 +48,7 @@ function NavBar() {
         <Navbar.Collapse className="justify-content-end">
           {user &&
           <Navbar.Text>
-            Welcome, <Link as={Link} to="/home" style={{ textDecoration: 'none', color: 'white'}} >{user.firstName}!</Link>
+            Welcome, {user.firstName}!
           </Navbar.Text>}
 
         </Navbar.Collapse>

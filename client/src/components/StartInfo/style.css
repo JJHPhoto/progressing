@@ -1,5 +1,6 @@
 .startContainer {
     height: 52vh !important;
+    margin-bottom: 120px;
 }
 
 .infoContainer {
@@ -14,6 +15,7 @@
 @media (max-width: 1024px){
     .startContainer{
         height: 69vh !important;
+        margin-bottom: 0px;
     }
 }
 
@@ -32,12 +34,13 @@
 @media (max-width: 411px){
     .startContainer{
         height: 58vh !important;
+        margin-top: 40px;
     }
 }
 
 @media (max-width: 375px){
     .startContainer{
-        height: 60vh !important;
+        height: 58vh !important;
     }
 }
 

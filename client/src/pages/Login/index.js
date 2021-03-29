@@ -3,7 +3,6 @@ import { useRef, useState } from "react";
 import { useLogin } from "../../utils/auth";
 import { Container } from "react-bootstrap";
 import ErrorNotification from "../../components/ErrorNotification";
-import ProgFooter from "../../components/Footer";
 import { Header } from "../../components/Header/Header";
 import "./style.css";
 
@@ -75,7 +74,6 @@ function Login() {
             />
           ) : null}{" "}
       </form>      
-      <ProgFooter />
     </Container>
   );
 }

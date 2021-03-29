@@ -1,15 +1,23 @@
-.titleContainer {
-    max-width: 675px;
-    height: 41vh;
+/****** re-useable ******/
+.goalContainer{
+    max-width: 925px;
+    height: 425px;
     margin: 0rem auto;
-    margin-bottom: 3rem;
+    margin-bottom: 7.5rem !important;
 }
 
-.goalTitle {
+.myContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem;
+}
+
+.paragraph {
+    width: 100%;
+    max-width: 925px;
+    padding: 2rem 2rem 1rem 2rem;
+    margin: 0 auto;
 }
 
 .inputField {
@@ -17,42 +25,52 @@
 }
 
 .btn-success {
-    margin-top: 1rem;
+    margin-top: 2rem;
     background-color: #01a35a !important;
 }
 
-@media (max-width: 1024px){
-    .titleContainer{
+.toggleButton {
+    margin-left: 2rem;
+}
+
+.progressing {
+    color: #01a35a
+}
+
+/* Media queries */
+
+/* @media (max-width: 1024px){
+    .goalContainer{
         height: 62vh !important;
     }
 }
 
 @media (max-width: 768px){
-    .titleContainer{
+    .goalContainer{
         height: 49vh !important;
     }
 }
 
 @media (max-width: 500px){
-    .titleContainer{
+    .goalContainer{
         height: 100% !important;
     }
 }
 
 @media (max-width: 411px){
-    .titleContainer{
+    .goalContainer{
         height: 100% !important;
     }
 }
 
 @media (max-width: 375px){
-    .titleContainer{
-        height: 39vh !important;
+    .goalContainer{
+        height: 100% !important;
     }
 }
 
 @media (max-width: 360px){
-    .titleContainer{
+    .goalContainer{
         height: 100% !important;
     }
-}
+} */

@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ProgFooter from "../../components/Footer";
 import { Header } from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import "./style.css";
@@ -62,7 +61,6 @@ function About() {
                     </p>
                 </Col>
             </Row> */}
-          <ProgFooter />
       </Container>
     </div>
   );

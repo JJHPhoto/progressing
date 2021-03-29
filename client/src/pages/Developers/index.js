@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import DeveloperCards from "../../components/DeveloperCards";
 import devs from "../../components/devs";
-import ProgFooter from "../../components/Footer";
 import { Header } from "../../components/Header/Header";
 import NavBar from "../../components/NavBar/NavBar";
 import Wrapper from "../../components/Wrapper";
@@ -29,7 +28,6 @@ function Developers() {
           );
         })}
       </Wrapper>
-      <ProgFooter />
     </Container>
   );
 }

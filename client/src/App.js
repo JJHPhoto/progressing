@@ -15,6 +15,8 @@ import GuestRoute from "./components/GuestRoute";
 import PrivateRoute from "./components/PrivateRoute";
 // Importing to overwrite bootstrap 'bg-success' color, TSK 
 import "./style.css";
+import ProgFooter from "./components/Footer";
+import { Container } from "react-bootstrap";
 
 function App() {
   const isReauthDone = useAuthTokenStore();
@@ -63,6 +65,9 @@ function App() {
           {isAuthenticated && <LogoutButton />}
         </Switch>
       )}
+      <Container>
+        <ProgFooter />
+      </Container>
     </div>
   );
 }
