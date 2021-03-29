@@ -64,6 +64,10 @@
   .description {
     max-width: 200px;
   }
+
+  .title {
+    margin-top: 4%;
+  }
   
 }
 
@@ -80,6 +84,10 @@
     margin-left: 12% !important ;
     width: 100% !important ;
   }
+
+  .title {
+    margin-top: 5% !important;
+  }
 }
 
 @media only screen and (max-width: 375px) {
@@ -87,4 +95,9 @@
   .pie {
     margin-left: -12%;
   }
+
+  .title {
+    margin-top: 6% !important;
+  }
+
 }
