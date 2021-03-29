@@ -15,7 +15,7 @@ function HowTo() {
 
             <Card className="mt-4" >
                 <Card.Header style={{backgroundColor: "#01a35a"}}>
-                    <h1 className="text-center text-white" style={{fontSize: "1.25rem"}}>How to Use Progressing</h1>
+                    <h1 className="text-center text-white pt-3" style={{fontSize: "1.25rem"}}>How to Use Progressing</h1>
                 </Card.Header>
             <Row>
                 <Col className="mt-4">
@@ -77,47 +77,49 @@ function HowTo() {
 
             <Card className="my-5">
                 <Card.Header style={{backgroundColor: "#01a35a"}}>
-                    <h1 className="text-center text-white" style={{fontSize: "1.25rem"}}>S.M.A.R.T. Goal Setting</h1>
+                    <h1 className="text-center text-white pt-3 " style={{fontSize: "1.25rem"}}>S.M.A.R.T. Goal Setting</h1>
                 </Card.Header>
-            <Row className="smart ml-3">
-                <h5>Specific</h5>
-                    
-                    <p className="ml-4 mx-4 font-weight-light">
-                        Be specific!  This is your chance to really start your Progressing journey.  The idea behind this is simple enough, what do you want to specifically achieve?  But, when you are creating your goal title, take a moment to think about what it is you are really looking to achieve.  For example, 'I want to eat more responsibly' sounds like a great goal to take on, but, to get the most out of Progressing, you're going to need to be more specific.  How about, 'I want to include fruits and vegetables at each meal today'?  This gives us something specific and attainable to work towards.
-                    </p>    
-            </Row>
+                <div className="p-4">
+                    <Row className="smart ml-3 pt-3">
+                        <h5>Specific</h5>
+                            
+                            <p className="ml-4 mx-4 font-weight-light">
+                                Be specific!  This is your chance to really start your Progressing journey.  The idea behind this is simple enough, what do you want to specifically achieve?  But, when you are creating your goal title, take a moment to think about what it is you are really looking to achieve.  For example, 'I want to eat more responsibly' sounds like a great goal to take on, but, to get the most out of Progressing, you're going to need to be more specific.  How about, 'I want to include fruits and vegetables at each meal today'?  This gives us something specific and attainable to work towards.
+                            </p>    
+                    </Row>
 
-            <Row className="smart ml-3">
-                <h5>Measurable</h5>
-                    
-                    <p className="ml-4 mx-4 font-weight-light">
-                        By picking something to progress towards, think about how you are going to measure your success.  This could come in different forms, but for our sake, we are going to use 'yes/no' boolean operators here to gauge your milestones and action items.  So, 'Did I include fruit and veggies with breakfast this morning?', quantifiable, simple, a measurable step tallied towards your goal.
-                    </p>    
-            </Row>
+                    <Row className="smart ml-3">
+                        <h5>Measurable</h5>
+                            
+                            <p className="ml-4 mx-4 font-weight-light">
+                                By picking something to progress towards, think about how you are going to measure your success.  This could come in different forms, but for our sake, we are going to use 'yes/no' boolean operators here to gauge your milestones and action items.  So, 'Did I include fruit and veggies with breakfast this morning?', quantifiable, simple, a measurable step tallied towards your goal.
+                            </p>    
+                    </Row>
 
-            <Row className="smart ml-3">
-                <h5>Attainable</h5>
-                    
-                    <p className="ml-4 mx-4 font-weight-light">
-                        Is your goal realistic?  Remember, that each of us is different, and this is where it is important to trust yourself.  To continue the above example, if we had set our goal as fruits and veggies for each meal every day for a month straight, that might be considered a stretch goal.  This would be a goal that will be difficult to achieve - which can be good - but know yourself, if you don't eat fruit and veggies at every meal as is, it may be more realistic to pick a day or a week to start, and move on from there.
-                    </p>    
-            </Row>
+                    <Row className="smart ml-3">
+                        <h5>Attainable</h5>
+                            
+                            <p className="ml-4 mx-4 font-weight-light">
+                                Is your goal realistic?  Remember, that each of us is different, and this is where it is important to trust yourself.  To continue the above example, if we had set our goal as fruits and veggies for each meal every day for a month straight, that might be considered a stretch goal.  This would be a goal that will be difficult to achieve - which can be good - but know yourself, if you don't eat fruit and veggies at every meal as is, it may be more realistic to pick a day or a week to start, and move on from there.
+                            </p>    
+                    </Row>
 
-            <Row className="smart ml-3">
-                <h5>Relevant</h5>
-                    
-                    <p className="ml-4 mx-4 font-weight-light">
-                        We at Progressing love this item - why is the goal relevant to you?  This can be the difference between a goal getting completed and it falling by the wayside.  Take a moment to really understand why this goal is important - often, a personal connection to a goal can be the most powerful motivation when you are challenged.  Remember why you are doing this, and keep that close to you as you move to progress.
-                    </p>    
-            </Row>
+                    <Row className="smart ml-3">
+                        <h5>Relevant</h5>
+                            
+                            <p className="ml-4 mx-4 font-weight-light">
+                                We at Progressing love this item - why is the goal relevant to you?  This can be the difference between a goal getting completed and it falling by the wayside.  Take a moment to really understand why this goal is important - often, a personal connection to a goal can be the most powerful motivation when you are challenged.  Remember why you are doing this, and keep that close to you as you move to progress.
+                            </p>    
+                    </Row>
 
-            <Row className="smart ml-3 mb-5">
-                <h5>Time-bound</h5>
-                    
-                    <p className="ml-4 mx-4 font-weight-light">
-                        We are all here because we want to move forward as people, family members, and/or employees, which means we probably have some sort of timeframe we wish to achieve our goal by.  At Progressing, we have the ability to set a completion date, or you can move forward with actionable items.  If you choose to not pick a date - add a soft date in your notes section that will remind you when you want to be complete.
-                    </p>    
-            </Row>
+                    <Row className="smart ml-3 mb-5">
+                        <h5>Time-bound</h5>
+                            
+                            <p className="ml-4 mx-4 font-weight-light">
+                                We are all here because we want to move forward as people, family members, and/or employees, which means we probably have some sort of timeframe we wish to achieve our goal by.  At Progressing, we have the ability to set a completion date, or you can move forward with actionable items.  If you choose to not pick a date - add a soft date in your notes section that will remind you when you want to be complete.
+                            </p>    
+                    </Row>
+                </div>
             </Card>
 
             <ProgFooter />

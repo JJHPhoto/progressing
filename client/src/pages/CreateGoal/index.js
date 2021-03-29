@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+// import "./style.css";
 // import { propTypes } from "react-bootstrap/esm/Image";
 import {
   GoalTitle,
@@ -16,6 +17,7 @@ import { Header } from "../../components/Header/Header";
 import NavBar from "..//../components/NavBar/NavBar";
 import { useAuthenticatedUser } from "../../utils/auth";
 import goalAPI from "../../utils/goalApi";
+import { Link } from "react-router-dom";
 
 function CreateGoal() {
 
@@ -152,6 +154,9 @@ function CreateGoal() {
     nextStep();
   }
 
+  // // Modal and content
+  // const [modalShow, setModalShow] = React.useState(false);
+
   // Done button handler
   const handleDoneButton = () => {
     setGoalState({
@@ -191,10 +196,9 @@ function CreateGoal() {
     <div className="container">
       <NavBar />
       <Header />
-
       {currentStep === 1 &&
-        <div>
-          <p>Let's define your goal at the root level. Type in a phrase that generally sums up what you hope to accomplish.</p>
+        <div className="titleCard">
+          <p  className="titleParagraph">In every moment of every day ad-infinitum, going after your goals can be one of the hardest things you can do. We help you define, break down, and outline your goal. We give you easy to read data that helps you keep track of how you're <Link to="/howto" className="progressing">Progressing</Link>.</p>
           <GoalTitle
             onInputChange={handleTitle}
             onClick={handleGoalState} />
