@@ -1,24 +1,58 @@
 .titleContainer {
-    width: 80%;
-    max-width: 800px;
-    padding: 2rem;
+    max-width: 675px;
+    height: 41vh;
     margin: 0rem auto;
-}
-
-.titeText {
-    
+    margin-bottom: 3rem;
 }
 
 .goalTitle {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-
+    padding: 1rem;
 }
 
 .inputField {
-    width: 70% !important;
+    width: 100% !important;
 }
 
 .btn-success {
+    margin-top: 1rem;
     background-color: #01a35a !important;
+}
+
+@media (max-width: 1024px){
+    .titleContainer{
+        height: 62vh !important;
+    }
+}
+
+@media (max-width: 768px){
+    .titleContainer{
+        height: 49vh !important;
+    }
+}
+
+@media (max-width: 500px){
+    .titleContainer{
+        height: 100% !important;
+    }
+}
+
+@media (max-width: 411px){
+    .titleContainer{
+        height: 100% !important;
+    }
+}
+
+@media (max-width: 375px){
+    .titleContainer{
+        height: 39vh !important;
+    }
+}
+
+@media (max-width: 360px){
+    .titleContainer{
+        height: 100% !important;
+    }
 }

@@ -29,7 +29,7 @@ function Home() {
     API
       .lookup(req)
       .then((res) => {
-        setGoals(res.data.goalsSet);
+        setGoals(res.data.goalsSet.reverse());
       })
       .catch((err) => console.log(err));
   };

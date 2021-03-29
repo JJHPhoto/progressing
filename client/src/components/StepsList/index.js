@@ -47,7 +47,7 @@ function StepsList({chartGoal, setGoals, checkCompleteStatus}) {
         } else {
             toggleValue = false
             console.log("///////////")
-            updateStep(listId, listName);
+            updateStep(listId, listName)
         } 
     }
 
