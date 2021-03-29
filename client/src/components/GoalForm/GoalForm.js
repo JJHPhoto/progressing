@@ -5,7 +5,6 @@ import { Dropdown, Card } from "react-bootstrap";
 import "./style.css";
 import {Link} from "react-router-dom";
 
-
 export function GoalTitle({ onInputChange, onClick }) {
     return (
         <Card className="goalContainer">
@@ -49,7 +48,7 @@ export function GoalDescription({ onInputChange, onClick }) {
                     name="description"
                     className="form-control inputField"
                     placeholder="Description (required)"
-                    rows="6"
+                    rows="5"
                 />
 
                 <button
@@ -71,16 +70,16 @@ export function Milestone({ onInputChange, onClick }) {
             <Card.Header style={{backgroundColor: "#01a35a"}}>
                 <h1 className="text-center text-white pt-3" style={{fontSize: "1.25rem"}}>Milestone</h1>
             </Card.Header>
-            <p className="paragraph"><span className="progressing">Milestone</span> : an important point in progress or development.</p>
+            <p className="paragraph"><span className="progressing">Milestone</span> : <i>An important point in progress or development.</i></p>
           
-            <p className="paragraph">What's the first milestone you need that will help you hit your goal?</p>
+            <p className="paragraph">Here we break your goal up into into milestones. This will make them measurable and more attainable. </p>
             <div className="form-group myContainer">
                 <input
                     onChange={onInputChange}
                     type="text"
                     name="steps"
                     className="form-control inputField"
-                    placeholder="Name this step"
+                    placeholder="Milestone"
                 />
                 <button
                     type="button"
@@ -198,7 +197,7 @@ export function GoalEndDate({ onInputChange, onClick }) {
 
 export function DoneButton({ onClick }) {
     return (
-        <Card className="form-group goalEndDate">
+        <Card className="form-group doneContainer">
             <Card.Header style={{backgroundColor: "#01a35a"}}>
                 <h1 className="text-center text-white pt-3" style={{fontSize: "1.25rem"}}>Well Done!</h1>
             </Card.Header>
