@@ -22,7 +22,7 @@ function App() {
   const isAuthenticated = useIsAuthenticated();
 
   return (
-    <div className="App" style={{maxHeight: "75%"}}>
+    <div className="App">
       {isReauthDone && (
         <Switch>
           <GuestRoute redirectTo="/home" exact path="/" component={Start} />

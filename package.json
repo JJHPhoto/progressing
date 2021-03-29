@@ -31,6 +31,7 @@
     "passport-jwt": "^4.0.0",
     "react-bootstrap": "^1.5.2",
     "react-router-dom": "^5.2.0",
+    "react-toastify": "^7.0.3",
     "update": "^0.7.4"
   }
 }

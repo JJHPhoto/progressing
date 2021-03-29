@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 function ProgInfo() {
 
     return (
-        <Container >
-            <Row>
+        <Container className="startContainer">
+            <Row className="infoContainer">
                 <Col className="infoCol mb-5">
                     <Link to="/about">
 
@@ -18,12 +18,10 @@ function ProgInfo() {
                             className="d-block w-100"
                             src={img}
                             alt="About Us"
-                        />
-                        
+                        /> 
                     </Link>
-                    
-                    
                 </Col>
+                
                 <Col className="infoCol mb-5" >
                     <Link to="/howto">
                         <img

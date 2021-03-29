@@ -1,8 +1,10 @@
+.footer {
+  width: inherit;
+}
+
 .ftCol {
-  /* position: fixed; */
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  position: sticky !important;
+  bottom: 0 !important;
   background-color: #01a35a;
   color: white;
   text-align: center;

@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import ErrorNotification from "../../components/ErrorNotification";
 import ProgFooter from "../../components/Footer";
 import { Header } from "../../components/Header/Header";
+import "./style.css";
 
 function Login() {
   const emailRef = useRef();
@@ -42,9 +43,8 @@ function Login() {
 
   return (
     <Container>
-      {/* <StartHeader /> */}
       <Header />
-      <form className="form-group mb-5" onSubmit={handleSubmit}>
+      <form className="form-group loginContainer" onSubmit={handleSubmit}>
         <h2>Login</h2>
         <input
           className="form-control"
@@ -66,7 +66,6 @@ function Login() {
         >
           Submit
         </button>
-        <div>
           {" "}
           {visible ? (
             <ErrorNotification
@@ -75,7 +74,6 @@ function Login() {
               errorMessage={errorMessage}
             />
           ) : null}{" "}
-        </div>
       </form>      
       <ProgFooter />
     </Container>

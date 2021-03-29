@@ -1,0 +1,39 @@
+.aboutContainer {
+    height: 55vh !important;
+}
+
+@media (max-width: 1024px){
+    .aboutContainer{
+        height: 70vh !important;
+    }
+}
+
+@media (max-width: 768px){
+    .aboutContainer{
+        height: 61vh !important;
+    }
+}
+
+@media (max-width: 500px){
+    .aboutContainer{
+        height: 100% !important;
+    }
+}
+
+@media (max-width: 411px){
+    .aboutContainer{
+        height: 100% !important;
+    }
+}
+
+@media (max-width: 375px){
+    .aboutContainer{
+        height: 100% !important;
+    }
+}
+
+@media (max-width: 360px){
+    .aboutContainer{
+        height: 100% !important;
+    }
+}
