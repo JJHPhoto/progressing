@@ -113,7 +113,7 @@ GoalSchema.virtual("completeFirst").get( function () {
     }); 
 
 GoalSchema.virtual("daysLeft").get( function () {
-    let curr = moment(new Date()).toISOString();
+    let curr = moment(new Date().toISOString());
     let start = moment(this.date);
     let end = moment(this.endDate);
 
