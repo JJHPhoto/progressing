@@ -7,10 +7,6 @@ const GoalSchema = new Schema({
         type: Date,
         default: new Date().toISOString()
     },
-    complete: {
-        type: Boolean,
-        default: false
-    },
     title: {
         type: String,
         required: true
@@ -57,20 +53,65 @@ if (this.steps){
             let {complete} = step
             milestoneComplete.push(complete);
         })
-    
         var trueMilestoneComplete = milestoneComplete.filter(function(complete) { 
         return complete === true;     
-        })
-        
+        })  
         let totalTrueCompletes = trueMilestoneComplete.length;
         console.log("totalTrueCompletes", totalTrueCompletes)
         return totalTrueCompletes 
     }
-});   
+}); 
 
-// date virtual, how much time is left
-// take end date and subtract by current date 
-// potential calendar
+GoalSchema.virtual("completeFull").get( function () { 
+    let milestoneComplete = []
+    let completeFull = false
+    if (this.steps){
+            this.steps.forEach(function(step) {
+                let {complete} = step
+                milestoneComplete.push(complete);
+            })
+            completeFull = milestoneComplete.every(v => v === true);
+            return completeFull;
+      }
+    });   
+
+GoalSchema.virtual("completeHalf").get( function () {
+    let milestoneComplete = []
+    let completeHalf = false
+    if (this.steps){
+            this.steps.forEach(function(step) {
+                let {complete} = step
+                milestoneComplete.push(complete);
+            })
+            var trueMilestoneComplete = milestoneComplete.filter(function(complete) { 
+            return complete === true;     
+            })
+            if ((trueMilestoneComplete.length/milestoneComplete.length) >= .5 && (trueMilestoneComplete.length/milestoneComplete.length) < 1) {
+               completeHalf = true
+            }
+            return completeHalf;
+          }
+    });
+    
+GoalSchema.virtual("completeFirst").get( function () {
+    let milestoneComplete = []
+      let completeFirst = false
+      if (this.steps){
+              this.steps.forEach(function(step) {
+                  let {complete} = step
+                  milestoneComplete.push(complete);
+              })
+              var trueMilestoneComplete = milestoneComplete.filter(function(complete) { 
+              return complete === true;     
+              })
+              if ((trueMilestoneComplete.length) === 1 ) {
+                 completeFirst = true
+              }
+              console.log("completeFirst", completeFirst)
+              return completeFirst;
+            }
+    }); 
+
 GoalSchema.virtual("daysLeft").get( function () {
     let start = moment(this.startDate);
     let end = moment(this.endDate);
@@ -87,8 +128,6 @@ GoalSchema.virtual("daysLeftHalf").get( function () {
 
     return (end-start)/2;
 })
-
-// daily goals, take all false milestone with steps and divide equally based off enddate
 
 module.exports = Goals = mongoose.model("Goals", GoalSchema);
 

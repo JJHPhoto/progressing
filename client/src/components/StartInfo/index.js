@@ -10,7 +10,7 @@ function ProgInfo() {
 
     return (
         <Container >
-            <Row>
+            <Row style={{ marginTop: "45px" }}>
                 <Col className="infoCol mb-5">
                     <Link to="/about">
 

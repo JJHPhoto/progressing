@@ -10,7 +10,7 @@ function ProgFooter() {
         <p className="ftCol mt-2 mb-2">Progressing © 2021</p>
       </Row>
       <footer />
-    </Container>
+     </Container>
   );
 }
 
