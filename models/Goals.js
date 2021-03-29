@@ -113,24 +113,28 @@ GoalSchema.virtual("completeFirst").get( function () {
     }); 
 
 GoalSchema.virtual("daysLeft").get( function () {
-    let curr = moment(new Date().toISOString()).format("DDD");
+    let current = new Date();
+    let curr = moment(current).format("DDD");
     let start = moment(this.date).format("DDD");
     let end = moment(this.endDate).format("DDD");
 
-    if(curr.diff(start, "days") < 0) {
-        return end.diff(start, "days");
+    console.log("curr - start", curr - start);
+    console.log("end - start", end - start);
+    console.log("(end - curr) + 1", (end - curr) + 1)
+
+    if((curr - start) < 0) {
+        console.log("Inside the if")
+        return (end - start);
     }
     else {
-        return end.diff(curr, "days");
+        console.log("Inside the else")
+        return ((end - curr) + 1);
     }
 })
 
 GoalSchema.virtual("daysLeftHalf").get( function () {
     let start = moment(this.startDate).format("DDD");
     let end = moment(this.endDate).format("DDD");
-
-    console.log("start", start);
-    console.log("end", end);
 
     return (end-start)/2;
 })
