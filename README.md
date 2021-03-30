@@ -23,9 +23,9 @@ Our application lets you to track your progress on life goals that you set!
 
 ## Application Demo
 
-![image](./client/public/AppSS.jpg)
+![image](./client/public/AppSS-3.jpg)
 
-To watch a video of the application being fully demo'd please use this link: [Application Demo](...).
+To watch a video of the application being fully demo'd please use this link: [Application Demo](https://drive.google.com/file/d/1x5CLyP7qBkGz2qVLEVHiD-VAS0JG6RDQ/view).
 
 ## Future Development
 
