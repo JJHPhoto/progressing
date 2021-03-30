@@ -1,0 +1,25 @@
+.goalContainer{
+    max-width: 925px;
+    height: 425px;
+    margin: 0rem auto;
+    margin-bottom: 7.5rem !important;
+}
+
+.myContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.paragraph {
+    width: 100%;
+    max-width: 925px;
+    padding: 2rem 2rem 1rem 2rem;
+    margin: 0 auto;
+}
+
+.btn-success {
+    margin-top: 2rem;
+    background-color: #01a35a !important;
+}

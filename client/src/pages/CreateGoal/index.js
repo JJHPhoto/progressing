@@ -236,22 +236,29 @@ function CreateGoal() {
 
       {currentStep === 4 &&
       (conditionalQs.goalType === "true") &&
-        <div>
-          <Calendar 
-            onChange={handleStartDate} 
-            value={startDate} />
-          <Calendar 
-            onChange={handleEndDate} 
-            value={endDate} />
-          <button
-                type="button"
-                onClick={handleGoalState}
-                style={{ float: "right", marginBottom: 10 }}
-                className="btn btn-success submitBtn"
+          <div>
+            <h3 style={{marginBottom: "1rem"}}>Select a Date</h3>
+            <button
+              type="button"
+              onClick={handleGoalState}
+              style={{ margin: 0 }}
+              className="btn btn-success submitBtn"
             >
-                Next
+              Next
             </button>
-        </div>
+            <div>
+              <p style={{ marginTop: "2rem" }} >Start Date</p>
+              <Calendar
+                onChange={handleStartDate} 
+                value={startDate} />
+            </div>
+            <div>
+              <p style={{ marginTop: "1rem"}}>End Date</p>
+              <Calendar 
+                onChange={handleEndDate} 
+                value={endDate} />
+            </div>
+          </div>
       }
           
       {currentStep === 4 &&
@@ -347,7 +354,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -378,7 +384,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -389,9 +394,7 @@ function CreateGoal() {
       {currentStep === 8 &&
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
-        <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
+        <div>      
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -402,8 +405,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -413,8 +414,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -425,8 +424,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -436,8 +433,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>You've made three milestones. Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -455,7 +450,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-         <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -467,8 +461,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>You've made three milestones. Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -486,7 +478,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -498,8 +489,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -510,8 +499,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -521,8 +508,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -533,8 +518,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -544,8 +527,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -563,7 +544,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -575,8 +555,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -594,7 +572,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-         <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -606,8 +583,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -618,8 +593,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -629,8 +602,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -641,8 +612,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summary.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -652,8 +621,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -671,7 +638,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -683,8 +649,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -702,7 +666,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -714,8 +677,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -726,8 +687,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -737,8 +696,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -749,8 +706,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summary.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -760,8 +715,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -779,7 +732,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -791,8 +743,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -810,7 +760,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -822,8 +771,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -834,8 +781,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -845,8 +790,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -857,8 +800,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summary.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -868,8 +809,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -887,7 +826,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -899,8 +837,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -918,7 +854,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -930,8 +865,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -942,8 +875,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -953,8 +884,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -965,8 +894,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summary.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -976,8 +903,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -995,7 +920,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -1007,8 +931,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -1026,7 +948,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -1038,8 +959,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -1050,8 +969,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -1061,8 +978,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -1073,8 +988,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summary.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -1084,8 +997,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -1103,7 +1014,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -1115,8 +1025,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Would you like to break your goal up further?</p>
-
           <MilestoneDropdown
             onClick={handleConditionals} />
         </div>
@@ -1134,7 +1042,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -1146,8 +1053,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Let's keep breaking your goal into milestones.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -1158,8 +1063,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -1169,8 +1072,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>This is your last mileston.</p>
-          
           <Milestone
             onInputChange={handleThisStep}
             onClick={handleAllSteps} />
@@ -1181,8 +1082,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "false") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summary.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -1192,8 +1091,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "false") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summary.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -1211,7 +1108,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -1223,8 +1119,6 @@ function CreateGoal() {
       (conditionalQs.goalType === "true") &&
       (conditionalQs.anotherMilestone === "true") &&
         <div>
-          <p>Congratulations! You've made <span>ten</span> milestones for this goal. Hit the done button and we'll head over to your summary.</p>
-          
           <DoneButton
             onClick={handleDoneButton} />
         </div>
@@ -1242,7 +1136,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -1262,7 +1155,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
@@ -1282,7 +1174,6 @@ function CreateGoal() {
             rtl={false}
             pauseOnFocusLoss
             draggable/>
-          <p>Here is your goal summary. If you feel like you want to make some edits to this goal, you can find all of your goals on your dashboard.</p>
           <Summary
             goalSummary={goalState} />
           <SubmitGoal
