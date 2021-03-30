@@ -172,28 +172,30 @@ export function GoalTypeDropdown({ onClick }) {
     );
 }
 
-export function GoalEndDate({ onInputChange, onClick }) {
-    return (
-        <div className="form-group goalEndDate">
-            Completion Date
-            <input
-                onChange={onInputChange}
-                name="endDate"
-                className="form-control"
-                placeholder="03/18/2021"
-            />
+// export function GoalEndDate({ onInputChange, onClick }) {
+//     return (
+//         <Card className="goalContainer">
+//             <Card.Header style={{backgroundColor: "#01a35a"}}>
+//                 <h1 className="text-center text-white pt-3" style={{fontSize: "1.25rem"}}>Completion Date</h1>
+//             </Card.Header>
+//             <input
+//                 onChange={onInputChange}
+//                 name="endDate"
+//                 className="form-control"
+//                 placeholder="03/18/2021"
+//             />
 
-            <button
-                type="button"
-                onClick={onClick}
-                style={{ float: "right", marginBottom: 10 }}
-                className="btn btn-success submitBtn"
-            >
-                Next
-            </button>
-        </div>
-    );
-}
+//             <button
+//                 type="button"
+//                 onClick={onClick}
+//                 style={{ float: "right", marginBottom: 10 }}
+//                 className="btn btn-success submitBtn"
+//             >
+//                 Next
+//             </button>
+//         </Card>
+//     );
+// }
 
 export function DoneButton({ onClick }) {
     return (
@@ -201,7 +203,7 @@ export function DoneButton({ onClick }) {
             <Card.Header style={{backgroundColor: "#01a35a"}}>
                 <h1 className="text-center text-white pt-3" style={{fontSize: "1.25rem"}}>Well Done!</h1>
             </Card.Header>
-            <p className="paragraph">Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summery.</p>
+            <p className="paragraph">Looks like you've finished outlining your goal. Hit the done button and we'll head over to your summary.</p>
             <div 
                 className="form-group myContainer">
                 <button
@@ -218,17 +220,23 @@ export function DoneButton({ onClick }) {
 
 export function Summary({goalSummary}) {
     console.log("goalSummary", goalSummary)
+    const userStartDate = goalSummary.startDate.slice("T", -14);
+    const userEndDate = goalSummary.endDate.slice("T", -14);
     return (
         // What to do with the summary page.
-        <div className="form-group goalSummary">
-            Here is your goal summary
-            <p>Goal Title: {goalSummary.title}</p>
-            <p>Goal Description: {goalSummary.description}</p>
-            <p>End Date: {goalSummary.endDate}</p>
+        <Card className="form-group goalSummary">
+            <Card.Header style={{backgroundColor: "#01a35a"}}>
+                <h1 className="text-center text-white pt-3" style={{fontSize: "1.25rem"}}>Goal Summary</h1>
+            </Card.Header>
+            
+            <p className="summary"><span className="font-weight-bold">Goal Title:</span><span className="font-weight-light">  {goalSummary.title}</span></p>
+            <p className="summary"><span className="font-weight-bold">Goal Description:</span><span className="font-weight-light">  {goalSummary.description}</span></p>
+            <p className="summary"><span className="font-weight-bold">Start Date:</span><span className="font-weight-light">  {userStartDate}</span></p>
+            <p className="summary"><span className="font-weight-bold">End Date:</span><span className="font-weight-light">  {userEndDate}</span></p>
             {goalSummary.steps.map(step => {
-                return <p key={step.id} >Milestones: {step.name}</p>
+                return <p className="summary" key={step.id} ><span className="font-weight-bold">Milestone:</span><span className="font-weight-light"> {step.name}</span></p>
             })}
-        </div>
+        </Card>
 
     );
 }

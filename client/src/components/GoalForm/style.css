@@ -20,6 +20,13 @@
     margin: 0 auto;
 }
 
+.summary {
+    width: 100%;
+    max-width: 925px;
+    padding: 0.5rem 2rem;
+    margin: 0 auto;
+}
+
 .inputField {
     width: 100% !important;
 }
